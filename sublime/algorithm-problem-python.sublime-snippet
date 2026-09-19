@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[# @url ${1:https://example.com/problem}
+# @primary ${2:implementation}
+# @topics ${3:}
+# @note
+# ${4:Reasoning, mistakes and review notes.}
+# @endnote
+
+${0}
+]]></content>
+  <tabTrigger>algo</tabTrigger>
+  <scope>source.python</scope>
+  <description>Algorithm notebook metadata (Python)</description>
+</snippet>
+

@@ -1,0 +1,647 @@
+version: 1
+
+# Stable IDs are used in source comments, JSON, URLs and folders.
+# `aliases` are accepted as input but are always normalized to the stable ID.
+groups:
+  fundamentals:
+    name: Fundamentals
+    children:
+      implementation:
+        name: Implementation
+        aliases: [coding, implementation-details]
+      simulation:
+        name: Simulation
+      enumeration:
+        name: Enumeration
+        aliases: [brute-force, exhaustive-search]
+      constructive-algorithms:
+        name: Constructive Algorithms
+        aliases: [constructive]
+      case-analysis:
+        name: Case Analysis
+      sorting:
+        name: Sorting
+        children:
+          comparison-sorting:
+            name: Comparison Sorting
+          counting-sort:
+            name: Counting Sort
+          radix-sort:
+            name: Radix Sort
+          custom-comparator:
+            name: Custom Comparator
+      prefix-sum:
+        name: Prefix Sum
+        aliases: [prefix-sums, cumulative-sum]
+      two-dimensional-prefix-sum:
+        name: 2D Prefix Sum
+        aliases: [2d-prefix-sum, matrix-prefix-sum]
+      difference-array:
+        name: Difference Array
+        aliases: [difference, range-difference]
+      two-dimensional-difference:
+        name: 2D Difference Array
+        aliases: [2d-difference]
+      two-pointers:
+        name: Two Pointers
+        aliases: [two-pointer]
+      sliding-window:
+        name: Sliding Window
+      coordinate-compression:
+        name: Coordinate Compression
+        aliases: [discretization]
+      contribution-technique:
+        name: Contribution Technique
+        aliases: [contribution]
+      sweep-line:
+        name: Sweep Line
+        aliases: [line-sweep]
+      offline-processing:
+        name: Offline Processing
+        aliases: [offline-algorithm]
+
+  paradigms:
+    name: Algorithmic Paradigms
+    children:
+      recursion:
+        name: Recursion
+      divide-and-conquer:
+        name: Divide and Conquer
+      decrease-and-conquer:
+        name: Decrease and Conquer
+      incremental-construction:
+        name: Incremental Construction
+      meet-in-the-middle:
+        name: Meet in the Middle
+        aliases: [mitm]
+      randomized-algorithms:
+        name: Randomized Algorithms
+        aliases: [randomization]
+      probabilistic-algorithms:
+        name: Probabilistic Algorithms
+
+  search:
+    name: Search
+    children:
+      binary-search:
+        name: Binary Search
+      binary-search-on-answer:
+        name: Binary Search on Answer
+        aliases: [answer-binary-search, parametric-search]
+      ternary-search:
+        name: Ternary Search
+      depth-first-search:
+        name: Depth-First Search
+        aliases: [dfs]
+      breadth-first-search:
+        name: Breadth-First Search
+        aliases: [bfs]
+      multi-source-bfs:
+        name: Multi-source BFS
+      bidirectional-bfs:
+        name: Bidirectional BFS
+      zero-one-bfs:
+        name: 0-1 BFS
+        aliases: [01-bfs]
+      backtracking:
+        name: Backtracking
+      flood-fill:
+        name: Flood Fill
+      iterative-deepening:
+        name: Iterative Deepening
+        aliases: [iddfs]
+      a-star:
+        name: A* Search
+        aliases: [astar]
+      branch-and-bound:
+        name: Branch and Bound
+
+  data-structures:
+    name: Data Structures
+    children:
+      array:
+        name: Array
+      matrix:
+        name: Matrix
+      linked-list:
+        name: Linked List
+      stack:
+        name: Stack
+      queue:
+        name: Queue
+      deque:
+        name: Deque
+      priority-queue:
+        name: Priority Queue
+        aliases: [heap, binary-heap]
+      hash-map:
+        name: Hash Map
+        aliases: [hashmap, hash-table, unordered-map]
+      hash-set:
+        name: Hash Set
+        aliases: [unordered-set]
+      ordered-set:
+        name: Ordered Set
+      ordered-map:
+        name: Ordered Map
+      disjoint-set-union:
+        name: Disjoint Set Union
+        aliases: [dsu, union-find]
+      weighted-dsu:
+        name: Weighted DSU
+        aliases: [weighted-union-find]
+      rollback-dsu:
+        name: Rollback DSU
+      fenwick-tree:
+        name: Fenwick Tree
+        aliases: [binary-indexed-tree, bit]
+      segment-tree:
+        name: Segment Tree
+        children:
+          basic-segment-tree:
+            name: Basic Segment Tree
+          lazy-segment-tree:
+            name: Lazy Segment Tree
+            aliases: [lazy-propagation]
+          dynamic-segment-tree:
+            name: Dynamic Segment Tree
+          persistent-segment-tree:
+            name: Persistent Segment Tree
+          segment-tree-beats:
+            name: Segment Tree Beats
+          merge-sort-tree:
+            name: Merge Sort Tree
+      sparse-table:
+        name: Sparse Table
+        aliases: [st-table]
+      monotonic-stack:
+        name: Monotonic Stack
+      monotonic-queue:
+        name: Monotonic Queue
+        aliases: [monotonic-deque]
+      trie:
+        name: Trie
+        aliases: [prefix-tree]
+      binary-trie:
+        name: Binary Trie
+        aliases: [xor-trie]
+      balanced-binary-search-tree:
+        name: Balanced Binary Search Tree
+        aliases: [balanced-bst]
+      treap:
+        name: Treap
+      splay-tree:
+        name: Splay Tree
+      implicit-treap:
+        name: Implicit Treap
+      square-root-decomposition:
+        name: Square Root Decomposition
+        aliases: [sqrt-decomposition, block-decomposition]
+      mos-algorithm:
+        name: Mo's Algorithm
+        aliases: [mo-algorithm]
+      bitset:
+        name: Bitset
+      persistent-data-structure:
+        name: Persistent Data Structure
+      small-to-large-merging:
+        name: Small-to-Large Merging
+        aliases: [dsu-on-tree, sack]
+
+  greedy:
+    name: Greedy
+    children:
+      general-greedy:
+        name: General Greedy
+      sorting-greedy:
+        name: Sorting-based Greedy
+      interval-greedy:
+        name: Interval Greedy
+        children:
+          interval-scheduling:
+            name: Interval Scheduling
+          interval-covering:
+            name: Interval Covering
+          interval-merging:
+            name: Interval Merging
+      exchange-argument:
+        name: Exchange Argument
+      earliest-deadline-first:
+        name: Earliest Deadline First
+        aliases: [edf]
+      huffman-coding:
+        name: Huffman Coding
+      greedy-construction:
+        name: Greedy Construction
+
+  dynamic-programming:
+    name: Dynamic Programming
+    aliases: [dp]
+    children:
+      general-dp:
+        name: General Dynamic Programming
+      linear-dp:
+        name: Linear DP
+        children:
+          sequence-dp:
+            name: Sequence DP
+          longest-increasing-subsequence:
+            name: Longest Increasing Subsequence
+            aliases: [lis]
+          longest-common-subsequence:
+            name: Longest Common Subsequence
+            aliases: [lcs]
+          longest-common-substring:
+            name: Longest Common Substring
+          edit-distance:
+            name: Edit Distance
+            aliases: [levenshtein-distance]
+          maximum-subarray:
+            name: Maximum Subarray
+            aliases: [kadane]
+          house-robber-model:
+            name: House Robber Model
+      knapsack:
+        name: Knapsack DP
+        children:
+          zero-one-knapsack:
+            name: 0/1 Knapsack
+            aliases: [01-knapsack]
+          complete-knapsack:
+            name: Complete Knapsack
+            aliases: [unbounded-knapsack]
+          multiple-knapsack:
+            name: Multiple Knapsack
+            aliases: [bounded-knapsack]
+          grouped-knapsack:
+            name: Grouped Knapsack
+            aliases: [group-knapsack]
+          mixed-knapsack:
+            name: Mixed Knapsack
+          two-dimensional-knapsack:
+            name: Two-dimensional Knapsack
+            aliases: [2d-knapsack]
+          dependent-knapsack:
+            name: Dependent Knapsack
+          tree-knapsack:
+            name: Tree Knapsack
+          knapsack-counting:
+            name: Knapsack Counting
+          knapsack-reconstruction:
+            name: Knapsack Reconstruction
+      interval-dp:
+        name: Interval DP
+      tree-dp:
+        name: Tree DP
+        children:
+          rerooting-dp:
+            name: Rerooting DP
+          tree-diameter-dp:
+            name: Tree Diameter DP
+      digit-dp:
+        name: Digit DP
+      state-compression-dp:
+        name: State Compression DP
+        aliases: [bitmask-dp]
+      profile-dp:
+        name: Profile DP
+        aliases: [plug-dp, contour-line-dp]
+      dag-dp:
+        name: DAG DP
+      probability-dp:
+        name: Probability DP
+      expectation-dp:
+        name: Expectation DP
+      game-dp:
+        name: Game DP
+      counting-dp:
+        name: Counting DP
+      automaton-dp:
+        name: Automaton DP
+      dp-optimization:
+        name: DP Optimization
+        children:
+          rolling-array:
+            name: Rolling Array
+          prefix-sum-optimization:
+            name: Prefix Sum Optimization
+          monotonic-queue-optimization:
+            name: Monotonic Queue Optimization
+          binary-splitting:
+            name: Binary Splitting
+          divide-and-conquer-optimization:
+            name: Divide and Conquer Optimization
+          convex-hull-optimization:
+            name: Convex Hull Optimization
+            aliases: [convex-hull-trick, cht]
+          slope-optimization:
+            name: Slope Optimization
+          quadrangle-inequality-optimization:
+            name: Quadrangle Inequality Optimization
+            aliases: [knuth-optimization]
+
+  graph-theory:
+    name: Graph Theory
+    children:
+      graph-traversal:
+        name: Graph Traversal
+      connected-components:
+        name: Connected Components
+      topological-sort:
+        name: Topological Sort
+      shortest-path:
+        name: Shortest Path
+        children:
+          dijkstra:
+            name: Dijkstra
+          bellman-ford:
+            name: Bellman-Ford
+          spfa:
+            name: SPFA
+          floyd-warshall:
+            name: Floyd-Warshall
+            aliases: [floyd]
+          johnsons-algorithm:
+            name: Johnson's Algorithm
+          shortest-path-dag:
+            name: Shortest Path in DAG
+          multi-source-shortest-path:
+            name: Multi-source Shortest Path
+      minimum-spanning-tree:
+        name: Minimum Spanning Tree
+        aliases: [mst]
+        children:
+          kruskal:
+            name: Kruskal
+          prim:
+            name: Prim
+          boruvka:
+            name: Boruvka
+      strongly-connected-components:
+        name: Strongly Connected Components
+        aliases: [scc]
+        children:
+          tarjan-scc:
+            name: Tarjan SCC
+          kosaraju:
+            name: Kosaraju
+      bridges:
+        name: Bridges
+      articulation-points:
+        name: Articulation Points
+        aliases: [cut-vertices]
+      biconnected-components:
+        name: Biconnected Components
+        aliases: [bcc]
+      eulerian-path:
+        name: Eulerian Path and Circuit
+      hamiltonian-path:
+        name: Hamiltonian Path and Circuit
+      bipartite-graph:
+        name: Bipartite Graph
+      bipartite-matching:
+        name: Bipartite Matching
+        children:
+          kuhn-algorithm:
+            name: Kuhn Algorithm
+          hopcroft-karp:
+            name: Hopcroft-Karp
+          hungarian-algorithm:
+            name: Hungarian Algorithm
+      network-flow:
+        name: Network Flow
+        children:
+          maximum-flow:
+            name: Maximum Flow
+          dinic:
+            name: Dinic
+          minimum-cut:
+            name: Minimum Cut
+          min-cost-max-flow:
+            name: Min-Cost Max-Flow
+          circulation-with-demands:
+            name: Circulation with Demands
+      two-sat:
+        name: 2-SAT
+        aliases: [2sat]
+      difference-constraints:
+        name: Difference Constraints
+      functional-graph:
+        name: Functional Graph
+      tree-algorithms:
+        name: Tree Algorithms
+        children:
+          tree-traversal:
+            name: Tree Traversal
+          lowest-common-ancestor:
+            name: Lowest Common Ancestor
+            aliases: [lca]
+          binary-lifting:
+            name: Binary Lifting
+          tree-diameter:
+            name: Tree Diameter
+          tree-centroid:
+            name: Tree Centroid
+          centroid-decomposition:
+            name: Centroid Decomposition
+          heavy-light-decomposition:
+            name: Heavy-Light Decomposition
+            aliases: [hld]
+          euler-tour-technique:
+            name: Euler Tour Technique
+          tree-difference:
+            name: Tree Difference
+          virtual-tree:
+            name: Virtual Tree
+
+  strings:
+    name: String Algorithms
+    children:
+      string-simulation:
+        name: String Simulation
+      pattern-matching:
+        name: Pattern Matching
+        children:
+          kmp:
+            name: Knuth-Morris-Pratt
+          z-algorithm:
+            name: Z Algorithm
+          rabin-karp:
+            name: Rabin-Karp
+      string-hashing:
+        name: String Hashing
+        aliases: [rolling-hash]
+      palindrome:
+        name: Palindrome
+        children:
+          manacher:
+            name: Manacher
+          palindrome-dp:
+            name: Palindrome DP
+      aho-corasick:
+        name: Aho-Corasick Automaton
+        aliases: [ac-automaton]
+      suffix-array:
+        name: Suffix Array
+      suffix-automaton:
+        name: Suffix Automaton
+        aliases: [sam]
+      suffix-tree:
+        name: Suffix Tree
+      longest-common-prefix:
+        name: Longest Common Prefix
+        aliases: [lcp]
+      subsequence:
+        name: Subsequence
+      string-periodicity:
+        name: String Periodicity
+      minimum-representation:
+        name: Minimum Representation
+
+  mathematics:
+    name: Mathematics
+    children:
+      arithmetic:
+        name: Arithmetic
+      number-theory:
+        name: Number Theory
+        children:
+          gcd-lcm:
+            name: GCD and LCM
+          extended-euclidean:
+            name: Extended Euclidean Algorithm
+            aliases: [exgcd]
+          prime-testing:
+            name: Prime Testing
+          sieve-of-eratosthenes:
+            name: Sieve of Eratosthenes
+          linear-sieve:
+            name: Linear Sieve
+            aliases: [euler-sieve]
+          prime-factorization:
+            name: Prime Factorization
+          modular-arithmetic:
+            name: Modular Arithmetic
+          fast-exponentiation:
+            name: Fast Exponentiation
+            aliases: [binary-exponentiation, fast-power]
+          modular-inverse:
+            name: Modular Inverse
+          chinese-remainder-theorem:
+            name: Chinese Remainder Theorem
+            aliases: [crt]
+          euler-totient:
+            name: Euler Totient
+            aliases: [phi-function]
+          mobius-inversion:
+            name: Mobius Inversion
+          congruence-equations:
+            name: Congruence Equations
+          discrete-logarithm:
+            name: Discrete Logarithm
+          pell-equation:
+            name: Pell Equation
+      combinatorics:
+        name: Combinatorics
+        children:
+          permutations:
+            name: Permutations
+          combinations:
+            name: Combinations
+          binomial-coefficients:
+            name: Binomial Coefficients
+          inclusion-exclusion:
+            name: Inclusion-Exclusion
+          pigeonhole-principle:
+            name: Pigeonhole Principle
+          catalan-numbers:
+            name: Catalan Numbers
+          stirling-numbers:
+            name: Stirling Numbers
+          derangements:
+            name: Derangements
+          generating-functions:
+            name: Generating Functions
+      linear-algebra:
+        name: Linear Algebra
+        children:
+          matrix-exponentiation:
+            name: Matrix Exponentiation
+          gaussian-elimination:
+            name: Gaussian Elimination
+          linear-basis:
+            name: Linear Basis
+            aliases: [xor-basis]
+      probability:
+        name: Probability
+      expected-value:
+        name: Expected Value
+      fast-fourier-transform:
+        name: Fast Fourier Transform
+        aliases: [fft]
+      number-theoretic-transform:
+        name: Number Theoretic Transform
+        aliases: [ntt]
+      numerical-methods:
+        name: Numerical Methods
+      game-theory:
+        name: Game Theory
+        children:
+          nim-game:
+            name: Nim Game
+          sprague-grundy:
+            name: Sprague-Grundy Theorem
+            aliases: [sg-function]
+          minimax:
+            name: Minimax
+
+  computational-geometry:
+    name: Computational Geometry
+    aliases: [geometry]
+    children:
+      points-and-vectors:
+        name: Points and Vectors
+      lines-and-segments:
+        name: Lines and Segments
+      segment-intersection:
+        name: Segment Intersection
+      polygons:
+        name: Polygons
+      point-in-polygon:
+        name: Point in Polygon
+      convex-hull:
+        name: Convex Hull
+      rotating-calipers:
+        name: Rotating Calipers
+      closest-pair-of-points:
+        name: Closest Pair of Points
+      half-plane-intersection:
+        name: Half-Plane Intersection
+      circles:
+        name: Circles
+      planar-graphs:
+        name: Planar Graphs
+
+  advanced-techniques:
+    name: Advanced Techniques
+    children:
+      cdq-divide-and-conquer:
+        name: CDQ Divide and Conquer
+      parallel-binary-search:
+        name: Parallel Binary Search
+      fractional-cascading:
+        name: Fractional Cascading
+      dancing-links:
+        name: Dancing Links
+        aliases: [dlx, exact-cover]
+      simulated-annealing:
+        name: Simulated Annealing
+      divide-and-conquer-on-time:
+        name: Divide and Conquer on Time
+      offline-dynamic-connectivity:
+        name: Offline Dynamic Connectivity
+      polynomial-algorithms:
+        name: Polynomial Algorithms
+      matroid:
+        name: Matroid
+

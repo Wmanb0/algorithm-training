@@ -1,0 +1,2739 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "id": "fundamentals",
+      "name": "Fundamentals",
+      "parent": null,
+      "path": [
+        "fundamentals"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "implementation",
+      "name": "Implementation",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "implementation"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "simulation",
+      "name": "Simulation",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "simulation"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "enumeration",
+      "name": "Enumeration",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "enumeration"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "constructive-algorithms",
+      "name": "Constructive Algorithms",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "constructive-algorithms"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "case-analysis",
+      "name": "Case Analysis",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "case-analysis"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "sorting",
+      "name": "Sorting",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "sorting"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "comparison-sorting",
+      "name": "Comparison Sorting",
+      "parent": "sorting",
+      "path": [
+        "fundamentals",
+        "sorting",
+        "comparison-sorting"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "counting-sort",
+      "name": "Counting Sort",
+      "parent": "sorting",
+      "path": [
+        "fundamentals",
+        "sorting",
+        "counting-sort"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "radix-sort",
+      "name": "Radix Sort",
+      "parent": "sorting",
+      "path": [
+        "fundamentals",
+        "sorting",
+        "radix-sort"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "custom-comparator",
+      "name": "Custom Comparator",
+      "parent": "sorting",
+      "path": [
+        "fundamentals",
+        "sorting",
+        "custom-comparator"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "prefix-sum",
+      "name": "Prefix Sum",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "prefix-sum"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "two-dimensional-prefix-sum",
+      "name": "2D Prefix Sum",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "two-dimensional-prefix-sum"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "difference-array",
+      "name": "Difference Array",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "difference-array"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "two-dimensional-difference",
+      "name": "2D Difference Array",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "two-dimensional-difference"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "two-pointers",
+      "name": "Two Pointers",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "two-pointers"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "sliding-window",
+      "name": "Sliding Window",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "sliding-window"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "coordinate-compression",
+      "name": "Coordinate Compression",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "coordinate-compression"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "contribution-technique",
+      "name": "Contribution Technique",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "contribution-technique"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "sweep-line",
+      "name": "Sweep Line",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "sweep-line"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "offline-processing",
+      "name": "Offline Processing",
+      "parent": "fundamentals",
+      "path": [
+        "fundamentals",
+        "offline-processing"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "paradigms",
+      "name": "Algorithmic Paradigms",
+      "parent": null,
+      "path": [
+        "paradigms"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "recursion",
+      "name": "Recursion",
+      "parent": "paradigms",
+      "path": [
+        "paradigms",
+        "recursion"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "divide-and-conquer",
+      "name": "Divide and Conquer",
+      "parent": "paradigms",
+      "path": [
+        "paradigms",
+        "divide-and-conquer"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "decrease-and-conquer",
+      "name": "Decrease and Conquer",
+      "parent": "paradigms",
+      "path": [
+        "paradigms",
+        "decrease-and-conquer"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "incremental-construction",
+      "name": "Incremental Construction",
+      "parent": "paradigms",
+      "path": [
+        "paradigms",
+        "incremental-construction"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "meet-in-the-middle",
+      "name": "Meet in the Middle",
+      "parent": "paradigms",
+      "path": [
+        "paradigms",
+        "meet-in-the-middle"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "randomized-algorithms",
+      "name": "Randomized Algorithms",
+      "parent": "paradigms",
+      "path": [
+        "paradigms",
+        "randomized-algorithms"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "probabilistic-algorithms",
+      "name": "Probabilistic Algorithms",
+      "parent": "paradigms",
+      "path": [
+        "paradigms",
+        "probabilistic-algorithms"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "search",
+      "name": "Search",
+      "parent": null,
+      "path": [
+        "search"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "binary-search",
+      "name": "Binary Search",
+      "parent": "search",
+      "path": [
+        "search",
+        "binary-search"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "binary-search-on-answer",
+      "name": "Binary Search on Answer",
+      "parent": "search",
+      "path": [
+        "search",
+        "binary-search-on-answer"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "ternary-search",
+      "name": "Ternary Search",
+      "parent": "search",
+      "path": [
+        "search",
+        "ternary-search"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "depth-first-search",
+      "name": "Depth-First Search",
+      "parent": "search",
+      "path": [
+        "search",
+        "depth-first-search"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "breadth-first-search",
+      "name": "Breadth-First Search",
+      "parent": "search",
+      "path": [
+        "search",
+        "breadth-first-search"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "multi-source-bfs",
+      "name": "Multi-source BFS",
+      "parent": "search",
+      "path": [
+        "search",
+        "multi-source-bfs"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "bidirectional-bfs",
+      "name": "Bidirectional BFS",
+      "parent": "search",
+      "path": [
+        "search",
+        "bidirectional-bfs"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "zero-one-bfs",
+      "name": "0-1 BFS",
+      "parent": "search",
+      "path": [
+        "search",
+        "zero-one-bfs"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "backtracking",
+      "name": "Backtracking",
+      "parent": "search",
+      "path": [
+        "search",
+        "backtracking"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "flood-fill",
+      "name": "Flood Fill",
+      "parent": "search",
+      "path": [
+        "search",
+        "flood-fill"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "iterative-deepening",
+      "name": "Iterative Deepening",
+      "parent": "search",
+      "path": [
+        "search",
+        "iterative-deepening"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "a-star",
+      "name": "A* Search",
+      "parent": "search",
+      "path": [
+        "search",
+        "a-star"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "branch-and-bound",
+      "name": "Branch and Bound",
+      "parent": "search",
+      "path": [
+        "search",
+        "branch-and-bound"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "data-structures",
+      "name": "Data Structures",
+      "parent": null,
+      "path": [
+        "data-structures"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "array",
+      "name": "Array",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "array"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "matrix",
+      "name": "Matrix",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "matrix"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "linked-list",
+      "name": "Linked List",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "linked-list"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "stack",
+      "name": "Stack",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "stack"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "queue",
+      "name": "Queue",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "queue"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "deque",
+      "name": "Deque",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "deque"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "priority-queue",
+      "name": "Priority Queue",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "priority-queue"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "hash-map",
+      "name": "Hash Map",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "hash-map"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "hash-set",
+      "name": "Hash Set",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "hash-set"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "ordered-set",
+      "name": "Ordered Set",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "ordered-set"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "ordered-map",
+      "name": "Ordered Map",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "ordered-map"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "disjoint-set-union",
+      "name": "Disjoint Set Union",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "disjoint-set-union"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "weighted-dsu",
+      "name": "Weighted DSU",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "weighted-dsu"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "rollback-dsu",
+      "name": "Rollback DSU",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "rollback-dsu"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "fenwick-tree",
+      "name": "Fenwick Tree",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "fenwick-tree"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "segment-tree",
+      "name": "Segment Tree",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "segment-tree"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "basic-segment-tree",
+      "name": "Basic Segment Tree",
+      "parent": "segment-tree",
+      "path": [
+        "data-structures",
+        "segment-tree",
+        "basic-segment-tree"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "lazy-segment-tree",
+      "name": "Lazy Segment Tree",
+      "parent": "segment-tree",
+      "path": [
+        "data-structures",
+        "segment-tree",
+        "lazy-segment-tree"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "dynamic-segment-tree",
+      "name": "Dynamic Segment Tree",
+      "parent": "segment-tree",
+      "path": [
+        "data-structures",
+        "segment-tree",
+        "dynamic-segment-tree"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "persistent-segment-tree",
+      "name": "Persistent Segment Tree",
+      "parent": "segment-tree",
+      "path": [
+        "data-structures",
+        "segment-tree",
+        "persistent-segment-tree"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "segment-tree-beats",
+      "name": "Segment Tree Beats",
+      "parent": "segment-tree",
+      "path": [
+        "data-structures",
+        "segment-tree",
+        "segment-tree-beats"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "merge-sort-tree",
+      "name": "Merge Sort Tree",
+      "parent": "segment-tree",
+      "path": [
+        "data-structures",
+        "segment-tree",
+        "merge-sort-tree"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "sparse-table",
+      "name": "Sparse Table",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "sparse-table"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "monotonic-stack",
+      "name": "Monotonic Stack",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "monotonic-stack"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "monotonic-queue",
+      "name": "Monotonic Queue",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "monotonic-queue"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "trie",
+      "name": "Trie",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "trie"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "binary-trie",
+      "name": "Binary Trie",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "binary-trie"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "balanced-binary-search-tree",
+      "name": "Balanced Binary Search Tree",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "balanced-binary-search-tree"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "treap",
+      "name": "Treap",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "treap"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "splay-tree",
+      "name": "Splay Tree",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "splay-tree"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "implicit-treap",
+      "name": "Implicit Treap",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "implicit-treap"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "square-root-decomposition",
+      "name": "Square Root Decomposition",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "square-root-decomposition"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "mos-algorithm",
+      "name": "Mo's Algorithm",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "mos-algorithm"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "bitset",
+      "name": "Bitset",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "bitset"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "persistent-data-structure",
+      "name": "Persistent Data Structure",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "persistent-data-structure"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "small-to-large-merging",
+      "name": "Small-to-Large Merging",
+      "parent": "data-structures",
+      "path": [
+        "data-structures",
+        "small-to-large-merging"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "greedy",
+      "name": "Greedy",
+      "parent": null,
+      "path": [
+        "greedy"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "general-greedy",
+      "name": "General Greedy",
+      "parent": "greedy",
+      "path": [
+        "greedy",
+        "general-greedy"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "sorting-greedy",
+      "name": "Sorting-based Greedy",
+      "parent": "greedy",
+      "path": [
+        "greedy",
+        "sorting-greedy"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "interval-greedy",
+      "name": "Interval Greedy",
+      "parent": "greedy",
+      "path": [
+        "greedy",
+        "interval-greedy"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "interval-scheduling",
+      "name": "Interval Scheduling",
+      "parent": "interval-greedy",
+      "path": [
+        "greedy",
+        "interval-greedy",
+        "interval-scheduling"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "interval-covering",
+      "name": "Interval Covering",
+      "parent": "interval-greedy",
+      "path": [
+        "greedy",
+        "interval-greedy",
+        "interval-covering"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "interval-merging",
+      "name": "Interval Merging",
+      "parent": "interval-greedy",
+      "path": [
+        "greedy",
+        "interval-greedy",
+        "interval-merging"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "exchange-argument",
+      "name": "Exchange Argument",
+      "parent": "greedy",
+      "path": [
+        "greedy",
+        "exchange-argument"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "earliest-deadline-first",
+      "name": "Earliest Deadline First",
+      "parent": "greedy",
+      "path": [
+        "greedy",
+        "earliest-deadline-first"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "huffman-coding",
+      "name": "Huffman Coding",
+      "parent": "greedy",
+      "path": [
+        "greedy",
+        "huffman-coding"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "greedy-construction",
+      "name": "Greedy Construction",
+      "parent": "greedy",
+      "path": [
+        "greedy",
+        "greedy-construction"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "dynamic-programming",
+      "name": "Dynamic Programming",
+      "parent": null,
+      "path": [
+        "dynamic-programming"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "general-dp",
+      "name": "General Dynamic Programming",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "general-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "linear-dp",
+      "name": "Linear DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "linear-dp"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "sequence-dp",
+      "name": "Sequence DP",
+      "parent": "linear-dp",
+      "path": [
+        "dynamic-programming",
+        "linear-dp",
+        "sequence-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "longest-increasing-subsequence",
+      "name": "Longest Increasing Subsequence",
+      "parent": "linear-dp",
+      "path": [
+        "dynamic-programming",
+        "linear-dp",
+        "longest-increasing-subsequence"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "longest-common-subsequence",
+      "name": "Longest Common Subsequence",
+      "parent": "linear-dp",
+      "path": [
+        "dynamic-programming",
+        "linear-dp",
+        "longest-common-subsequence"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "longest-common-substring",
+      "name": "Longest Common Substring",
+      "parent": "linear-dp",
+      "path": [
+        "dynamic-programming",
+        "linear-dp",
+        "longest-common-substring"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "edit-distance",
+      "name": "Edit Distance",
+      "parent": "linear-dp",
+      "path": [
+        "dynamic-programming",
+        "linear-dp",
+        "edit-distance"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "maximum-subarray",
+      "name": "Maximum Subarray",
+      "parent": "linear-dp",
+      "path": [
+        "dynamic-programming",
+        "linear-dp",
+        "maximum-subarray"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "house-robber-model",
+      "name": "House Robber Model",
+      "parent": "linear-dp",
+      "path": [
+        "dynamic-programming",
+        "linear-dp",
+        "house-robber-model"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "knapsack",
+      "name": "Knapsack DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "knapsack"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "zero-one-knapsack",
+      "name": "0/1 Knapsack",
+      "parent": "knapsack",
+      "path": [
+        "dynamic-programming",
+        "knapsack",
+        "zero-one-knapsack"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "complete-knapsack",
+      "name": "Complete Knapsack",
+      "parent": "knapsack",
+      "path": [
+        "dynamic-programming",
+        "knapsack",
+        "complete-knapsack"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "multiple-knapsack",
+      "name": "Multiple Knapsack",
+      "parent": "knapsack",
+      "path": [
+        "dynamic-programming",
+        "knapsack",
+        "multiple-knapsack"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "grouped-knapsack",
+      "name": "Grouped Knapsack",
+      "parent": "knapsack",
+      "path": [
+        "dynamic-programming",
+        "knapsack",
+        "grouped-knapsack"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "mixed-knapsack",
+      "name": "Mixed Knapsack",
+      "parent": "knapsack",
+      "path": [
+        "dynamic-programming",
+        "knapsack",
+        "mixed-knapsack"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "two-dimensional-knapsack",
+      "name": "Two-dimensional Knapsack",
+      "parent": "knapsack",
+      "path": [
+        "dynamic-programming",
+        "knapsack",
+        "two-dimensional-knapsack"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "dependent-knapsack",
+      "name": "Dependent Knapsack",
+      "parent": "knapsack",
+      "path": [
+        "dynamic-programming",
+        "knapsack",
+        "dependent-knapsack"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "tree-knapsack",
+      "name": "Tree Knapsack",
+      "parent": "knapsack",
+      "path": [
+        "dynamic-programming",
+        "knapsack",
+        "tree-knapsack"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "knapsack-counting",
+      "name": "Knapsack Counting",
+      "parent": "knapsack",
+      "path": [
+        "dynamic-programming",
+        "knapsack",
+        "knapsack-counting"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "knapsack-reconstruction",
+      "name": "Knapsack Reconstruction",
+      "parent": "knapsack",
+      "path": [
+        "dynamic-programming",
+        "knapsack",
+        "knapsack-reconstruction"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "interval-dp",
+      "name": "Interval DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "interval-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "tree-dp",
+      "name": "Tree DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "tree-dp"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "rerooting-dp",
+      "name": "Rerooting DP",
+      "parent": "tree-dp",
+      "path": [
+        "dynamic-programming",
+        "tree-dp",
+        "rerooting-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "tree-diameter-dp",
+      "name": "Tree Diameter DP",
+      "parent": "tree-dp",
+      "path": [
+        "dynamic-programming",
+        "tree-dp",
+        "tree-diameter-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "digit-dp",
+      "name": "Digit DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "digit-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "state-compression-dp",
+      "name": "State Compression DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "state-compression-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "profile-dp",
+      "name": "Profile DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "profile-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "dag-dp",
+      "name": "DAG DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "dag-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "probability-dp",
+      "name": "Probability DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "probability-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "expectation-dp",
+      "name": "Expectation DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "expectation-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "game-dp",
+      "name": "Game DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "game-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "counting-dp",
+      "name": "Counting DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "counting-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "automaton-dp",
+      "name": "Automaton DP",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "automaton-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "dp-optimization",
+      "name": "DP Optimization",
+      "parent": "dynamic-programming",
+      "path": [
+        "dynamic-programming",
+        "dp-optimization"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "rolling-array",
+      "name": "Rolling Array",
+      "parent": "dp-optimization",
+      "path": [
+        "dynamic-programming",
+        "dp-optimization",
+        "rolling-array"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "prefix-sum-optimization",
+      "name": "Prefix Sum Optimization",
+      "parent": "dp-optimization",
+      "path": [
+        "dynamic-programming",
+        "dp-optimization",
+        "prefix-sum-optimization"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "monotonic-queue-optimization",
+      "name": "Monotonic Queue Optimization",
+      "parent": "dp-optimization",
+      "path": [
+        "dynamic-programming",
+        "dp-optimization",
+        "monotonic-queue-optimization"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "binary-splitting",
+      "name": "Binary Splitting",
+      "parent": "dp-optimization",
+      "path": [
+        "dynamic-programming",
+        "dp-optimization",
+        "binary-splitting"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "divide-and-conquer-optimization",
+      "name": "Divide and Conquer Optimization",
+      "parent": "dp-optimization",
+      "path": [
+        "dynamic-programming",
+        "dp-optimization",
+        "divide-and-conquer-optimization"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "convex-hull-optimization",
+      "name": "Convex Hull Optimization",
+      "parent": "dp-optimization",
+      "path": [
+        "dynamic-programming",
+        "dp-optimization",
+        "convex-hull-optimization"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "slope-optimization",
+      "name": "Slope Optimization",
+      "parent": "dp-optimization",
+      "path": [
+        "dynamic-programming",
+        "dp-optimization",
+        "slope-optimization"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "quadrangle-inequality-optimization",
+      "name": "Quadrangle Inequality Optimization",
+      "parent": "dp-optimization",
+      "path": [
+        "dynamic-programming",
+        "dp-optimization",
+        "quadrangle-inequality-optimization"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "graph-theory",
+      "name": "Graph Theory",
+      "parent": null,
+      "path": [
+        "graph-theory"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "graph-traversal",
+      "name": "Graph Traversal",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "graph-traversal"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "connected-components",
+      "name": "Connected Components",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "connected-components"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "topological-sort",
+      "name": "Topological Sort",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "topological-sort"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "shortest-path",
+      "name": "Shortest Path",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "shortest-path"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "dijkstra",
+      "name": "Dijkstra",
+      "parent": "shortest-path",
+      "path": [
+        "graph-theory",
+        "shortest-path",
+        "dijkstra"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "bellman-ford",
+      "name": "Bellman-Ford",
+      "parent": "shortest-path",
+      "path": [
+        "graph-theory",
+        "shortest-path",
+        "bellman-ford"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "spfa",
+      "name": "SPFA",
+      "parent": "shortest-path",
+      "path": [
+        "graph-theory",
+        "shortest-path",
+        "spfa"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "floyd-warshall",
+      "name": "Floyd-Warshall",
+      "parent": "shortest-path",
+      "path": [
+        "graph-theory",
+        "shortest-path",
+        "floyd-warshall"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "johnsons-algorithm",
+      "name": "Johnson's Algorithm",
+      "parent": "shortest-path",
+      "path": [
+        "graph-theory",
+        "shortest-path",
+        "johnsons-algorithm"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "shortest-path-dag",
+      "name": "Shortest Path in DAG",
+      "parent": "shortest-path",
+      "path": [
+        "graph-theory",
+        "shortest-path",
+        "shortest-path-dag"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "multi-source-shortest-path",
+      "name": "Multi-source Shortest Path",
+      "parent": "shortest-path",
+      "path": [
+        "graph-theory",
+        "shortest-path",
+        "multi-source-shortest-path"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "minimum-spanning-tree",
+      "name": "Minimum Spanning Tree",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "minimum-spanning-tree"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "kruskal",
+      "name": "Kruskal",
+      "parent": "minimum-spanning-tree",
+      "path": [
+        "graph-theory",
+        "minimum-spanning-tree",
+        "kruskal"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "prim",
+      "name": "Prim",
+      "parent": "minimum-spanning-tree",
+      "path": [
+        "graph-theory",
+        "minimum-spanning-tree",
+        "prim"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "boruvka",
+      "name": "Boruvka",
+      "parent": "minimum-spanning-tree",
+      "path": [
+        "graph-theory",
+        "minimum-spanning-tree",
+        "boruvka"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "strongly-connected-components",
+      "name": "Strongly Connected Components",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "strongly-connected-components"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "tarjan-scc",
+      "name": "Tarjan SCC",
+      "parent": "strongly-connected-components",
+      "path": [
+        "graph-theory",
+        "strongly-connected-components",
+        "tarjan-scc"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "kosaraju",
+      "name": "Kosaraju",
+      "parent": "strongly-connected-components",
+      "path": [
+        "graph-theory",
+        "strongly-connected-components",
+        "kosaraju"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "bridges",
+      "name": "Bridges",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "bridges"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "articulation-points",
+      "name": "Articulation Points",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "articulation-points"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "biconnected-components",
+      "name": "Biconnected Components",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "biconnected-components"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "eulerian-path",
+      "name": "Eulerian Path and Circuit",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "eulerian-path"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "hamiltonian-path",
+      "name": "Hamiltonian Path and Circuit",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "hamiltonian-path"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "bipartite-graph",
+      "name": "Bipartite Graph",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "bipartite-graph"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "bipartite-matching",
+      "name": "Bipartite Matching",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "bipartite-matching"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "kuhn-algorithm",
+      "name": "Kuhn Algorithm",
+      "parent": "bipartite-matching",
+      "path": [
+        "graph-theory",
+        "bipartite-matching",
+        "kuhn-algorithm"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "hopcroft-karp",
+      "name": "Hopcroft-Karp",
+      "parent": "bipartite-matching",
+      "path": [
+        "graph-theory",
+        "bipartite-matching",
+        "hopcroft-karp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "hungarian-algorithm",
+      "name": "Hungarian Algorithm",
+      "parent": "bipartite-matching",
+      "path": [
+        "graph-theory",
+        "bipartite-matching",
+        "hungarian-algorithm"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "network-flow",
+      "name": "Network Flow",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "network-flow"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "maximum-flow",
+      "name": "Maximum Flow",
+      "parent": "network-flow",
+      "path": [
+        "graph-theory",
+        "network-flow",
+        "maximum-flow"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "dinic",
+      "name": "Dinic",
+      "parent": "network-flow",
+      "path": [
+        "graph-theory",
+        "network-flow",
+        "dinic"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "minimum-cut",
+      "name": "Minimum Cut",
+      "parent": "network-flow",
+      "path": [
+        "graph-theory",
+        "network-flow",
+        "minimum-cut"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "min-cost-max-flow",
+      "name": "Min-Cost Max-Flow",
+      "parent": "network-flow",
+      "path": [
+        "graph-theory",
+        "network-flow",
+        "min-cost-max-flow"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "circulation-with-demands",
+      "name": "Circulation with Demands",
+      "parent": "network-flow",
+      "path": [
+        "graph-theory",
+        "network-flow",
+        "circulation-with-demands"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "two-sat",
+      "name": "2-SAT",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "two-sat"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "difference-constraints",
+      "name": "Difference Constraints",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "difference-constraints"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "functional-graph",
+      "name": "Functional Graph",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "functional-graph"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "tree-algorithms",
+      "name": "Tree Algorithms",
+      "parent": "graph-theory",
+      "path": [
+        "graph-theory",
+        "tree-algorithms"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "tree-traversal",
+      "name": "Tree Traversal",
+      "parent": "tree-algorithms",
+      "path": [
+        "graph-theory",
+        "tree-algorithms",
+        "tree-traversal"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "lowest-common-ancestor",
+      "name": "Lowest Common Ancestor",
+      "parent": "tree-algorithms",
+      "path": [
+        "graph-theory",
+        "tree-algorithms",
+        "lowest-common-ancestor"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "binary-lifting",
+      "name": "Binary Lifting",
+      "parent": "tree-algorithms",
+      "path": [
+        "graph-theory",
+        "tree-algorithms",
+        "binary-lifting"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "tree-diameter",
+      "name": "Tree Diameter",
+      "parent": "tree-algorithms",
+      "path": [
+        "graph-theory",
+        "tree-algorithms",
+        "tree-diameter"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "tree-centroid",
+      "name": "Tree Centroid",
+      "parent": "tree-algorithms",
+      "path": [
+        "graph-theory",
+        "tree-algorithms",
+        "tree-centroid"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "centroid-decomposition",
+      "name": "Centroid Decomposition",
+      "parent": "tree-algorithms",
+      "path": [
+        "graph-theory",
+        "tree-algorithms",
+        "centroid-decomposition"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "heavy-light-decomposition",
+      "name": "Heavy-Light Decomposition",
+      "parent": "tree-algorithms",
+      "path": [
+        "graph-theory",
+        "tree-algorithms",
+        "heavy-light-decomposition"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "euler-tour-technique",
+      "name": "Euler Tour Technique",
+      "parent": "tree-algorithms",
+      "path": [
+        "graph-theory",
+        "tree-algorithms",
+        "euler-tour-technique"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "tree-difference",
+      "name": "Tree Difference",
+      "parent": "tree-algorithms",
+      "path": [
+        "graph-theory",
+        "tree-algorithms",
+        "tree-difference"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "virtual-tree",
+      "name": "Virtual Tree",
+      "parent": "tree-algorithms",
+      "path": [
+        "graph-theory",
+        "tree-algorithms",
+        "virtual-tree"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "strings",
+      "name": "String Algorithms",
+      "parent": null,
+      "path": [
+        "strings"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "string-simulation",
+      "name": "String Simulation",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "string-simulation"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "pattern-matching",
+      "name": "Pattern Matching",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "pattern-matching"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "kmp",
+      "name": "Knuth-Morris-Pratt",
+      "parent": "pattern-matching",
+      "path": [
+        "strings",
+        "pattern-matching",
+        "kmp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "z-algorithm",
+      "name": "Z Algorithm",
+      "parent": "pattern-matching",
+      "path": [
+        "strings",
+        "pattern-matching",
+        "z-algorithm"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "rabin-karp",
+      "name": "Rabin-Karp",
+      "parent": "pattern-matching",
+      "path": [
+        "strings",
+        "pattern-matching",
+        "rabin-karp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "string-hashing",
+      "name": "String Hashing",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "string-hashing"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "palindrome",
+      "name": "Palindrome",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "palindrome"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "manacher",
+      "name": "Manacher",
+      "parent": "palindrome",
+      "path": [
+        "strings",
+        "palindrome",
+        "manacher"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "palindrome-dp",
+      "name": "Palindrome DP",
+      "parent": "palindrome",
+      "path": [
+        "strings",
+        "palindrome",
+        "palindrome-dp"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "aho-corasick",
+      "name": "Aho-Corasick Automaton",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "aho-corasick"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "suffix-array",
+      "name": "Suffix Array",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "suffix-array"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "suffix-automaton",
+      "name": "Suffix Automaton",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "suffix-automaton"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "suffix-tree",
+      "name": "Suffix Tree",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "suffix-tree"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "longest-common-prefix",
+      "name": "Longest Common Prefix",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "longest-common-prefix"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "subsequence",
+      "name": "Subsequence",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "subsequence"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "string-periodicity",
+      "name": "String Periodicity",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "string-periodicity"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "minimum-representation",
+      "name": "Minimum Representation",
+      "parent": "strings",
+      "path": [
+        "strings",
+        "minimum-representation"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "parent": null,
+      "path": [
+        "mathematics"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "arithmetic",
+      "name": "Arithmetic",
+      "parent": "mathematics",
+      "path": [
+        "mathematics",
+        "arithmetic"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "number-theory",
+      "name": "Number Theory",
+      "parent": "mathematics",
+      "path": [
+        "mathematics",
+        "number-theory"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "gcd-lcm",
+      "name": "GCD and LCM",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "gcd-lcm"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "extended-euclidean",
+      "name": "Extended Euclidean Algorithm",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "extended-euclidean"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "prime-testing",
+      "name": "Prime Testing",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "prime-testing"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "sieve-of-eratosthenes",
+      "name": "Sieve of Eratosthenes",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "sieve-of-eratosthenes"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "linear-sieve",
+      "name": "Linear Sieve",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "linear-sieve"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "prime-factorization",
+      "name": "Prime Factorization",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "prime-factorization"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "modular-arithmetic",
+      "name": "Modular Arithmetic",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "modular-arithmetic"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "fast-exponentiation",
+      "name": "Fast Exponentiation",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "fast-exponentiation"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "modular-inverse",
+      "name": "Modular Inverse",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "modular-inverse"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "chinese-remainder-theorem",
+      "name": "Chinese Remainder Theorem",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "chinese-remainder-theorem"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "euler-totient",
+      "name": "Euler Totient",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "euler-totient"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "mobius-inversion",
+      "name": "Mobius Inversion",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "mobius-inversion"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "congruence-equations",
+      "name": "Congruence Equations",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "congruence-equations"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "discrete-logarithm",
+      "name": "Discrete Logarithm",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "discrete-logarithm"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "pell-equation",
+      "name": "Pell Equation",
+      "parent": "number-theory",
+      "path": [
+        "mathematics",
+        "number-theory",
+        "pell-equation"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "combinatorics",
+      "name": "Combinatorics",
+      "parent": "mathematics",
+      "path": [
+        "mathematics",
+        "combinatorics"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "permutations",
+      "name": "Permutations",
+      "parent": "combinatorics",
+      "path": [
+        "mathematics",
+        "combinatorics",
+        "permutations"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "combinations",
+      "name": "Combinations",
+      "parent": "combinatorics",
+      "path": [
+        "mathematics",
+        "combinatorics",
+        "combinations"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "binomial-coefficients",
+      "name": "Binomial Coefficients",
+      "parent": "combinatorics",
+      "path": [
+        "mathematics",
+        "combinatorics",
+        "binomial-coefficients"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "inclusion-exclusion",
+      "name": "Inclusion-Exclusion",
+      "parent": "combinatorics",
+      "path": [
+        "mathematics",
+        "combinatorics",
+        "inclusion-exclusion"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "pigeonhole-principle",
+      "name": "Pigeonhole Principle",
+      "parent": "combinatorics",
+      "path": [
+        "mathematics",
+        "combinatorics",
+        "pigeonhole-principle"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "catalan-numbers",
+      "name": "Catalan Numbers",
+      "parent": "combinatorics",
+      "path": [
+        "mathematics",
+        "combinatorics",
+        "catalan-numbers"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "stirling-numbers",
+      "name": "Stirling Numbers",
+      "parent": "combinatorics",
+      "path": [
+        "mathematics",
+        "combinatorics",
+        "stirling-numbers"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "derangements",
+      "name": "Derangements",
+      "parent": "combinatorics",
+      "path": [
+        "mathematics",
+        "combinatorics",
+        "derangements"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "generating-functions",
+      "name": "Generating Functions",
+      "parent": "combinatorics",
+      "path": [
+        "mathematics",
+        "combinatorics",
+        "generating-functions"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "linear-algebra",
+      "name": "Linear Algebra",
+      "parent": "mathematics",
+      "path": [
+        "mathematics",
+        "linear-algebra"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "matrix-exponentiation",
+      "name": "Matrix Exponentiation",
+      "parent": "linear-algebra",
+      "path": [
+        "mathematics",
+        "linear-algebra",
+        "matrix-exponentiation"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "gaussian-elimination",
+      "name": "Gaussian Elimination",
+      "parent": "linear-algebra",
+      "path": [
+        "mathematics",
+        "linear-algebra",
+        "gaussian-elimination"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "linear-basis",
+      "name": "Linear Basis",
+      "parent": "linear-algebra",
+      "path": [
+        "mathematics",
+        "linear-algebra",
+        "linear-basis"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "probability",
+      "name": "Probability",
+      "parent": "mathematics",
+      "path": [
+        "mathematics",
+        "probability"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "expected-value",
+      "name": "Expected Value",
+      "parent": "mathematics",
+      "path": [
+        "mathematics",
+        "expected-value"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "fast-fourier-transform",
+      "name": "Fast Fourier Transform",
+      "parent": "mathematics",
+      "path": [
+        "mathematics",
+        "fast-fourier-transform"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "number-theoretic-transform",
+      "name": "Number Theoretic Transform",
+      "parent": "mathematics",
+      "path": [
+        "mathematics",
+        "number-theoretic-transform"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "numerical-methods",
+      "name": "Numerical Methods",
+      "parent": "mathematics",
+      "path": [
+        "mathematics",
+        "numerical-methods"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "game-theory",
+      "name": "Game Theory",
+      "parent": "mathematics",
+      "path": [
+        "mathematics",
+        "game-theory"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "nim-game",
+      "name": "Nim Game",
+      "parent": "game-theory",
+      "path": [
+        "mathematics",
+        "game-theory",
+        "nim-game"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "sprague-grundy",
+      "name": "Sprague-Grundy Theorem",
+      "parent": "game-theory",
+      "path": [
+        "mathematics",
+        "game-theory",
+        "sprague-grundy"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "minimax",
+      "name": "Minimax",
+      "parent": "game-theory",
+      "path": [
+        "mathematics",
+        "game-theory",
+        "minimax"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "computational-geometry",
+      "name": "Computational Geometry",
+      "parent": null,
+      "path": [
+        "computational-geometry"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "points-and-vectors",
+      "name": "Points and Vectors",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "points-and-vectors"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "lines-and-segments",
+      "name": "Lines and Segments",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "lines-and-segments"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "segment-intersection",
+      "name": "Segment Intersection",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "segment-intersection"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "polygons",
+      "name": "Polygons",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "polygons"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "point-in-polygon",
+      "name": "Point in Polygon",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "point-in-polygon"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "convex-hull",
+      "name": "Convex Hull",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "convex-hull"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "rotating-calipers",
+      "name": "Rotating Calipers",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "rotating-calipers"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "closest-pair-of-points",
+      "name": "Closest Pair of Points",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "closest-pair-of-points"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "half-plane-intersection",
+      "name": "Half-Plane Intersection",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "half-plane-intersection"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "circles",
+      "name": "Circles",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "circles"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "planar-graphs",
+      "name": "Planar Graphs",
+      "parent": "computational-geometry",
+      "path": [
+        "computational-geometry",
+        "planar-graphs"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "advanced-techniques",
+      "name": "Advanced Techniques",
+      "parent": null,
+      "path": [
+        "advanced-techniques"
+      ],
+      "selectable": false
+    },
+    {
+      "id": "cdq-divide-and-conquer",
+      "name": "CDQ Divide and Conquer",
+      "parent": "advanced-techniques",
+      "path": [
+        "advanced-techniques",
+        "cdq-divide-and-conquer"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "parallel-binary-search",
+      "name": "Parallel Binary Search",
+      "parent": "advanced-techniques",
+      "path": [
+        "advanced-techniques",
+        "parallel-binary-search"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "fractional-cascading",
+      "name": "Fractional Cascading",
+      "parent": "advanced-techniques",
+      "path": [
+        "advanced-techniques",
+        "fractional-cascading"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "dancing-links",
+      "name": "Dancing Links",
+      "parent": "advanced-techniques",
+      "path": [
+        "advanced-techniques",
+        "dancing-links"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "simulated-annealing",
+      "name": "Simulated Annealing",
+      "parent": "advanced-techniques",
+      "path": [
+        "advanced-techniques",
+        "simulated-annealing"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "divide-and-conquer-on-time",
+      "name": "Divide and Conquer on Time",
+      "parent": "advanced-techniques",
+      "path": [
+        "advanced-techniques",
+        "divide-and-conquer-on-time"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "offline-dynamic-connectivity",
+      "name": "Offline Dynamic Connectivity",
+      "parent": "advanced-techniques",
+      "path": [
+        "advanced-techniques",
+        "offline-dynamic-connectivity"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "polynomial-algorithms",
+      "name": "Polynomial Algorithms",
+      "parent": "advanced-techniques",
+      "path": [
+        "advanced-techniques",
+        "polynomial-algorithms"
+      ],
+      "selectable": true
+    },
+    {
+      "id": "matroid",
+      "name": "Matroid",
+      "parent": "advanced-techniques",
+      "path": [
+        "advanced-techniques",
+        "matroid"
+      ],
+      "selectable": true
+    }
+  ]
+}
