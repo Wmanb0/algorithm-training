@@ -1,4 +1,93 @@
 {
   "schema_version": 1,
-  "problems": []
+  "problems": [
+    {
+      "id": "leetcode:car-fleet",
+      "platform": "leetcode",
+      "problem_id": "853",
+      "title": "Car Fleet",
+      "platform_meta": {
+        "slug": "car-fleet",
+        "difficulty": "medium"
+      },
+      "url": "https://leetcode.com/problems/car-fleet/",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "C++",
+          "source_file": "solutions/data-structures/monotonic-stack/leetcode-853/2026-09-20.cpp",
+          "note": "核心思路：\n按照车辆与终点的距离，从最靠近终点的车辆开始向后处理。\n每辆车单独到达终点所需时间为 (target - position[i]) / speed[i]。\n\n如果后车的到达时间小于等于前方车队的到达时间，它一定会在终点前\n或恰好在终点追上前方车队，因此不会形成新的车队。\n只有当前车辆的到达时间严格大于前方最后一个车队的到达时间时，\n才会产生一个新的车队。\n\n代码中使用 map 的负位置作为键，使遍历顺序从位置最大到位置最小。\n到达时间形成单调序列；由于这里只需要统计车队数量，所以不需要保存\n完整的单调栈，只需要保存当前最后一个车队的到达时间 cur。\n\n复杂度：\n时间复杂度 O(n log n)，其中排序由 map 完成。\n空间复杂度 O(n)。\n\n复习重点：\n1. 必须从最靠近终点的车辆向后判断。\n2. 相同到达时间属于同一个车队，所以只有 time > cur 时答案才加一。\n3. 这道题虽然代码没有显式使用 stack，但本质是 Monotonic Stack 模型。",
+          "code": "/*\n@url https://leetcode.com/problems/car-fleet/\n@primary monotonic-stack\n@topics comparison-sorting, ordered-map, general-greedy\n@note\n核心思路：\n按照车辆与终点的距离，从最靠近终点的车辆开始向后处理。\n每辆车单独到达终点所需时间为 (target - position[i]) / speed[i]。\n\n如果后车的到达时间小于等于前方车队的到达时间，它一定会在终点前\n或恰好在终点追上前方车队，因此不会形成新的车队。\n只有当前车辆的到达时间严格大于前方最后一个车队的到达时间时，\n才会产生一个新的车队。\n\n代码中使用 map 的负位置作为键，使遍历顺序从位置最大到位置最小。\n到达时间形成单调序列；由于这里只需要统计车队数量，所以不需要保存\n完整的单调栈，只需要保存当前最后一个车队的到达时间 cur。\n\n复杂度：\n时间复杂度 O(n log n)，其中排序由 map 完成。\n空间复杂度 O(n)。\n\n复习重点：\n1. 必须从最靠近终点的车辆向后判断。\n2. 相同到达时间属于同一个车队，所以只有 time > cur 时答案才加一。\n3. 这道题虽然代码没有显式使用 stack，但本质是 Monotonic Stack 模型。\n@endnote\n*/\n\n#include <map>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int carFleet(int target, vector<int>& position, vector<int>& speed) {\n        map<int, double> cars;\n\n        const int n = static_cast<int>(position.size());\n        for (int i = 0; i < n; ++i) {\n            cars[-position[i]] =\n                static_cast<double>(target - position[i]) / speed[i];\n        }\n\n        int fleets = 0;\n        double latestArrivalTime = 0.0;\n\n        for (const auto& [negativePosition, arrivalTime] : cars) {\n            (void)negativePosition;\n            if (arrivalTime > latestArrivalTime) {\n                latestArrivalTime = arrivalTime;\n                ++fleets;\n            }\n        }\n\n        return fleets;\n    }\n};\n\n"
+        }
+      ],
+      "primary_topic": "monotonic-stack",
+      "topics": [
+        "monotonic-stack",
+        "comparison-sorting",
+        "ordered-map",
+        "general-greedy"
+      ],
+      "difficulty_label": "Medium",
+      "topic_paths": {
+        "monotonic-stack": [
+          "data-structures",
+          "monotonic-stack"
+        ],
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
+        ],
+        "ordered-map": [
+          "data-structures",
+          "ordered-map"
+        ],
+        "general-greedy": [
+          "greedy",
+          "general-greedy"
+        ]
+      }
+    },
+    {
+      "id": "leetcode:min-stack",
+      "platform": "leetcode",
+      "problem_id": "155",
+      "title": "Min Stack",
+      "platform_meta": {
+        "slug": "min-stack",
+        "difficulty": "medium"
+      },
+      "url": "https://leetcode.com/problems/min-stack/",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "C++",
+          "source_file": "solutions/data-structures/stack/leetcode-155/2026-09-20.cpp",
+          "note": "核心思路：\n栈中的每个元素同时保存两个值：\n1. 当前压入的实际数值。\n2. 从栈底到当前位置为止的最小值。\n\npush 时，新位置的最小值等于 min(val, 之前的最小值)。\npop 时，数值和对应的最小值一起删除。\n因此 top 和 getMin 都只需要访问最后一个元素，不需要重新遍历整个栈。\n\n状态表示：\nst[i][0] 表示第 i 个元素的实际值。\nst[i][1] 表示包含第 i 个元素在内的整个栈的最小值。\n\n复杂度：\npush、pop、top、getMin 的时间复杂度均为 O(1)。\n保存 n 个元素的空间复杂度为 O(n)。\n\n复习重点：\n把需要快速查询的历史状态与每个栈元素一起保存。\n这是典型的“辅助状态随主状态同步入栈和出栈”模型。",
+          "code": "/*\n@url https://leetcode.com/problems/min-stack/\n@primary stack\n@topics array, implementation\n@note\n核心思路：\n栈中的每个元素同时保存两个值：\n1. 当前压入的实际数值。\n2. 从栈底到当前位置为止的最小值。\n\npush 时，新位置的最小值等于 min(val, 之前的最小值)。\npop 时，数值和对应的最小值一起删除。\n因此 top 和 getMin 都只需要访问最后一个元素，不需要重新遍历整个栈。\n\n状态表示：\nst[i][0] 表示第 i 个元素的实际值。\nst[i][1] 表示包含第 i 个元素在内的整个栈的最小值。\n\n复杂度：\npush、pop、top、getMin 的时间复杂度均为 O(1)。\n保存 n 个元素的空间复杂度为 O(n)。\n\n复习重点：\n把需要快速查询的历史状态与每个栈元素一起保存。\n这是典型的“辅助状态随主状态同步入栈和出栈”模型。\n@endnote\n*/\n\n#include <algorithm>\n#include <array>\n#include <vector>\nusing namespace std;\n\nclass MinStack {\nprivate:\n    vector<array<int, 2>> st;\n\npublic:\n    MinStack() = default;\n\n    void push(int val) {\n        const int minimum = st.empty() ? val : min(val, st.back()[1]);\n        st.push_back({val, minimum});\n    }\n\n    void pop() {\n        st.pop_back();\n    }\n\n    int top() {\n        return st.back()[0];\n    }\n\n    int getMin() {\n        return st.back()[1];\n    }\n};\n\n"
+        }
+      ],
+      "primary_topic": "stack",
+      "topics": [
+        "stack",
+        "array",
+        "implementation"
+      ],
+      "difficulty_label": "Medium",
+      "topic_paths": {
+        "stack": [
+          "data-structures",
+          "stack"
+        ],
+        "array": [
+          "data-structures",
+          "array"
+        ],
+        "implementation": [
+          "fundamentals",
+          "implementation"
+        ]
+      }
+    }
+  ]
 }

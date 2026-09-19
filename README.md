@@ -4,24 +4,35 @@
 
 ## Statistics
 
-- Training days: **0**
-- Problems solved: **0**
-- Training attempts: **0**
-- Platforms: **0**
-- Topics used: **0**
+- Training days: **1**
+- Problems solved: **2**
+- Training attempts: **2**
+- Platforms: **1**
+- Topics used: **7**
 
 ### By Platform
 
 | Platform | Problems |
 |---|---:|
-| — | 0 |
+| LeetCode | 2 |
 
 ### By Topic
 
 | Topic | Problems |
 |---|---:|
-| — | 0 |
+| Array | 1 |
+| Comparison Sorting | 1 |
+| General Greedy | 1 |
+| Implementation | 1 |
+| Monotonic Stack | 1 |
+| Ordered Map | 1 |
+| Stack | 1 |
 
 ## Daily Log
 
-No training records yet.
+### 2026-09-20
+
+| Problem | Platform | Difficulty | Topics |
+|---|---|---|---|
+| [Car Fleet](https://leetcode.com/problems/car-fleet/) | LeetCode | Medium | Monotonic Stack, Comparison Sorting, Ordered Map, General Greedy |
+| [Min Stack](https://leetcode.com/problems/min-stack/) | LeetCode | Medium | Stack, Array, Implementation |
