@@ -44,8 +44,8 @@
               <select id="topicFilter"><option value="">All topics</option></select>
             </label>
             <label>
-              <span>Difficulty</span>
-              <select id="difficultyFilter"><option value="">All difficulties</option></select>
+              <span>Level</span>
+              <select id="difficultyFilter"><option value="">All levels</option></select>
             </label>
             <label>
               <span>From</span>
@@ -60,12 +60,14 @@
                 <span>Division</span>
                 <select id="divisionFilter"><option value="">All divisions</option></select>
               </label>
+            </div>
+            <div class="platform-filters rating-filters" id="ratingFilters" hidden>
               <label>
-                <span>Min rating</span>
+                <span id="ratingMinLabel">Min rating</span>
                 <input id="ratingMin" type="number" min="0" step="100" placeholder="800">
               </label>
               <label>
-                <span>Max rating</span>
+                <span id="ratingMaxLabel">Max rating</span>
                 <input id="ratingMax" type="number" min="0" step="100" placeholder="3500">
               </label>
             </div>
@@ -81,6 +83,8 @@
                 <option value="oldest">Oldest first</option>
                 <option value="title">Title</option>
                 <option value="platform">Platform</option>
+                <option id="ratingSortAsc" value="rating-asc" hidden disabled>Rating: low to high</option>
+                <option id="ratingSortDesc" value="rating-desc" hidden disabled>Rating: high to low</option>
               </select>
             </label>
           </div>
@@ -91,7 +95,8 @@
                 <tr>
                   <th>Problem</th>
                   <th>Platform</th>
-                  <th>Difficulty</th>
+                  <th>Level</th>
+                  <th>Rating</th>
                   <th>Topics</th>
                   <th>Last trained</th>
                   <th><span class="sr-only">Details</span></th>

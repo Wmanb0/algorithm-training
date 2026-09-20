@@ -39,7 +39,17 @@ class FrontendTests(unittest.TestCase):
             payload = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(payload["schema_version" if name == "problems.json" else "version"], 1)
 
+    def test_rating_controls_and_columns_exist(self):
+        html = (PROJECT_ROOT / "docs/index.html").read_text(encoding="utf-8")
+        script = (PROJECT_ROOT / "docs/app.js").read_text(encoding="utf-8")
+        self.assertIn('id="ratingMin"', html)
+        self.assertIn('id="ratingMax"', html)
+        self.assertIn('id="ratingFilters" hidden', html)
+        self.assertIn("<th>Rating</th>", html)
+        self.assertIn('value="rating-desc" hidden disabled', html)
+        self.assertIn("function problemRating(problem)", script)
+        self.assertIn('selected === "codeforces" || selected === "atcoder"', script)
+
 
 if __name__ == "__main__":
     unittest.main()
-

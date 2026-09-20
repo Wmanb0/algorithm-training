@@ -6,6 +6,4 @@ venv/
 .DS_Store
 .sites-runtime/
 data/metadata-cache.json
-.env
-.env.*
-*.zip
+

@@ -5,34 +5,49 @@
 ## Statistics
 
 - Training days: **1**
-- Problems solved: **2**
-- Training attempts: **2**
-- Platforms: **1**
-- Topics used: **7**
+- Problems solved: **7**
+- Training attempts: **7**
+- Platforms: **2**
+- Topics used: **16**
 
 ### By Platform
 
 | Platform | Problems |
 |---|---:|
+| AtCoder | 5 |
 | LeetCode | 2 |
 
 ### By Topic
 
 | Topic | Problems |
 |---|---:|
+| Comparison Sorting | 2 |
+| Arithmetic | 1 |
 | Array | 1 |
-| Comparison Sorting | 1 |
+| Case Analysis | 1 |
+| Constructive Algorithms | 1 |
+| Enumeration | 1 |
+| Exchange Argument | 1 |
 | General Greedy | 1 |
+| Hash Map | 1 |
 | Implementation | 1 |
 | Monotonic Stack | 1 |
 | Ordered Map | 1 |
+| Prefix Sum | 1 |
+| Simulation | 1 |
+| Sorting-based Greedy | 1 |
 | Stack | 1 |
 
 ## Daily Log
 
 ### 2026-09-20
 
-| Problem | Platform | Difficulty | Topics |
-|---|---|---|---|
-| [Car Fleet](https://leetcode.com/problems/car-fleet/) | LeetCode | Medium | Monotonic Stack, Comparison Sorting, Ordered Map, General Greedy |
-| [Min Stack](https://leetcode.com/problems/min-stack/) | LeetCode | Medium | Stack, Array, Implementation |
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [AtCoder ABC474 A](https://atcoder.jp/contests/abc474/tasks/abc474_a) | AtCoder | ABC · A | AtCoder ≈15 | Arithmetic |
+| [AtCoder ABC474 B](https://atcoder.jp/contests/abc474/tasks/abc474_b) | AtCoder | ABC · B | AtCoder ≈65 | Simulation |
+| [AtCoder ABC474 C](https://atcoder.jp/contests/abc474/tasks/abc474_c) | AtCoder | ABC · C | AtCoder ≈243 | Hash Map, Comparison Sorting |
+| [AtCoder ABC474 D](https://atcoder.jp/contests/abc474/tasks/abc474_d) | AtCoder | ABC · D | AtCoder ≈389 | Constructive Algorithms, Case Analysis |
+| [AtCoder ABC474 E](https://atcoder.jp/contests/abc474/tasks/abc474_e) | AtCoder | ABC · E | AtCoder ≈1153 | Sorting-based Greedy, Enumeration, Prefix Sum, Exchange Argument |
+| [Car Fleet](https://leetcode.com/problems/car-fleet/) | LeetCode | Medium | — | Monotonic Stack, Comparison Sorting, Ordered Map, General Greedy |
+| [Min Stack](https://leetcode.com/problems/min-stack/) | LeetCode | Medium | — | Stack, Array, Implementation |

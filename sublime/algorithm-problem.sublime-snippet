@@ -3,8 +3,9 @@
 @url ${1:https://example.com/problem}
 @primary ${2:implementation}
 @topics ${3:}
+@rating ${4:}
 @note
-${4:Reasoning, mistakes and review notes.}
+${5:Reasoning, mistakes and review notes.}
 @endnote
 */
 
@@ -14,4 +15,3 @@ ${0}
   <scope>source.c, source.c++, source.java, source.rust, source.go</scope>
   <description>Algorithm notebook metadata</description>
 </snippet>
-

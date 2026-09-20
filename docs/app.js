@@ -5,6 +5,7 @@ const state = {
   topics: new Map(),
   topicChildren: new Map(),
   selectedProblem: null,
+  ratingPlatform: "",
 };
 
 const elements = {};
@@ -16,6 +17,45 @@ function byId(id) {
 function platformLabel(value) {
   return { codeforces: "Codeforces", leetcode: "LeetCode", atcoder: "AtCoder" }[value]
     || value.split("-").map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ");
+}
+
+function problemLevel(problem) {
+  return problem.level_label || problem.difficulty_label || "—";
+}
+
+function problemRating(problem) {
+  if (problem.rating != null) return Number(problem.rating);
+  const meta = problem.platform_meta || {};
+  const value = problem.platform === "atcoder" ? meta.difficulty_rating : meta.rating;
+  return value == null ? null : Number(value);
+}
+
+function ratingSystem(problem) {
+  if (problem.rating_system) return problem.rating_system;
+  if (problem.platform === "codeforces") return "codeforces";
+  if (problem.platform === "atcoder") return "atcoder-problems";
+  return null;
+}
+
+function ratingDisplay(problem) {
+  const rating = problemRating(problem);
+  if (rating == null) return "—";
+  if (ratingSystem(problem) === "codeforces") return `CF ${rating}`;
+  if (ratingSystem(problem) === "atcoder-problems") return `AtCoder ≈${rating}`;
+  return String(rating);
+}
+
+function ratingSourceLabel(problem) {
+  const source = problem.rating_source || problem.platform_meta?.rating_source;
+  if (problem.platform === "codeforces") {
+    return source === "manual" ? "Manually specified Codeforces rating" : "Official Codeforces rating";
+  }
+  if (problem.platform === "atcoder") {
+    return source === "manual"
+      ? "Manually specified AtCoder difficulty estimate"
+      : "Difficulty estimated by AtCoder Problems";
+  }
+  return "Platform-specific rating";
 }
 
 function latestAttempt(problem) {
@@ -107,16 +147,41 @@ function populateFilters() {
 
 function refreshDifficultyOptions() {
   const selected = elements.platformFilter.value;
+  const ratingSupported = selected === "codeforces" || selected === "atcoder";
+  if (state.ratingPlatform !== selected) {
+    elements.ratingMin.value = "";
+    elements.ratingMax.value = "";
+    if (elements.sortSelect.value.startsWith("rating-")) elements.sortSelect.value = "recent";
+    state.ratingPlatform = selected;
+  }
   const values = new Set(
     state.problems
       .filter((problem) => !selected || problem.platform === selected)
-      .map((problem) => problem.difficulty_label)
+      .map(problemLevel)
       .filter((value) => value && value !== "—"),
   );
   const previous = elements.difficultyFilter.value;
   fillSelect(elements.difficultyFilter, values);
   if (values.has(previous)) elements.difficultyFilter.value = previous;
-  elements.codeforcesFilters.hidden = selected !== "codeforces";
+  const isCodeforces = selected === "codeforces";
+  elements.codeforcesFilters.hidden = !isCodeforces;
+  if (!isCodeforces) elements.divisionFilter.value = "";
+  elements.ratingFilters.hidden = !ratingSupported;
+  [elements.ratingSortAsc, elements.ratingSortDesc].forEach((item) => {
+    item.hidden = !ratingSupported;
+    item.disabled = !ratingSupported;
+  });
+  if (selected === "codeforces") {
+    elements.ratingMinLabel.textContent = "Min Codeforces rating";
+    elements.ratingMaxLabel.textContent = "Max Codeforces rating";
+    elements.ratingMin.placeholder = "800";
+    elements.ratingMax.placeholder = "3500";
+  } else if (selected === "atcoder") {
+    elements.ratingMinLabel.textContent = "Min AtCoder estimate";
+    elements.ratingMaxLabel.textContent = "Max AtCoder estimate";
+    elements.ratingMin.placeholder = "0";
+    elements.ratingMax.placeholder = "4000";
+  }
 }
 
 function renderStats() {
@@ -169,7 +234,10 @@ function renderCountList(container, counts, labeler, onSelect) {
 function searchableText(problem) {
   const topicNames = (problem.topics || []).map((id) => state.topics.get(id)?.name || id);
   const notes = (problem.attempts || []).map((attempt) => attempt.note || "");
-  return [problem.title, problem.problem_id, problem.platform, ...topicNames, ...notes].join(" ").toLowerCase();
+  return [
+    problem.title, problem.problem_id, problem.platform, problemLevel(problem),
+    ratingDisplay(problem), ...topicNames, ...notes,
+  ].join(" ").toLowerCase();
 }
 
 function matchesTopic(problem, selected) {
@@ -186,7 +254,8 @@ function filteredProblems() {
   const division = elements.divisionFilter.value;
   const min = Number(elements.ratingMin.value || 0);
   const max = Number(elements.ratingMax.value || Number.POSITIVE_INFINITY);
-  const hasRatingFilter = Boolean(elements.ratingMin.value || elements.ratingMax.value);
+  const ratingSupported = platform === "codeforces" || platform === "atcoder";
+  const hasRatingFilter = ratingSupported && Boolean(elements.ratingMin.value || elements.ratingMax.value);
   const from = elements.dateFrom.value;
   const to = elements.dateTo.value;
 
@@ -194,11 +263,11 @@ function filteredProblems() {
     const attemptDates = (problem.attempts || []).map((attempt) => attempt.date);
     const inDateRange = attemptDates.some((date) => (!from || date >= from) && (!to || date <= to));
     const meta = problem.platform_meta || {};
-    const rating = meta.rating;
+    const rating = problemRating(problem);
     return (!query || searchableText(problem).includes(query))
       && (!platform || problem.platform === platform)
       && matchesTopic(problem, topic)
-      && (!difficulty || problem.difficulty_label === difficulty)
+      && (!difficulty || problemLevel(problem) === difficulty)
       && (!division || (meta.divisions || []).includes(division))
       && (!hasRatingFilter || (rating != null && rating >= min && rating <= max))
       && (!from && !to || inDateRange);
@@ -209,6 +278,14 @@ function filteredProblems() {
     if (sort === "oldest") return (latestAttempt(a)?.date || "").localeCompare(latestAttempt(b)?.date || "");
     if (sort === "title") return a.title.localeCompare(b.title);
     if (sort === "platform") return a.platform.localeCompare(b.platform) || a.title.localeCompare(b.title);
+    if (sort === "rating-asc" || sort === "rating-desc") {
+      const aRating = problemRating(a);
+      const bRating = problemRating(b);
+      if (aRating == null && bRating == null) return a.title.localeCompare(b.title);
+      if (aRating == null) return 1;
+      if (bRating == null) return -1;
+      return sort === "rating-asc" ? aRating - bRating : bRating - aRating;
+    }
     return (latestAttempt(b)?.date || "").localeCompare(latestAttempt(a)?.date || "");
   });
 }
@@ -247,8 +324,12 @@ function renderProblems() {
 
     const platform = document.createElement("td");
     platform.textContent = platformLabel(problem.platform);
-    const difficulty = document.createElement("td");
-    difficulty.textContent = problem.difficulty_label || "—";
+    const level = document.createElement("td");
+    level.textContent = problemLevel(problem);
+    const rating = document.createElement("td");
+    const ratingValue = problemRating(problem);
+    rating.textContent = ratingDisplay(problem);
+    if (ratingValue != null) rating.title = ratingSourceLabel(problem);
     const topics = document.createElement("td");
     topics.append(makePills(problem));
     const trained = document.createElement("td");
@@ -260,7 +341,7 @@ function renderProblems() {
     button.textContent = "View";
     button.addEventListener("click", () => openProblem(problem));
     action.append(button);
-    row.append(titleCell, platform, difficulty, topics, trained, action);
+    row.append(titleCell, platform, level, rating, topics, trained, action);
     elements.problemRows.append(row);
   });
 }
@@ -294,14 +375,27 @@ function openProblem(problem) {
   elements.dialogProblemLink.href = problem.url;
   elements.dialogMeta.replaceChildren();
 
-  [problem.difficulty_label, ...(problem.topics || []).map((id) => state.topics.get(id)?.name || id)]
-    .filter(Boolean)
-    .forEach((text, index) => {
-      const pill = document.createElement("span");
-      pill.className = `pill${index === 1 ? " primary" : ""}`;
-      pill.textContent = text;
-      elements.dialogMeta.append(pill);
-    });
+  const level = problemLevel(problem);
+  if (level !== "—") {
+    const pill = document.createElement("span");
+    pill.className = "pill";
+    pill.textContent = level;
+    elements.dialogMeta.append(pill);
+  }
+  const rating = problemRating(problem);
+  if (rating != null) {
+    const pill = document.createElement("span");
+    pill.className = "pill rating";
+    pill.textContent = ratingDisplay(problem);
+    pill.title = ratingSourceLabel(problem);
+    elements.dialogMeta.append(pill);
+  }
+  (problem.topics || []).forEach((topicId) => {
+    const pill = document.createElement("span");
+    pill.className = `pill${topicId === problem.primary_topic ? " primary" : ""}`;
+    pill.textContent = state.topics.get(topicId)?.name || topicId;
+    elements.dialogMeta.append(pill);
+  });
 
   const attempts = [...(problem.attempts || [])].sort((a, b) => b.date.localeCompare(a.date));
   elements.attemptSelect.replaceChildren();
@@ -348,7 +442,8 @@ async function initialize() {
   [
     "problemCount", "attemptCount", "dayCount", "currentStreak", "longestStreak",
     "platformFilter", "topicFilter", "difficultyFilter", "dateFrom", "dateTo",
-    "divisionFilter", "ratingMin", "ratingMax", "codeforcesFilters", "searchInput",
+    "divisionFilter", "ratingMin", "ratingMax", "codeforcesFilters", "ratingFilters",
+    "ratingMinLabel", "ratingMaxLabel", "ratingSortAsc", "ratingSortDesc", "searchInput",
     "resetFilters", "sortSelect", "resultCount", "problemRows", "emptyState",
     "platformCounts", "topicCounts", "platformTotal", "topicTotal", "problemDialog",
     "dialogPlatform", "dialogTitle", "dialogMeta", "dialogProblemLink", "attemptSelect",

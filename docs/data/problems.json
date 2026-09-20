@@ -2,6 +2,237 @@
   "schema_version": 1,
   "problems": [
     {
+      "id": "atcoder:abc474_a",
+      "platform": "atcoder",
+      "problem_id": "ABC474_A",
+      "title": "AtCoder ABC474 A",
+      "platform_meta": {
+        "contest_id": "abc474",
+        "contest_series": "ABC",
+        "problem_index": "A",
+        "task_id": "abc474_a",
+        "difficulty_rating": 15,
+        "difficulty_raw": -923.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc474/tasks/abc474_a",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "Python",
+          "source_file": "solutions/mathematics/arithmetic/atcoder-ABC474_A/2026-09-20.py",
+          "note": "Idea: Compute the answer directly using N modulo 3.\nKey observation: The required result repeats with period 3, so N % 3 + 1 gives the answer.\nComplexity: O(1) time and O(1) space.",
+          "code": "# @url https://atcoder.jp/contests/abc474/tasks/abc474_a\n# @primary arithmetic\n# @note\n# Idea: Compute the answer directly using N modulo 3.\n# Key observation: The required result repeats with period 3, so N % 3 + 1 gives the answer.\n# Complexity: O(1) time and O(1) space.\n# @endnote\n\nn = int(input())\nprint(n % 3 + 1)"
+        }
+      ],
+      "primary_topic": "arithmetic",
+      "topics": [
+        "arithmetic"
+      ],
+      "level_label": "ABC · A",
+      "difficulty_label": "ABC · A",
+      "rating": 15,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈15",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc474_b",
+      "platform": "atcoder",
+      "problem_id": "ABC474_B",
+      "title": "AtCoder ABC474 B",
+      "platform_meta": {
+        "contest_id": "abc474",
+        "contest_series": "ABC",
+        "problem_index": "B",
+        "task_id": "abc474_b",
+        "difficulty_rating": 65,
+        "difficulty_raw": -328.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc474/tasks/abc474_b",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/simulation/atcoder-ABC474_B/2026-09-20.py",
+          "note": "Idea: Scan the sequence from left to right and increase the available threshold by 10 at every index divisible by 10.\nKey observation: The answer is \"Yes\" only if every A[i] is at most the threshold available at its position.\nComplexity: O(N) time and O(N) space.",
+          "code": "# @url https://atcoder.jp/contests/abc474/tasks/abc474_b\n# @primary simulation\n# @note\n# Idea: Scan the sequence from left to right and increase the available threshold by 10 at every index divisible by 10.\n# Key observation: The answer is \"Yes\" only if every A[i] is at most the threshold available at its position.\n# Complexity: O(N) time and O(N) space.\n# @endnote\n\nn = int(input())\na = list(map(int, input().split()))\nT = 0\nres = \"Yes\"\nfor i in range(n):\n    if i % 10 == 0: T += 10\n\n    if a[i] > T:\n        res = \"No\"\n\nprint(res)"
+        }
+      ],
+      "primary_topic": "simulation",
+      "topics": [
+        "simulation"
+      ],
+      "level_label": "ABC · B",
+      "difficulty_label": "ABC · B",
+      "rating": 65,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈65",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "simulation": [
+          "fundamentals",
+          "simulation"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc474_c",
+      "platform": "atcoder",
+      "problem_id": "ABC474_C",
+      "title": "AtCoder ABC474 C",
+      "platform_meta": {
+        "contest_id": "abc474",
+        "contest_series": "ABC",
+        "problem_index": "C",
+        "task_id": "abc474_c",
+        "difficulty_rating": 243,
+        "difficulty_raw": 200.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc474/tasks/abc474_c",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "Python",
+          "source_file": "solutions/data-structures/hash-map/atcoder-ABC474_C/2026-09-20.py",
+          "note": "Idea: Store the latest timestamp of each value in a hash map, overwrite it whenever the value appears again, then sort values by their final timestamps.\nKey observation: The final timestamp represents the last position of each distinct value after processing all updates.\nComplexity: O(N + Q + M log M) time and O(M) space, where M is the number of distinct values.",
+          "code": "\n# @url https://atcoder.jp/contests/abc474/tasks/abc474_c\n# @primary hash-map\n# @topics comparison-sorting\n# @note\n# Idea: Store the latest timestamp of each value in a hash map, overwrite it whenever the value appears again, then sort values by their final timestamps.\n# Key observation: The final timestamp represents the last position of each distinct value after processing all updates.\n# Complexity: O(N + Q + M log M) time and O(M) space, where M is the number of distinct values.\n# @endnote\n\n\nn, q = map(int, input().split())\na = list(map(int, input().split()))\nk = {}\nt = 1\nfor i in a:\n    k[i] = t\n    t += 1\nfor i in range(q):\n    m = int(input())\n    k[m] = t\n    t += 1\n\nk = dict(sorted(k.items(), key=lambda x: x[1]))\nfor v in k:\n    print(v, end = ' ')\n"
+        }
+      ],
+      "primary_topic": "hash-map",
+      "topics": [
+        "hash-map",
+        "comparison-sorting"
+      ],
+      "level_label": "ABC · C",
+      "difficulty_label": "ABC · C",
+      "rating": 243,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈243",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "hash-map": [
+          "data-structures",
+          "hash-map"
+        ],
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc474_d",
+      "platform": "atcoder",
+      "problem_id": "ABC474_D",
+      "title": "AtCoder ABC474 D",
+      "platform_meta": {
+        "contest_id": "abc474",
+        "contest_series": "ABC",
+        "problem_index": "D",
+        "task_id": "abc474_d",
+        "difficulty_rating": 389,
+        "difficulty_raw": 389.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc474/tasks/abc474_d",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/constructive-algorithms/atcoder-ABC474_D/2026-09-20.py",
+          "note": "Idea: Construct W independently for each position, assigning 1 when A[i] <= B[i] and a sufficiently large value otherwise.\nKey observation: A valid construction exists exactly when at least one position satisfies A[i] > B[i].\nComplexity: O(N) time and O(N) space.",
+          "code": "# @url https://atcoder.jp/contests/abc474/tasks/abc474_d\n# @primary constructive-algorithms\n# @topics case-analysis\n# @note\n# Idea: Construct W independently for each position, assigning 1 when A[i] <= B[i] and a sufficiently large value otherwise.\n# Key observation: A valid construction exists exactly when at least one position satisfies A[i] > B[i].\n# Complexity: O(N) time and O(N) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n = int(input())\n    a = list(map(int, input().split()))\n    b = list(map(int, input().split()))\n    flag = False\n    w = []\n    p = 0\n    for i in range(n):\n        if a[i] <= b[i]: \n            w.append(1)\n            p += b[i] - a[i]\n        else: \n            w.append(int(1e18))\n            flag = True\n    \n    if flag: \n        print(\"Yes\")\n        print(*w, sep=' ')\n    else: print(\"No\")\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "constructive-algorithms",
+      "topics": [
+        "constructive-algorithms",
+        "case-analysis"
+      ],
+      "level_label": "ABC · D",
+      "difficulty_label": "ABC · D",
+      "rating": 389,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈389",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "constructive-algorithms": [
+          "fundamentals",
+          "constructive-algorithms"
+        ],
+        "case-analysis": [
+          "fundamentals",
+          "case-analysis"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc474_e",
+      "platform": "atcoder",
+      "problem_id": "ABC474_E",
+      "title": "AtCoder ABC474 E",
+      "platform_meta": {
+        "contest_id": "abc474",
+        "contest_series": "ABC",
+        "problem_index": "E",
+        "task_id": "abc474_e",
+        "difficulty_rating": 1153,
+        "difficulty_raw": 1153.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc474/tasks/abc474_e",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "Python",
+          "source_file": "solutions/greedy/sorting-greedy/atcoder-ABC474_E/2026-09-20.py",
+          "note": "Idea: Start from the total cost of choosing A for every product, sort the savings A-B in descending order, and enumerate the number k of products bought using coupons.\nKey observation: For a fixed k, choosing the k largest savings is optimal. If k exceeds N/2, exactly 2k-N additional coupons are required, and each can be obtained with the minimum A cost.\nComplexity: O(N log N) time and O(N) space per test case.",
+          "code": "# @url https://atcoder.jp/contests/abc474/tasks/abc474_e\n# @primary sorting-greedy\n# @topics enumeration, prefix-sum, exchange-argument\n# @note\n# Idea: Start from the total cost of choosing A for every product, sort the savings A-B in descending order, and enumerate the number k of products bought using coupons.\n# Key observation: For a fixed k, choosing the k largest savings is optimal. If k exceeds N/2, exactly 2k-N additional coupons are required, and each can be obtained with the minimum A cost.\n# Complexity: O(N log N) time and O(N) space per test case.\n# @endnote\n\nimport sys\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input())\n\n    s = 0\n    p = 10**30\n    d = []\n\n    for _ in range(n):\n        a, b = map(int, input().split())\n\n        s += a\n        p = min(p, a)\n        d.append(a - b)\n\n    d.sort(reverse=True)\n\n    ans = s\n    pre = 0\n\n    for k in range(1, n + 1):\n        pre += d[k - 1]\n\n        cost = s - pre\n        if k >= n / 2: cost += (2 * k - n) * p\n\n        ans = min(ans, cost)\n\n    print(ans)\n\n\ndef main():\n    T = int(input())\n\n    for _ in range(T):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "sorting-greedy",
+      "topics": [
+        "sorting-greedy",
+        "enumeration",
+        "prefix-sum",
+        "exchange-argument"
+      ],
+      "level_label": "ABC · E",
+      "difficulty_label": "ABC · E",
+      "rating": 1153,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈1153",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "sorting-greedy": [
+          "greedy",
+          "sorting-greedy"
+        ],
+        "enumeration": [
+          "fundamentals",
+          "enumeration"
+        ],
+        "prefix-sum": [
+          "fundamentals",
+          "prefix-sum"
+        ],
+        "exchange-argument": [
+          "greedy",
+          "exchange-argument"
+        ]
+      }
+    },
+    {
       "id": "leetcode:car-fleet",
       "platform": "leetcode",
       "problem_id": "853",
@@ -27,7 +258,12 @@
         "ordered-map",
         "general-greedy"
       ],
+      "level_label": "Medium",
       "difficulty_label": "Medium",
+      "rating": null,
+      "rating_system": null,
+      "rating_label": "—",
+      "rating_source": null,
       "topic_paths": {
         "monotonic-stack": [
           "data-structures",
@@ -73,7 +309,12 @@
         "array",
         "implementation"
       ],
+      "level_label": "Medium",
       "difficulty_label": "Medium",
+      "rating": null,
+      "rating_system": null,
+      "rating_label": "—",
+      "rating_source": null,
       "topic_paths": {
         "stack": [
           "data-structures",

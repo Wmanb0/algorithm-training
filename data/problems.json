@@ -2,6 +2,151 @@
   "schema_version": 1,
   "problems": [
     {
+      "id": "atcoder:abc474_a",
+      "platform": "atcoder",
+      "problem_id": "ABC474_A",
+      "title": "AtCoder ABC474 A",
+      "platform_meta": {
+        "contest_id": "abc474",
+        "contest_series": "ABC",
+        "problem_index": "A",
+        "task_id": "abc474_a",
+        "difficulty_rating": 15,
+        "difficulty_raw": -923.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc474/tasks/abc474_a",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "Python",
+          "source_file": "solutions/mathematics/arithmetic/atcoder-ABC474_A/2026-09-20.py",
+          "note": "Idea: Compute the answer directly using N modulo 3.\nKey observation: The required result repeats with period 3, so N % 3 + 1 gives the answer.\nComplexity: O(1) time and O(1) space."
+        }
+      ],
+      "primary_topic": "arithmetic",
+      "topics": [
+        "arithmetic"
+      ]
+    },
+    {
+      "id": "atcoder:abc474_b",
+      "platform": "atcoder",
+      "problem_id": "ABC474_B",
+      "title": "AtCoder ABC474 B",
+      "platform_meta": {
+        "contest_id": "abc474",
+        "contest_series": "ABC",
+        "problem_index": "B",
+        "task_id": "abc474_b",
+        "difficulty_rating": 65,
+        "difficulty_raw": -328.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc474/tasks/abc474_b",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/simulation/atcoder-ABC474_B/2026-09-20.py",
+          "note": "Idea: Scan the sequence from left to right and increase the available threshold by 10 at every index divisible by 10.\nKey observation: The answer is \"Yes\" only if every A[i] is at most the threshold available at its position.\nComplexity: O(N) time and O(N) space."
+        }
+      ],
+      "primary_topic": "simulation",
+      "topics": [
+        "simulation"
+      ]
+    },
+    {
+      "id": "atcoder:abc474_c",
+      "platform": "atcoder",
+      "problem_id": "ABC474_C",
+      "title": "AtCoder ABC474 C",
+      "platform_meta": {
+        "contest_id": "abc474",
+        "contest_series": "ABC",
+        "problem_index": "C",
+        "task_id": "abc474_c",
+        "difficulty_rating": 243,
+        "difficulty_raw": 200.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc474/tasks/abc474_c",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "Python",
+          "source_file": "solutions/data-structures/hash-map/atcoder-ABC474_C/2026-09-20.py",
+          "note": "Idea: Store the latest timestamp of each value in a hash map, overwrite it whenever the value appears again, then sort values by their final timestamps.\nKey observation: The final timestamp represents the last position of each distinct value after processing all updates.\nComplexity: O(N + Q + M log M) time and O(M) space, where M is the number of distinct values."
+        }
+      ],
+      "primary_topic": "hash-map",
+      "topics": [
+        "hash-map",
+        "comparison-sorting"
+      ]
+    },
+    {
+      "id": "atcoder:abc474_d",
+      "platform": "atcoder",
+      "problem_id": "ABC474_D",
+      "title": "AtCoder ABC474 D",
+      "platform_meta": {
+        "contest_id": "abc474",
+        "contest_series": "ABC",
+        "problem_index": "D",
+        "task_id": "abc474_d",
+        "difficulty_rating": 389,
+        "difficulty_raw": 389.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc474/tasks/abc474_d",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/constructive-algorithms/atcoder-ABC474_D/2026-09-20.py",
+          "note": "Idea: Construct W independently for each position, assigning 1 when A[i] <= B[i] and a sufficiently large value otherwise.\nKey observation: A valid construction exists exactly when at least one position satisfies A[i] > B[i].\nComplexity: O(N) time and O(N) space."
+        }
+      ],
+      "primary_topic": "constructive-algorithms",
+      "topics": [
+        "constructive-algorithms",
+        "case-analysis"
+      ]
+    },
+    {
+      "id": "atcoder:abc474_e",
+      "platform": "atcoder",
+      "problem_id": "ABC474_E",
+      "title": "AtCoder ABC474 E",
+      "platform_meta": {
+        "contest_id": "abc474",
+        "contest_series": "ABC",
+        "problem_index": "E",
+        "task_id": "abc474_e",
+        "difficulty_rating": 1153,
+        "difficulty_raw": 1153.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc474/tasks/abc474_e",
+      "attempts": [
+        {
+          "date": "2026-09-20",
+          "language": "Python",
+          "source_file": "solutions/greedy/sorting-greedy/atcoder-ABC474_E/2026-09-20.py",
+          "note": "Idea: Start from the total cost of choosing A for every product, sort the savings A-B in descending order, and enumerate the number k of products bought using coupons.\nKey observation: For a fixed k, choosing the k largest savings is optimal. If k exceeds N/2, exactly 2k-N additional coupons are required, and each can be obtained with the minimum A cost.\nComplexity: O(N log N) time and O(N) space per test case."
+        }
+      ],
+      "primary_topic": "sorting-greedy",
+      "topics": [
+        "sorting-greedy",
+        "enumeration",
+        "prefix-sum",
+        "exchange-argument"
+      ]
+    },
+    {
       "id": "leetcode:car-fleet",
       "platform": "leetcode",
       "problem_id": "853",

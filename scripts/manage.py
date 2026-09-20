@@ -11,6 +11,7 @@ import argparse
 import datetime as dt
 import difflib
 import json
+import math
 import os
 import re
 import shutil
@@ -43,6 +44,9 @@ SUPPORTED_EXTENSIONS = {
     ".js": "JavaScript",
     ".ts": "TypeScript",
 }
+
+ATCODER_MODELS_URL = "https://kenkoooo.com/atcoder/resources/problem-models.json"
+_ATCODER_MODELS_CACHE: dict[str, Any] | None = None
 
 
 class NotebookError(RuntimeError):
@@ -296,6 +300,7 @@ def parse_problem_url(url: str, metadata: dict[str, str]) -> dict[str, Any]:
                 "contest_id": contest_id.lower(),
                 "contest_series": series,
                 "problem_index": index,
+                "task_id": task_id.lower(),
                 "difficulty_rating": None,
             },
         }
@@ -341,9 +346,50 @@ def fetch_codeforces_metadata(problem: dict[str, Any]) -> dict[str, Any]:
         "platform_meta": {
             **meta,
             "rating": target.get("rating"),
+            "rating_source": "codeforces" if target.get("rating") is not None else None,
             "divisions": list(dict.fromkeys(divisions)),
             "contest_name": contest_name or None,
         },
+    }
+
+
+def display_atcoder_rating(difficulty: float) -> int:
+    """Convert an AtCoder Problems model value to its displayed rating."""
+    displayed = difficulty if difficulty >= 400 else 400 / math.exp(1 - difficulty / 400)
+    return int(math.floor(displayed + 0.5))
+
+
+def fetch_atcoder_metadata(problem: dict[str, Any]) -> dict[str, Any]:
+    global _ATCODER_MODELS_CACHE
+
+    if _ATCODER_MODELS_CACHE is None:
+        payload = http_json(
+            urllib.request.Request(
+                ATCODER_MODELS_URL,
+                headers={"User-Agent": "AlgorithmNotebook/1.0"},
+            )
+        )
+        if not isinstance(payload, dict):
+            raise NotebookError("AtCoder Problems returned an invalid difficulty dataset")
+        _ATCODER_MODELS_CACHE = payload
+
+    meta = problem["platform_meta"]
+    task_id = str(meta.get("task_id") or problem["id"].removeprefix("atcoder:")).lower()
+    model = _ATCODER_MODELS_CACHE.get(task_id)
+    if not isinstance(model, dict) or model.get("difficulty") is None:
+        raise NotebookError(f"AtCoder Problems has no estimated rating for {task_id}")
+    try:
+        raw_difficulty = float(model["difficulty"])
+    except (TypeError, ValueError) as exc:
+        raise NotebookError(f"AtCoder Problems returned an invalid rating for {task_id}") from exc
+
+    return {
+        "platform_meta": {
+            **meta,
+            "difficulty_rating": display_atcoder_rating(raw_difficulty),
+            "difficulty_raw": raw_difficulty,
+            "rating_source": "atcoder-problems",
+        }
     }
 
 
@@ -391,6 +437,7 @@ def apply_manual_metadata(problem: dict[str, Any], metadata: dict[str, str]) -> 
                 meta["rating"] = int(metadata["rating"])
             except ValueError as exc:
                 raise NotebookError("@rating must be an integer") from exc
+            meta["rating_source"] = "manual"
         if metadata.get("division"):
             divisions = []
             for item in split_csv(metadata["division"]):
@@ -412,6 +459,7 @@ def apply_manual_metadata(problem: dict[str, Any], metadata: dict[str, str]) -> 
                 meta["difficulty_rating"] = int(rating)
             except ValueError as exc:
                 raise NotebookError("AtCoder @rating must be an integer") from exc
+            meta["rating_source"] = "manual"
 
 
 def enrich_problem(problem: dict[str, Any], metadata: dict[str, str], fetch: bool) -> list[str]:
@@ -422,19 +470,48 @@ def enrich_problem(problem: dict[str, Any], metadata: dict[str, str], fetch: boo
                 problem.update(fetch_codeforces_metadata(problem))
             elif problem["platform"] == "leetcode":
                 problem.update(fetch_leetcode_metadata(problem))
+            elif problem["platform"] == "atcoder":
+                problem.update(fetch_atcoder_metadata(problem))
         except (NotebookError, urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
             warnings.append(f"Could not fetch metadata for {problem['id']}: {exc}")
     apply_manual_metadata(problem, metadata)
     return warnings
 
 
-def difficulty_label(problem: dict[str, Any]) -> str:
+def problem_rating(problem: dict[str, Any]) -> int | None:
+    meta = problem.get("platform_meta") or {}
+    if problem.get("platform") == "codeforces":
+        return meta.get("rating")
+    if problem.get("platform") == "atcoder":
+        return meta.get("difficulty_rating")
+    return None
+
+
+def problem_rating_system(problem: dict[str, Any]) -> str | None:
+    if problem.get("platform") == "codeforces":
+        return "codeforces"
+    if problem.get("platform") == "atcoder":
+        return "atcoder-problems"
+    return None
+
+
+def rating_label(problem: dict[str, Any]) -> str:
+    rating = problem_rating(problem)
+    if rating is None:
+        return "—"
+    system = problem_rating_system(problem)
+    if system == "codeforces":
+        return f"CF {rating}"
+    if system == "atcoder-problems":
+        return f"AtCoder ≈{rating}"
+    return str(rating)
+
+
+def level_label(problem: dict[str, Any]) -> str:
     platform = problem["platform"]
     meta = problem.get("platform_meta") or {}
     if platform == "codeforces":
         parts = [item.replace("div", "Div.") for item in meta.get("divisions", [])]
-        if meta.get("rating") is not None:
-            parts.append(str(meta["rating"]))
         if meta.get("problem_index"):
             parts.append(str(meta["problem_index"]))
         return " · ".join(parts) or "—"
@@ -447,10 +524,13 @@ def difficulty_label(problem: dict[str, Any]) -> str:
             parts.append(str(meta["contest_series"]))
         if meta.get("problem_index"):
             parts.append(str(meta["problem_index"]))
-        if meta.get("difficulty_rating") is not None:
-            parts.append(str(meta["difficulty_rating"]))
         return " · ".join(parts) or "—"
     return str(meta.get("difficulty") or "—")
+
+
+def difficulty_label(problem: dict[str, Any]) -> str:
+    """Backward-compatible name for the platform-specific level label."""
+    return level_label(problem)
 
 
 def load_database(path: Path) -> dict[str, Any]:
@@ -534,8 +614,8 @@ def generate_readme(database: dict[str, Any], taxonomy: Taxonomy) -> str:
                 [
                     f"### {date}",
                     "",
-                    "| Problem | Platform | Difficulty | Topics |",
-                    "|---|---|---|---|",
+                    "| Problem | Platform | Level | Rating | Topics |",
+                    "|---|---|---|---:|---|",
                 ]
             )
             for problem, _attempt in sorted(by_date[date], key=lambda pair: pair[0]["title"]):
@@ -545,7 +625,8 @@ def generate_readme(database: dict[str, Any], taxonomy: Taxonomy) -> str:
                 title = markdown_escape(problem["title"])
                 lines.append(
                     f"| [{title}]({problem['url']}) | {platform_name(problem['platform'])} | "
-                    f"{markdown_escape(difficulty_label(problem))} | {markdown_escape(topic_names)} |"
+                    f"{markdown_escape(level_label(problem))} | "
+                    f"{rating_label(problem)} | {markdown_escape(topic_names)} |"
                 )
             lines.append("")
     return "\n".join(lines).rstrip() + "\n"
@@ -555,7 +636,12 @@ def build_web_payload(root: Path, database: dict[str, Any], taxonomy: Taxonomy) 
     problems: list[dict[str, Any]] = []
     for problem in database["problems"]:
         item = json.loads(json.dumps(problem))
-        item["difficulty_label"] = difficulty_label(problem)
+        item["level_label"] = level_label(problem)
+        item["difficulty_label"] = item["level_label"]
+        item["rating"] = problem_rating(problem)
+        item["rating_system"] = problem_rating_system(problem)
+        item["rating_label"] = rating_label(problem)
+        item["rating_source"] = (problem.get("platform_meta") or {}).get("rating_source")
         item["topic_paths"] = {
             topic_id: taxonomy.ancestors(topic_id) for topic_id in problem.get("topics", [])
         }
