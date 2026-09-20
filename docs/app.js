@@ -269,8 +269,22 @@ function renderAttempt(problem, index) {
   const attempts = [...(problem.attempts || [])].sort((a, b) => b.date.localeCompare(a.date));
   const attempt = attempts[index];
   elements.dialogNote.textContent = attempt?.note || "No notes for this attempt.";
+  elements.dialogCode.removeAttribute("data-highlighted");
+  const languageClass = {
+    "C": "c",
+    "C++": "cpp",
+    "Python": "python",
+    "Java": "java",
+    "Kotlin": "kotlin",
+    "Rust": "rust",
+    "Go": "go",
+    "JavaScript": "javascript",
+    "TypeScript": "typescript",
+  }[attempt?.language] || "plaintext";
+  elements.dialogCode.className = `language-${languageClass}`;
   elements.dialogCode.textContent = attempt?.code || "Source file not available in the generated data.";
   elements.codeLanguage.textContent = attempt?.language || "";
+  if (window.hljs) window.hljs.highlightElement(elements.dialogCode);
 }
 
 function openProblem(problem) {
