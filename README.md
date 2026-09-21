@@ -4,41 +4,57 @@
 
 ## Statistics
 
-- Training days: **1**
-- Problems solved: **7**
-- Training attempts: **7**
-- Platforms: **2**
-- Topics used: **16**
+- Training days: **2**
+- Problems solved: **12**
+- Training attempts: **12**
+- Platforms: **5**
+- Topics used: **19**
 
 ### By Platform
 
 | Platform | Problems |
 |---|---:|
 | AtCoder | 5 |
+| Codeforces | 3 |
 | LeetCode | 2 |
+| Cses | 1 |
+| Usaco | 1 |
 
 ### By Topic
 
 | Topic | Problems |
 |---|---:|
-| Comparison Sorting | 2 |
+| Comparison Sorting | 4 |
+| Enumeration | 3 |
+| Case Analysis | 2 |
+| Hash Map | 2 |
+| Prefix Sum | 2 |
+| Two Pointers | 2 |
 | Arithmetic | 1 |
 | Array | 1 |
-| Case Analysis | 1 |
 | Constructive Algorithms | 1 |
-| Enumeration | 1 |
 | Exchange Argument | 1 |
+| General Dynamic Programming | 1 |
 | General Greedy | 1 |
-| Hash Map | 1 |
 | Implementation | 1 |
+| Incremental Construction | 1 |
 | Monotonic Stack | 1 |
 | Ordered Map | 1 |
-| Prefix Sum | 1 |
 | Simulation | 1 |
 | Sorting-based Greedy | 1 |
 | Stack | 1 |
 
 ## Daily Log
+
+### 2026-09-21
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [1641](https://cses.fi/problemset/task/1641/) | Cses | — | — | Two Pointers, Comparison Sorting |
+| [Codeforces 1398C](https://codeforces.com/contest/1398/problem/C) | Codeforces | C | CF 1600 | Prefix Sum, Hash Map |
+| [Codeforces 1826D](https://codeforces.com/contest/1826/problem/D) | Codeforces | D | — | General Dynamic Programming, Enumeration |
+| [Codeforces 2008E](https://codeforces.com/contest/2008/problem/E) | Codeforces | E | — | Enumeration, Case Analysis, Incremental Construction |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=643) | Usaco | — | — | Two Pointers, Comparison Sorting |
 
 ### 2026-09-20
 

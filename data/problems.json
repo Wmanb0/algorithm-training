@@ -147,6 +147,107 @@
       ]
     },
     {
+      "id": "codeforces:1398:C",
+      "platform": "codeforces",
+      "problem_id": "1398C",
+      "title": "Codeforces 1398C",
+      "platform_meta": {
+        "contest_id": 1398,
+        "problem_index": "C",
+        "rating": 1600,
+        "divisions": [],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/1398/problem/C",
+      "attempts": [
+        {
+          "date": "2026-09-21",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/prefix-sum/codeforces-1398C/2026-09-21.py",
+          "note": "Idea: Convert each prefix sum into pre[i] - (i + 1) and count how many previous prefixes have the same transformed value.\nKey observation: A subarray has digit sum equal to its length exactly when the transformed prefix values at its two boundaries are equal.\nComplexity: O(N) time and O(N) space per test case."
+        }
+      ],
+      "primary_topic": "prefix-sum",
+      "topics": [
+        "prefix-sum",
+        "hash-map"
+      ]
+    },
+    {
+      "id": "codeforces:1826:D",
+      "platform": "codeforces",
+      "problem_id": "1826D",
+      "title": "Codeforces 1826D",
+      "platform_meta": {
+        "contest_id": 1826,
+        "problem_index": "D",
+        "rating": null,
+        "divisions": []
+      },
+      "url": "https://codeforces.com/contest/1826/problem/D",
+      "attempts": [
+        {
+          "date": "2026-09-21",
+          "language": "Python",
+          "source_file": "solutions/dynamic-programming/general-dp/codeforces-1826D/2026-09-21.py",
+          "note": "Idea: Precompute the best value of a[j] + j on every prefix and a[k] - k on every suffix, then enumerate the middle index.\nKey observation: Once the middle index is fixed, the optimal left and right choices are independent and can be obtained from the precomputed prefix and suffix maxima.\nComplexity: O(N) time and O(N) space per test case."
+        }
+      ],
+      "primary_topic": "general-dp",
+      "topics": [
+        "general-dp",
+        "enumeration"
+      ]
+    },
+    {
+      "id": "codeforces:2008:E",
+      "platform": "codeforces",
+      "problem_id": "2008E",
+      "title": "Codeforces 2008E",
+      "platform_meta": {
+        "contest_id": 2008,
+        "problem_index": "E",
+        "rating": null,
+        "divisions": []
+      },
+      "url": "https://codeforces.com/contest/2008/problem/E",
+      "attempts": [
+        {
+          "date": "2026-09-21",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/enumeration/codeforces-2008E/2026-09-21.py",
+          "note": "Idea: For even length, independently choose the most frequent character on odd and even positions. For odd length, enumerate the deleted position while maintaining character frequencies on the left and right.\nKey observation: After deleting one character, the parity of every position to its right is reversed, so the resulting odd-position count combines left odd positions with right even positions, and vice versa.\nComplexity: O(26N) time and O(26) space per test case."
+        }
+      ],
+      "primary_topic": "enumeration",
+      "topics": [
+        "enumeration",
+        "case-analysis",
+        "incremental-construction"
+      ]
+    },
+    {
+      "id": "cses:1641",
+      "platform": "cses",
+      "problem_id": "1641",
+      "title": "1641",
+      "platform_meta": {},
+      "url": "https://cses.fi/problemset/task/1641/",
+      "attempts": [
+        {
+          "date": "2026-09-21",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/two-pointers/cses-1641/2026-09-21.py",
+          "note": "Idea: Sort the values together with their original indices, fix one element, and use two pointers to find two remaining values whose sum completes the target.\nKey observation: In sorted order, increasing the left pointer increases the sum and decreasing the right pointer decreases it.\nComplexity: O(N^2) time and O(N) space."
+        }
+      ],
+      "primary_topic": "two-pointers",
+      "topics": [
+        "two-pointers",
+        "comparison-sorting"
+      ]
+    },
+    {
       "id": "leetcode:car-fleet",
       "platform": "leetcode",
       "problem_id": "853",
@@ -195,6 +296,27 @@
         "stack",
         "array",
         "implementation"
+      ]
+    },
+    {
+      "id": "usaco:index-php",
+      "platform": "usaco",
+      "problem_id": "index.php",
+      "title": "Index.php",
+      "platform_meta": {},
+      "url": "https://usaco.org/index.php?page=viewproblem2&cpid=643",
+      "attempts": [
+        {
+          "date": "2026-09-21",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/two-pointers/usaco-index.php/2026-09-21.py",
+          "note": "Idea: Sort the diamond sizes and use a monotonic right pointer to compute the largest valid group starting at each position. Build suffix maxima of these group sizes and combine two non-overlapping groups.\nKey observation: After sorting, every valid group forms a contiguous interval, and the right endpoint never moves backward as the left endpoint increases.\nComplexity: O(N log N) time and O(N) space."
+        }
+      ],
+      "primary_topic": "two-pointers",
+      "topics": [
+        "two-pointers",
+        "comparison-sorting"
       ]
     }
   ]
