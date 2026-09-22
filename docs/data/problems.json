@@ -368,6 +368,59 @@
       }
     },
     {
+      "id": "codeforces:702:C",
+      "platform": "codeforces",
+      "problem_id": "702C",
+      "title": "Codeforces 702C",
+      "platform_meta": {
+        "contest_id": 702,
+        "problem_index": "C",
+        "rating": 1500,
+        "divisions": [
+          "div1",
+          "div2"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/702/problem/C",
+      "attempts": [
+        {
+          "date": "2026-09-22",
+          "language": "Python",
+          "source_file": "solutions/search/binary-search-on-answer/codeforces-702C/2026-09-22.py",
+          "note": "Idea: Sort the city and tower positions, then binary search the minimum radius. For each candidate radius, scan the cities and towers with two pointers and advance past every city covered by the current tower.\nKey observation: If radius r covers every city, then every radius greater than r is also feasible, so the feasibility condition is monotonic and can be binary searched.\nComplexity: O(N log N + M log M + (N + M) log V) time and O(N + M) space.",
+          "code": "# @url https://codeforces.com/contest/702/problem/C\n# @primary binary-search-on-answer\n# @topics binary-search-on-answer, two-pointers, comparison-sorting\n# @rating 1500\n# @division div1, div2\n# @note\n# Idea: Sort the city and tower positions, then binary search the minimum radius. For each candidate radius, scan the cities and towers with two pointers and advance past every city covered by the current tower.\n# Key observation: If radius r covers every city, then every radius greater than r is also feasible, so the feasibility condition is monotonic and can be binary searched.\n# Complexity: O(N log N + M log M + (N + M) log V) time and O(N + M) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, m = map(int, input().split())\n    a = [-2e11] + list(map(int, input().split()))\n    b = [-2e11] + list(map(int, input().split()))\n\n    a = sorted(a)\n    b = sorted(b)\n\n    l = 0\n    r = 2e10\n\n    def check(x):\n\n        i = 1\n        j = 1\n\n        while j <= m and i <= n:\n\n            while i <= n and  j <= m and (b[j] - x <= a[i] <= b[j] + x): i += 1\n\n            j += 1\n        \n        if i > n: return True\n        else: return False\n\n\n    while l < r:\n        mid = (l + r) // 2\n        if check(mid): r = mid\n        else: l = mid + 1\n\n    \n    print(int(l))\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "binary-search-on-answer",
+      "topics": [
+        "binary-search-on-answer",
+        "two-pointers",
+        "comparison-sorting"
+      ],
+      "level_label": "Div.1 · Div.2 · C",
+      "difficulty_label": "Div.1 · Div.2 · C",
+      "rating": 1500,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1500",
+      "rating_source": "manual",
+      "topic_paths": {
+        "binary-search-on-answer": [
+          "search",
+          "binary-search-on-answer"
+        ],
+        "two-pointers": [
+          "fundamentals",
+          "two-pointers"
+        ],
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
+        ]
+      }
+    },
+    {
       "id": "cses:1641",
       "platform": "cses",
       "problem_id": "1641",
@@ -510,7 +563,7 @@
       "problem_id": "index.php",
       "title": "Index.php",
       "platform_meta": {},
-      "url": "https://usaco.org/index.php?page=viewproblem2&cpid=643",
+      "url": "https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh",
       "attempts": [
         {
           "date": "2026-09-21",
@@ -518,12 +571,30 @@
           "source_file": "solutions/fundamentals/two-pointers/usaco-index.php/2026-09-21.py",
           "note": "Idea: Sort the diamond sizes and use a monotonic right pointer to compute the largest valid group starting at each position. Build suffix maxima of these group sizes and combine two non-overlapping groups.\nKey observation: After sorting, every valid group forms a contiguous interval, and the right endpoint never moves backward as the left endpoint increases.\nComplexity: O(N log N) time and O(N) space.",
           "code": "# @url https://usaco.org/index.php?page=viewproblem2&cpid=643\n# @primary two-pointers\n# @topics comparison-sorting\n# @note\n# Idea: Sort the diamond sizes and use a monotonic right pointer to compute the largest valid group starting at each position. Build suffix maxima of these group sizes and combine two non-overlapping groups.\n# Key observation: After sorting, every valid group forms a contiguous interval, and the right endpoint never moves backward as the left endpoint increases.\n# Complexity: O(N log N) time and O(N) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\ndef solve():\n\n    n, k = map(int, input().strip().split())\n    a = [-1]\n    res = 0\n    for i in range(n): a.append(int(input().strip()))\n    a.sort()\n    pre = [0 for _ in range(n + 5)]\n    bac = [0 for _ in range(n + 5)]\n    r = 1\n    for i in range(1, n + 1):\n        while r <= n and abs(a[r] - a[i]) <= k: r += 1\n        pre[i] = r - i\n    r = n\n    for i in range(n, 0, -1):\n        bac[i] = max(bac[i + 1], pre[i])\n    res = 0\n    for i in range(1, n):\n        res = max(res, pre[i] + bac[i + pre[i]])\n    print(res)\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        },
+        {
+          "date": "2026-09-22",
+          "language": "Python",
+          "source_file": "solutions/search/binary-search-on-answer/usaco-index.php/2026-09-22-2.py",
+          "note": "Idea: Sort the haybale positions and binary search the minimum explosion radius. For each candidate radius, greedily start coverage from the leftmost uncovered haybale and cover every haybale within an interval of length 2R before using another cow.\nKey observation: Covering the leftmost uncovered haybale as far to the right as possible is optimal for a fixed radius, and if radius R is feasible then every larger radius is also feasible.\nComplexity: O(N log N + N log V) time and O(N) space.",
+          "code": "# @url https://usaco.org/index.php?page=viewproblem2&cpid=594&lang=en\n# @primary binary-search-on-answer\n# @topics binary-search-on-answer, interval-covering, comparison-sorting\n# @note\n# Idea: Sort the haybale positions and binary search the minimum explosion radius. For each candidate radius, greedily start coverage from the leftmost uncovered haybale and cover every haybale within an interval of length 2R before using another cow.\n# Key observation: Covering the leftmost uncovered haybale as far to the right as possible is optimal for a fixed radius, and if radius R is feasible then every larger radius is also feasible.\n# Complexity: O(N log N + N log V) time and O(N) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, k = map(int, input().split())\n    a = [-1] \n    for _ in range(n):\n        a.append(int(input().rstrip()))\n    a = sorted(a)\n\n    l = 0\n    r = 1e10\n\n    def check(x):\n\n        i = 0\n        now = 1\n        right = a[1] + 2 * x\n        while i <= n:\n            \n            i += 1\n            if i <= n and a[i] > right:\n                now += 1\n                if now > k: return False\n                right = a[i] + 2 * x\n        \n        return True\n            \n    while l < r:\n        mid = (l + r) // 2\n        if check(mid): r = mid\n        else: l = mid + 1\n    \n    print(int(l))\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        },
+        {
+          "date": "2026-09-22",
+          "language": "Python",
+          "source_file": "solutions/search/binary-search-on-answer/usaco-index.php/2026-09-22.py",
+          "note": "Idea: Sort the cow arrival times and binary search the minimum allowed maximum waiting time. For each candidate value, greedily process cows from left to right, filling the current bus before starting the next one when the waiting-time or capacity condition requires it.\nKey observation: If all cows can be transported with maximum waiting time x using at most M buses, then any larger waiting time is also feasible, so feasibility is monotonic.\nComplexity: O(N log N + N log V) time and O(N) space.",
+          "code": "# @url https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh\n# @primary binary-search-on-answer\n# @topics binary-search-on-answer, sorting-greedy, comparison-sorting\n# @note\n# Idea: Sort the cow arrival times and binary search the minimum allowed maximum waiting time. For each candidate value, greedily process cows from left to right, filling the current bus before starting the next one when the waiting-time or capacity condition requires it.\n# Key observation: If all cows can be transported with maximum waiting time x using at most M buses, then any larger waiting time is also feasible, so feasibility is monotonic.\n# Complexity: O(N log N + N log V) time and O(N) space.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    iiii = input()\n    n, m, c = map(int, input().split())\n    t = [-1] + list(map(int, input().split()))\n\n    t = sorted(t)\n\n    l = 0\n    r = 1e10\n\n    def check(x):\n\n        now = 1\n        mval = t[1] + x\n        h = 0\n        for i in range(1, n + 1):\n            # need new car\n            if t[i] > mval or h > c:\n                now += 1\n                mval = t[i] + x\n                h = 1\n                if now > m: return False\n                continue\n\n            h += 1\n\n\n        return True\n\n    while l < r:\n        mid = (l + r) // 2\n        if check(mid): r = mid\n        else: l = mid + 1\n\n    print(int(l))\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
         }
       ],
-      "primary_topic": "two-pointers",
+      "primary_topic": "binary-search-on-answer",
       "topics": [
         "two-pointers",
-        "comparison-sorting"
+        "comparison-sorting",
+        "binary-search",
+        "points-and-vectors",
+        "binary-search-on-answer",
+        "sorting-greedy"
       ],
       "level_label": "—",
       "difficulty_label": "—",
@@ -540,6 +611,22 @@
           "fundamentals",
           "sorting",
           "comparison-sorting"
+        ],
+        "binary-search": [
+          "search",
+          "binary-search"
+        ],
+        "points-and-vectors": [
+          "computational-geometry",
+          "points-and-vectors"
+        ],
+        "binary-search-on-answer": [
+          "search",
+          "binary-search-on-answer"
+        ],
+        "sorting-greedy": [
+          "greedy",
+          "sorting-greedy"
         ]
       }
     }

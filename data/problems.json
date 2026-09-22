@@ -227,6 +227,37 @@
       ]
     },
     {
+      "id": "codeforces:702:C",
+      "platform": "codeforces",
+      "problem_id": "702C",
+      "title": "Codeforces 702C",
+      "platform_meta": {
+        "contest_id": 702,
+        "problem_index": "C",
+        "rating": 1500,
+        "divisions": [
+          "div1",
+          "div2"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/702/problem/C",
+      "attempts": [
+        {
+          "date": "2026-09-22",
+          "language": "Python",
+          "source_file": "solutions/search/binary-search-on-answer/codeforces-702C/2026-09-22.py",
+          "note": "Idea: Sort the city and tower positions, then binary search the minimum radius. For each candidate radius, scan the cities and towers with two pointers and advance past every city covered by the current tower.\nKey observation: If radius r covers every city, then every radius greater than r is also feasible, so the feasibility condition is monotonic and can be binary searched.\nComplexity: O(N log N + M log M + (N + M) log V) time and O(N + M) space."
+        }
+      ],
+      "primary_topic": "binary-search-on-answer",
+      "topics": [
+        "binary-search-on-answer",
+        "two-pointers",
+        "comparison-sorting"
+      ]
+    },
+    {
       "id": "cses:1641",
       "platform": "cses",
       "problem_id": "1641",
@@ -304,19 +335,35 @@
       "problem_id": "index.php",
       "title": "Index.php",
       "platform_meta": {},
-      "url": "https://usaco.org/index.php?page=viewproblem2&cpid=643",
+      "url": "https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh",
       "attempts": [
         {
           "date": "2026-09-21",
           "language": "Python",
           "source_file": "solutions/fundamentals/two-pointers/usaco-index.php/2026-09-21.py",
           "note": "Idea: Sort the diamond sizes and use a monotonic right pointer to compute the largest valid group starting at each position. Build suffix maxima of these group sizes and combine two non-overlapping groups.\nKey observation: After sorting, every valid group forms a contiguous interval, and the right endpoint never moves backward as the left endpoint increases.\nComplexity: O(N log N) time and O(N) space."
+        },
+        {
+          "date": "2026-09-22",
+          "language": "Python",
+          "source_file": "solutions/search/binary-search-on-answer/usaco-index.php/2026-09-22-2.py",
+          "note": "Idea: Sort the haybale positions and binary search the minimum explosion radius. For each candidate radius, greedily start coverage from the leftmost uncovered haybale and cover every haybale within an interval of length 2R before using another cow.\nKey observation: Covering the leftmost uncovered haybale as far to the right as possible is optimal for a fixed radius, and if radius R is feasible then every larger radius is also feasible.\nComplexity: O(N log N + N log V) time and O(N) space."
+        },
+        {
+          "date": "2026-09-22",
+          "language": "Python",
+          "source_file": "solutions/search/binary-search-on-answer/usaco-index.php/2026-09-22.py",
+          "note": "Idea: Sort the cow arrival times and binary search the minimum allowed maximum waiting time. For each candidate value, greedily process cows from left to right, filling the current bus before starting the next one when the waiting-time or capacity condition requires it.\nKey observation: If all cows can be transported with maximum waiting time x using at most M buses, then any larger waiting time is also feasible, so feasibility is monotonic.\nComplexity: O(N log N + N log V) time and O(N) space."
         }
       ],
-      "primary_topic": "two-pointers",
+      "primary_topic": "binary-search-on-answer",
       "topics": [
         "two-pointers",
-        "comparison-sorting"
+        "comparison-sorting",
+        "binary-search",
+        "points-and-vectors",
+        "binary-search-on-answer",
+        "sorting-greedy"
       ]
     }
   ]

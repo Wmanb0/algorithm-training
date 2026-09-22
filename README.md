@@ -4,18 +4,18 @@
 
 ## Statistics
 
-- Training days: **2**
-- Problems solved: **12**
-- Training attempts: **12**
+- Training days: **3**
+- Problems solved: **13**
+- Training attempts: **15**
 - Platforms: **5**
-- Topics used: **19**
+- Topics used: **22**
 
 ### By Platform
 
 | Platform | Problems |
 |---|---:|
 | AtCoder | 5 |
-| Codeforces | 3 |
+| Codeforces | 4 |
 | LeetCode | 2 |
 | Cses | 1 |
 | Usaco | 1 |
@@ -24,14 +24,17 @@
 
 | Topic | Problems |
 |---|---:|
-| Comparison Sorting | 4 |
+| Comparison Sorting | 5 |
 | Enumeration | 3 |
+| Two Pointers | 3 |
+| Binary Search on Answer | 2 |
 | Case Analysis | 2 |
 | Hash Map | 2 |
 | Prefix Sum | 2 |
-| Two Pointers | 2 |
+| Sorting-based Greedy | 2 |
 | Arithmetic | 1 |
 | Array | 1 |
+| Binary Search | 1 |
 | Constructive Algorithms | 1 |
 | Exchange Argument | 1 |
 | General Dynamic Programming | 1 |
@@ -40,11 +43,19 @@
 | Incremental Construction | 1 |
 | Monotonic Stack | 1 |
 | Ordered Map | 1 |
+| Points and Vectors | 1 |
 | Simulation | 1 |
-| Sorting-based Greedy | 1 |
 | Stack | 1 |
 
 ## Daily Log
+
+### 2026-09-22
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [Codeforces 702C](https://codeforces.com/contest/702/problem/C) | Codeforces | Div.1 · Div.2 · C | CF 1500 | Binary Search on Answer, Two Pointers, Comparison Sorting |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
 
 ### 2026-09-21
 
@@ -54,7 +65,7 @@
 | [Codeforces 1398C](https://codeforces.com/contest/1398/problem/C) | Codeforces | C | CF 1600 | Prefix Sum, Hash Map |
 | [Codeforces 1826D](https://codeforces.com/contest/1826/problem/D) | Codeforces | D | — | General Dynamic Programming, Enumeration |
 | [Codeforces 2008E](https://codeforces.com/contest/2008/problem/E) | Codeforces | E | — | Enumeration, Case Analysis, Incremental Construction |
-| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=643) | Usaco | — | — | Two Pointers, Comparison Sorting |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
 
 ### 2026-09-20
 
