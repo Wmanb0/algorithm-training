@@ -147,6 +147,35 @@
       ]
     },
     {
+      "id": "codeforces:1117:C",
+      "platform": "codeforces",
+      "problem_id": "1117C",
+      "title": "Codeforces 1117C",
+      "platform_meta": {
+        "contest_id": 1117,
+        "problem_index": "C",
+        "rating": 1900,
+        "divisions": [
+          "div2"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/problemset/problem/1117/C",
+      "attempts": [
+        {
+          "date": "2026-09-23",
+          "language": "Python",
+          "source_file": "solutions/search/binary-search-on-answer/codeforces-1117C/2026-09-23.py",
+          "note": "Idea: Binary search the minimum number of days. For each candidate x, compute the wind displacement from x // N complete forecast cycles and simulate the remaining x % N days, then check whether the destination is within Manhattan distance x of the resulting position.\nKey observation: After x days of wind, the ship can compensate by at most x Manhattan-distance units through its own movement. Thus x is feasible exactly when the remaining Manhattan distance is at most x, and feasibility is monotonic.\nComplexity: O(N log V) time and O(N) space, where V = 10^18."
+        }
+      ],
+      "primary_topic": "binary-search-on-answer",
+      "topics": [
+        "binary-search-on-answer",
+        "string-simulation"
+      ]
+    },
+    {
       "id": "codeforces:1398:C",
       "platform": "codeforces",
       "problem_id": "1398C",
@@ -255,6 +284,27 @@
         "binary-search-on-answer",
         "two-pointers",
         "comparison-sorting"
+      ]
+    },
+    {
+      "id": "cses:1085",
+      "platform": "cses",
+      "problem_id": "1085",
+      "title": "1085",
+      "platform_meta": {},
+      "url": "https://cses.fi/problemset/task/1085/",
+      "attempts": [
+        {
+          "date": "2026-09-23",
+          "language": "Python",
+          "source_file": "solutions/search/binary-search-on-answer/cses-1085/2026-09-23.py",
+          "note": "Idea: Binary search the minimum possible maximum subarray sum. For each candidate value, greedily extend the current subarray while its sum stays within the limit, starting a new subarray whenever adding the next value would exceed it.\nKey observation: For a fixed maximum sum x, greedily making each subarray as long as possible minimizes the number of required subarrays. If x is feasible using at most K subarrays, every larger value is also feasible.\nComplexity: O(N log V) time and O(N) space, where V = sum(a) - max(a) + 1."
+        }
+      ],
+      "primary_topic": "binary-search-on-answer",
+      "topics": [
+        "binary-search-on-answer",
+        "general-greedy"
       ]
     },
     {

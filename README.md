@@ -4,20 +4,20 @@
 
 ## Statistics
 
-- Training days: **3**
-- Problems solved: **13**
-- Training attempts: **15**
+- Training days: **4**
+- Problems solved: **15**
+- Training attempts: **17**
 - Platforms: **5**
-- Topics used: **22**
+- Topics used: **23**
 
 ### By Platform
 
 | Platform | Problems |
 |---|---:|
 | AtCoder | 5 |
-| Codeforces | 4 |
+| Codeforces | 5 |
+| Cses | 2 |
 | LeetCode | 2 |
-| Cses | 1 |
 | Usaco | 1 |
 
 ### By Topic
@@ -25,10 +25,11 @@
 | Topic | Problems |
 |---|---:|
 | Comparison Sorting | 5 |
+| Binary Search on Answer | 4 |
 | Enumeration | 3 |
 | Two Pointers | 3 |
-| Binary Search on Answer | 2 |
 | Case Analysis | 2 |
+| General Greedy | 2 |
 | Hash Map | 2 |
 | Prefix Sum | 2 |
 | Sorting-based Greedy | 2 |
@@ -38,7 +39,6 @@
 | Constructive Algorithms | 1 |
 | Exchange Argument | 1 |
 | General Dynamic Programming | 1 |
-| General Greedy | 1 |
 | Implementation | 1 |
 | Incremental Construction | 1 |
 | Monotonic Stack | 1 |
@@ -46,8 +46,16 @@
 | Points and Vectors | 1 |
 | Simulation | 1 |
 | Stack | 1 |
+| String Simulation | 1 |
 
 ## Daily Log
+
+### 2026-09-23
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [1085](https://cses.fi/problemset/task/1085/) | Cses | — | — | Binary Search on Answer, General Greedy |
+| [Codeforces 1117C](https://codeforces.com/problemset/problem/1117/C) | Codeforces | Div.2 · C | CF 1900 | Binary Search on Answer, String Simulation |
 
 ### 2026-09-22
 
