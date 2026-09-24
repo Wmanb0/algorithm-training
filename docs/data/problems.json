@@ -233,6 +233,47 @@
       }
     },
     {
+      "id": "codeforces:1117:A",
+      "platform": "codeforces",
+      "problem_id": "1117A",
+      "title": "Codeforces 1117A",
+      "platform_meta": {
+        "contest_id": 1117,
+        "problem_index": "A",
+        "rating": 1100,
+        "divisions": [
+          "div2"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/1117/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-24",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/implementation/codeforces-1117A/2026-09-24.py",
+          "note": "Idea: Find the maximum array value, then scan the array and measure the length of every consecutive run consisting only of that maximum value. Keep the longest such run.\nKey observation: The maximum possible subarray average equals the maximum element of the array, and a subarray achieves this average only if every element in it equals that maximum.\nComplexity: O(N) time and O(N) space.",
+          "code": "# @url https://codeforces.com/contest/1117/problem/A\n# @primary implementation\n# @topics implementation\n# @rating 1100\n# @division div2\n# @note\n# Idea: Find the maximum array value, then scan the array and measure the length of every consecutive run consisting only of that maximum value. Keep the longest such run.\n# Key observation: The maximum possible subarray average equals the maximum element of the array, and a subarray achieves this average only if every element in it equals that maximum.\n# Complexity: O(N) time and O(N) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n = int(input().strip())\n    a = list(map(int, input().split()))\n\n    v = max(a)\n    res = 0\n    i = 0\n\n    while i < n:\n        r = 0\n\n        while i < n and a[i] == v:\n            r += 1\n            i += 1\n\n        res = max(res, r)\n        i += 1\n\n    print(res)\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "implementation",
+      "topics": [
+        "implementation"
+      ],
+      "level_label": "Div.2 · A",
+      "difficulty_label": "Div.2 · A",
+      "rating": 1100,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1100",
+      "rating_source": "manual",
+      "topic_paths": {
+        "implementation": [
+          "fundamentals",
+          "implementation"
+        ]
+      }
+    },
+    {
       "id": "codeforces:1117:C",
       "platform": "codeforces",
       "problem_id": "1117C",
@@ -275,6 +316,53 @@
         "string-simulation": [
           "strings",
           "string-simulation"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:1158:A",
+      "platform": "codeforces",
+      "problem_id": "1158A",
+      "title": "Codeforces 1158A",
+      "platform_meta": {
+        "contest_id": 1158,
+        "problem_index": "A",
+        "rating": 1500,
+        "divisions": [
+          "div1"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/problemset/problem/1158/A",
+      "attempts": [
+        {
+          "date": "2026-09-24",
+          "language": "Python",
+          "source_file": "solutions/greedy/sorting-greedy/codeforces-1158A/2026-09-24.py",
+          "note": "Idea: Reject the instance if the largest boy minimum exceeds the smallest girl maximum. Otherwise start from the baseline where every boy gives his minimum to every girl, then greedily add the extra amounts required to realize each girl's maximum while handling the smallest girl maximum separately when necessary.\nKey observation: All entries should remain at their boy minimum unless they must be increased to realize a girl's required maximum; these increases should use the largest boy minimum whenever possible, while preserving at least one occurrence of that boy's original minimum.\nComplexity: O(N log N + M log M) time and O(N + M) space.",
+          "code": "# @url https://codeforces.com/problemset/problem/1158/A\n# @primary sorting-greedy\n# @topics sorting-greedy, comparison-sorting\n# @rating 1500\n# @division div1\n# @note\n# Idea: Reject the instance if the largest boy minimum exceeds the smallest girl maximum. Otherwise start from the baseline where every boy gives his minimum to every girl, then greedily add the extra amounts required to realize each girl's maximum while handling the smallest girl maximum separately when necessary.\n# Key observation: All entries should remain at their boy minimum unless they must be increased to realize a girl's required maximum; these increases should use the largest boy minimum whenever possible, while preserving at least one occurrence of that boy's original minimum.\n# Complexity: O(N log N + M log M) time and O(N + M) space.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, m = map(int, input().strip().split())\n    a = list(map(int, input().strip().split()))\n    b = list(map(int, input().strip().split()))\n\n    if max(a) > min(b):\n        print(-1)\n        return\n\n    a = sorted(a, reverse=True)\n    b = sorted(b, reverse=True)\n    res = int(m * sum(a))\n\n    for i in range(m):\n        if b[i] > a[0] and i != m - 1: res += b[i] - a[0]\n        if i == m - 1 and n > 1 and b[i] > a[0]: res += b[i] - a[1]\n\n    print(res)            \n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "sorting-greedy",
+      "topics": [
+        "sorting-greedy",
+        "comparison-sorting"
+      ],
+      "level_label": "Div.1 · A",
+      "difficulty_label": "Div.1 · A",
+      "rating": 1500,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1500",
+      "rating_source": "manual",
+      "topic_paths": {
+        "sorting-greedy": [
+          "greedy",
+          "sorting-greedy"
+        ],
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
         ]
       }
     },
@@ -467,6 +555,53 @@
       }
     },
     {
+      "id": "codeforces:762:B",
+      "platform": "codeforces",
+      "problem_id": "762B",
+      "title": "Codeforces 762B",
+      "platform_meta": {
+        "contest_id": 762,
+        "problem_index": "B",
+        "rating": 1400,
+        "divisions": [
+          "div2"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/762/problem/B",
+      "attempts": [
+        {
+          "date": "2026-09-24",
+          "language": "Python",
+          "source_file": "solutions/greedy/sorting-greedy/codeforces-762B/2026-09-24.py",
+          "note": "Idea: Sort all devices by price and process them from cheapest to most expensive. Buy each device using a compatible dedicated port if available, otherwise use a universal port, until no compatible port remains.\nKey observation: Since every purchased device contributes exactly one unit to the device count, processing prices in ascending order ensures that for any achievable number of purchases, the chosen compatible devices have minimum total cost.\nComplexity: O(N log N) time and O(N) space.",
+          "code": "# @url https://codeforces.com/contest/762/problem/B\n# @primary sorting-greedy\n# @topics sorting-greedy, comparison-sorting\n# @rating 1400\n# @division div2\n# @note\n# Idea: Sort all devices by price and process them from cheapest to most expensive. Buy each device using a compatible dedicated port if available, otherwise use a universal port, until no compatible port remains.\n# Key observation: Since every purchased device contributes exactly one unit to the device count, processing prices in ascending order ensures that for any achievable number of purchases, the chosen compatible devices have minimum total cost.\n# Complexity: O(N log N) time and O(N) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    a, b, c = map(int, input().split())\n    n = int(input().strip())\n    list_m = []\n    for _ in range(n):\n        t = input().strip().split()\n        list_m.append([int(t[0]), t[1]])\n\n    list_m = sorted(list_m)\n    res = a + b + c\n    p = 0\n    for i in range(n):\n        if list_m[i][1] == 'USB':\n            if a > 0: \n                a -= 1\n                p += list_m[i][0]\n            elif c > 0:\n                c -= 1\n                p += list_m[i][0]\n        else:\n            if b > 0: \n                b -= 1\n                p += list_m[i][0]\n            elif c > 0: \n                c -= 1\n                p += list_m[i][0]\n\n            \n    print(res - a - b - c, p)\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "sorting-greedy",
+      "topics": [
+        "sorting-greedy",
+        "comparison-sorting"
+      ],
+      "level_label": "Div.2 · B",
+      "difficulty_label": "Div.2 · B",
+      "rating": 1400,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1400",
+      "rating_source": "manual",
+      "topic_paths": {
+        "sorting-greedy": [
+          "greedy",
+          "sorting-greedy"
+        ],
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
+        ]
+      }
+    },
+    {
       "id": "cses:1085",
       "platform": "cses",
       "problem_id": "1085",
@@ -501,6 +636,45 @@
         "general-greedy": [
           "greedy",
           "general-greedy"
+        ]
+      }
+    },
+    {
+      "id": "cses:1630",
+      "platform": "cses",
+      "problem_id": "1630",
+      "title": "1630",
+      "platform_meta": {},
+      "url": "https://cses.fi/problemset/task/1630",
+      "attempts": [
+        {
+          "date": "2026-09-24",
+          "language": "Python",
+          "source_file": "solutions/greedy/sorting-greedy/cses-1630/2026-09-24.py",
+          "note": "Idea: Sort the tasks by duration in ascending order, execute them in that order, and accumulate each reward as deadline minus its completion time.\nKey observation: The sum of deadlines is independent of task order, so maximizing total reward is equivalent to minimizing the sum of completion times; placing shorter tasks before longer tasks minimizes that sum.\nComplexity: O(N log N) time and O(N) space.",
+          "code": "# @url https://cses.fi/problemset/task/1630\n# @primary sorting-greedy\n# @topics sorting-greedy, comparison-sorting\n# @note\n# Idea: Sort the tasks by duration in ascending order, execute them in that order, and accumulate each reward as deadline minus its completion time.\n# Key observation: The sum of deadlines is independent of task order, so maximizing total reward is equivalent to minimizing the sum of completion times; placing shorter tasks before longer tasks minimizes that sum.\n# Complexity: O(N log N) time and O(N) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n = int(input().strip())\n    t = []\n    for _ in range(n):\n        a, d = map(int, input().split())\n        t.append([a, d])\n    t = sorted(t, key=lambda x : (x[0], -x[1]))\n    res = 0\n    now = 0\n\n    for i in range(n):\n        now += t[i][0] \n        res += t[i][1] - now\n\n    print(res)\n\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "sorting-greedy",
+      "topics": [
+        "sorting-greedy",
+        "comparison-sorting"
+      ],
+      "level_label": "—",
+      "difficulty_label": "—",
+      "rating": null,
+      "rating_system": null,
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "sorting-greedy": [
+          "greedy",
+          "sorting-greedy"
+        ],
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
         ]
       }
     },
@@ -647,7 +821,7 @@
       "problem_id": "index.php",
       "title": "Index.php",
       "platform_meta": {},
-      "url": "https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh",
+      "url": "https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en",
       "attempts": [
         {
           "date": "2026-09-21",
@@ -669,9 +843,16 @@
           "source_file": "solutions/search/binary-search-on-answer/usaco-index.php/2026-09-22.py",
           "note": "Idea: Sort the cow arrival times and binary search the minimum allowed maximum waiting time. For each candidate value, greedily process cows from left to right, filling the current bus before starting the next one when the waiting-time or capacity condition requires it.\nKey observation: If all cows can be transported with maximum waiting time x using at most M buses, then any larger waiting time is also feasible, so feasibility is monotonic.\nComplexity: O(N log N + N log V) time and O(N) space.",
           "code": "# @url https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh\n# @primary binary-search-on-answer\n# @topics binary-search-on-answer, sorting-greedy, comparison-sorting\n# @note\n# Idea: Sort the cow arrival times and binary search the minimum allowed maximum waiting time. For each candidate value, greedily process cows from left to right, filling the current bus before starting the next one when the waiting-time or capacity condition requires it.\n# Key observation: If all cows can be transported with maximum waiting time x using at most M buses, then any larger waiting time is also feasible, so feasibility is monotonic.\n# Complexity: O(N log N + N log V) time and O(N) space.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    iiii = input()\n    n, m, c = map(int, input().split())\n    t = [-1] + list(map(int, input().split()))\n\n    t = sorted(t)\n\n    l = 0\n    r = 1e10\n\n    def check(x):\n\n        now = 1\n        mval = t[1] + x\n        h = 0\n        for i in range(1, n + 1):\n            # need new car\n            if t[i] > mval or h > c:\n                now += 1\n                mval = t[i] + x\n                h = 1\n                if now > m: return False\n                continue\n\n            h += 1\n\n\n        return True\n\n    while l < r:\n        mid = (l + r) // 2\n        if check(mid): r = mid\n        else: l = mid + 1\n\n    print(int(l))\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        },
+        {
+          "date": "2026-09-24",
+          "language": "Python",
+          "source_file": "solutions/greedy/sorting-greedy/usaco-index.php/2026-09-24.py",
+          "note": "Idea: Split Elsie's cards into the two halves of the game and sort them in the required directions. Use Bessie's larger cards to greedily beat as many cards as possible in the first half, then use her smaller cards to greedily play below as many cards as possible in the second half.\nKey observation: In each half, using the weakest card that can still win preserves stronger or smaller useful cards for later rounds, so the sorted greedy matching maximizes the number of wins.\nComplexity: O(N log N) time and O(N) space.",
+          "code": "# @url https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en\n# @primary sorting-greedy\n# @topics sorting-greedy, two-pointers, comparison-sorting\n# @note\n# Idea: Split Elsie's cards into the two halves of the game and sort them in the required directions. Use Bessie's larger cards to greedily beat as many cards as possible in the first half, then use her smaller cards to greedily play below as many cards as possible in the second half.\n# Key observation: In each half, using the weakest card that can still win preserves stronger or smaller useful cards for later rounds, so the sorted greedy matching maximizes the number of wins.\n# Complexity: O(N log N) time and O(N) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n = int(input())\n\n    a = []\n    k = {}\n    b = []\n    for _ in range(n):\n        t = int(input().strip())\n        k[t] = 1\n        a.append(t)\n    for i in range(1, 2 * n + 1):\n        if k.get(i, 0) == 0: b.append(i)\n\n    d = a[:n // 2]\n    d = sorted(d)\n    dd = a[n // 2:]\n    dd = sorted(dd, reverse=True)\n\n    res = 0\n    j = 0\n    bb = b[n // 2:]\n    for i in range(n // 2):\n\n        if bb[i] > d[j]:\n            j += 1\n            res += 1\n\n\n    j = 0\n    bbb = b[:n // 2]\n    bbb = sorted(bbb, reverse=True)\n    for i in range(n // 2):\n        if bbb[i] < dd[j]:\n            j += 1\n            res += 1\n\n    print(res)\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
         }
       ],
-      "primary_topic": "binary-search-on-answer",
+      "primary_topic": "sorting-greedy",
       "topics": [
         "two-pointers",
         "comparison-sorting",

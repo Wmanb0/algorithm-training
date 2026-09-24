@@ -4,9 +4,9 @@
 
 ## Statistics
 
-- Training days: **4**
-- Problems solved: **15**
-- Training attempts: **17**
+- Training days: **5**
+- Problems solved: **19**
+- Training attempts: **22**
 - Platforms: **5**
 - Topics used: **23**
 
@@ -14,9 +14,9 @@
 
 | Platform | Problems |
 |---|---:|
+| Codeforces | 8 |
 | AtCoder | 5 |
-| Codeforces | 5 |
-| Cses | 2 |
+| Cses | 3 |
 | LeetCode | 2 |
 | Usaco | 1 |
 
@@ -24,22 +24,22 @@
 
 | Topic | Problems |
 |---|---:|
-| Comparison Sorting | 5 |
+| Comparison Sorting | 8 |
+| Sorting-based Greedy | 5 |
 | Binary Search on Answer | 4 |
 | Enumeration | 3 |
 | Two Pointers | 3 |
 | Case Analysis | 2 |
 | General Greedy | 2 |
 | Hash Map | 2 |
+| Implementation | 2 |
 | Prefix Sum | 2 |
-| Sorting-based Greedy | 2 |
 | Arithmetic | 1 |
 | Array | 1 |
 | Binary Search | 1 |
 | Constructive Algorithms | 1 |
 | Exchange Argument | 1 |
 | General Dynamic Programming | 1 |
-| Implementation | 1 |
 | Incremental Construction | 1 |
 | Monotonic Stack | 1 |
 | Ordered Map | 1 |
@@ -49,6 +49,16 @@
 | String Simulation | 1 |
 
 ## Daily Log
+
+### 2026-09-24
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [1630](https://cses.fi/problemset/task/1630) | Cses | — | — | Sorting-based Greedy, Comparison Sorting |
+| [Codeforces 1117A](https://codeforces.com/contest/1117/problem/A) | Codeforces | Div.2 · A | CF 1100 | Implementation |
+| [Codeforces 1158A](https://codeforces.com/problemset/problem/1158/A) | Codeforces | Div.1 · A | CF 1500 | Sorting-based Greedy, Comparison Sorting |
+| [Codeforces 762B](https://codeforces.com/contest/762/problem/B) | Codeforces | Div.2 · B | CF 1400 | Sorting-based Greedy, Comparison Sorting |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
 
 ### 2026-09-23
 
@@ -62,8 +72,8 @@
 | Problem | Platform | Level | Rating | Topics |
 |---|---|---|---:|---|
 | [Codeforces 702C](https://codeforces.com/contest/702/problem/C) | Codeforces | Div.1 · Div.2 · C | CF 1500 | Binary Search on Answer, Two Pointers, Comparison Sorting |
-| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
-| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
 
 ### 2026-09-21
 
@@ -73,7 +83,7 @@
 | [Codeforces 1398C](https://codeforces.com/contest/1398/problem/C) | Codeforces | C | CF 1600 | Prefix Sum, Hash Map |
 | [Codeforces 1826D](https://codeforces.com/contest/1826/problem/D) | Codeforces | D | — | General Dynamic Programming, Enumeration |
 | [Codeforces 2008E](https://codeforces.com/contest/2008/problem/E) | Codeforces | E | — | Enumeration, Case Analysis, Incremental Construction |
-| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=858&lang=zh) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
 
 ### 2026-09-20
 
