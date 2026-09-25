@@ -4,17 +4,17 @@
 
 ## Statistics
 
-- Training days: **5**
-- Problems solved: **19**
-- Training attempts: **22**
+- Training days: **6**
+- Problems solved: **23**
+- Training attempts: **26**
 - Platforms: **5**
-- Topics used: **23**
+- Topics used: **24**
 
 ### By Platform
 
 | Platform | Problems |
 |---|---:|
-| Codeforces | 8 |
+| Codeforces | 12 |
 | AtCoder | 5 |
 | Cses | 3 |
 | LeetCode | 2 |
@@ -24,17 +24,18 @@
 
 | Topic | Problems |
 |---|---:|
-| Comparison Sorting | 8 |
-| Sorting-based Greedy | 5 |
+| Comparison Sorting | 10 |
+| Sorting-based Greedy | 6 |
 | Binary Search on Answer | 4 |
+| Hash Map | 4 |
+| Two Pointers | 4 |
 | Enumeration | 3 |
-| Two Pointers | 3 |
+| Arithmetic | 2 |
 | Case Analysis | 2 |
 | General Greedy | 2 |
-| Hash Map | 2 |
 | Implementation | 2 |
 | Prefix Sum | 2 |
-| Arithmetic | 1 |
+| String Simulation | 2 |
 | Array | 1 |
 | Binary Search | 1 |
 | Constructive Algorithms | 1 |
@@ -44,11 +45,20 @@
 | Monotonic Stack | 1 |
 | Ordered Map | 1 |
 | Points and Vectors | 1 |
+| Prime Factorization | 1 |
 | Simulation | 1 |
 | Stack | 1 |
-| String Simulation | 1 |
 
 ## Daily Log
+
+### 2026-09-25
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [Codeforces 2267A](https://codeforces.com/contest/2267/problem/A) | Codeforces | A | — | Two Pointers, String Simulation |
+| [Codeforces 2267B](https://codeforces.com/contest/2267/problem/B) | Codeforces | B | — | Comparison Sorting, Hash Map |
+| [Codeforces 2267C](https://codeforces.com/contest/2267/problem/c) | Codeforces | C | — | Prime Factorization, Arithmetic |
+| [Codeforces 2267D](https://codeforces.com/contest/2267/problem/D) | Codeforces | D | — | Sorting-based Greedy, Comparison Sorting, Hash Map |
 
 ### 2026-09-24
 

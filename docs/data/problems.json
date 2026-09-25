@@ -502,6 +502,186 @@
       }
     },
     {
+      "id": "codeforces:2267:A",
+      "platform": "codeforces",
+      "problem_id": "2267A",
+      "title": "Codeforces 2267A",
+      "platform_meta": {
+        "contest_id": 2267,
+        "problem_index": "A",
+        "rating": null,
+        "divisions": []
+      },
+      "url": "https://codeforces.com/contest/2267/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/two-pointers/codeforces-2267A/2026-09-25.py",
+          "note": "Idea: Use two pointers from both ends of the string. For every mismatched mirrored pair, add two changes, but subtract one if either character already equals the target character c.\nKey observation: Each mirrored pair is independent: equal characters need no change, while a mismatched pair costs two operations unless one side is already c, in which case only one additional change is needed.\nComplexity: O(N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2267/problem/A\n# @primary two-pointers\n# @topics two-pointers, string-simulation\n# @note\n# Idea: Use two pointers from both ends of the string. For every mismatched mirrored pair, add two changes, but subtract one if either character already equals the target character c.\n# Key observation: Each mirrored pair is independent: equal characters need no change, while a mismatched pair costs two operations unless one side is already c, in which case only one additional change is needed.\n# Complexity: O(N) time and O(N) space per test case.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n, c = input().strip().split()\n    n = int(n)\n\n    s = input()\n\n    i = 0\n    j = n - 1\n    res = 0\n    while i < j:\n        if s[i] != s[j]:\n            res += 2\n            if s[i] == c or s[j] == c:\n                res -= 1\n        i += 1\n        j -= 1\n    print(res)\n\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "two-pointers",
+      "topics": [
+        "two-pointers",
+        "string-simulation"
+      ],
+      "level_label": "A",
+      "difficulty_label": "A",
+      "rating": null,
+      "rating_system": "codeforces",
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "two-pointers": [
+          "fundamentals",
+          "two-pointers"
+        ],
+        "string-simulation": [
+          "strings",
+          "string-simulation"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2267:B",
+      "platform": "codeforces",
+      "problem_id": "2267B",
+      "title": "Codeforces 2267B",
+      "platform_meta": {
+        "contest_id": 2267,
+        "problem_index": "B",
+        "rating": null,
+        "divisions": []
+      },
+      "url": "https://codeforces.com/contest/2267/problem/B",
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/sorting/comparison-sorting/codeforces-2267B/2026-09-25.py",
+          "note": "Idea: Count the frequency of every value, sort the distinct values in descending order, then repeatedly scan them and output one remaining copy of each value until all elements are printed.\nKey observation: Each pass outputs every currently available distinct value exactly once in descending order, while the frequency table determines how many future passes each value survives.\nComplexity: O(N + U log U + NU) time and O(N + U) space per test case, where U is the number of distinct values.",
+          "code": "# @url https://codeforces.com/contest/2267/problem/B\n# @primary comparison-sorting\n# @topics comparison-sorting, hash-map\n# @note\n# Idea: Count the frequency of every value, sort the distinct values in descending order, then repeatedly scan them and output one remaining copy of each value until all elements are printed.\n# Key observation: Each pass outputs every currently available distinct value exactly once in descending order, while the frequency table determines how many future passes each value survives.\n# Complexity: O(N + U log U + NU) time and O(N + U) space per test case, where U is the number of distinct values.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input())\n    l = list(map(int, input().strip().split()))\n\n    k = {}\n    for i in range(n):\n        k[l[i]] = k.get(l[i], 0) + 1\n\n    \n    l = list(set(l))\n    l = sorted(l, reverse=True)\n    cnt = 0\n    while cnt < n:\n\n        for i in l:\n            if k[i] > 0:\n                k[i] -= 1\n                print(i, end=' ')\n                cnt += 1\n    print()\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "comparison-sorting",
+      "topics": [
+        "comparison-sorting",
+        "hash-map"
+      ],
+      "level_label": "B",
+      "difficulty_label": "B",
+      "rating": null,
+      "rating_system": "codeforces",
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
+        ],
+        "hash-map": [
+          "data-structures",
+          "hash-map"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2267:C",
+      "platform": "codeforces",
+      "problem_id": "2267C",
+      "title": "Codeforces 2267C",
+      "platform_meta": {
+        "contest_id": 2267,
+        "problem_index": "C",
+        "rating": null,
+        "divisions": []
+      },
+      "url": "https://codeforces.com/contest/2267/problem/c",
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "language": "Python",
+          "source_file": "solutions/mathematics/number-theory/prime-factorization/codeforces-2267C/2026-09-25.py",
+          "note": "Idea: Extract all distinct prime factors of m by trial division. For each prime factor p, scan the array and sum every element divisible by p, then take the maximum such sum.\nKey observation: Only distinct prime divisors of m need to be considered, and for a fixed divisor p the required contribution is exactly the sum of array elements divisible by p.\nComplexity: O(sqrt(M) + NP) time and O(P) space per test case, where P is the number of distinct prime factors of M.",
+          "code": "# @url https://codeforces.com/contest/2267/problem/c\n# @primary prime-factorization\n# @topics prime-factorization, arithmetic\n# @note\n# Idea: Extract all distinct prime factors of m by trial division. For each prime factor p, scan the array and sum every element divisible by p, then take the maximum such sum.\n# Key observation: Only distinct prime divisors of m need to be considered, and for a fixed divisor p the required contribution is exactly the sum of array elements divisible by p.\n# Complexity: O(sqrt(M) + NP) time and O(P) space per test case, where P is the number of distinct prime factors of M.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n, m = map(int, input().strip().split())\n\n    a = list(map(int, input().strip().split()))\n\n    p = []\n\n    d = 2\n    while d <= m // d:\n\n        if m % d == 0:\n            p.append(d)\n            while m % d == 0:\n                m //= d\n        d += 1\n\n    if m > 1: p.append(m)\n\n    res = 0\n\n    for i in p:\n        v = 0\n        for j in range(n):\n            if a[j] % i == 0:\n                v += a[j]\n\n        res = max(res, v)\n\n    print(res)\n\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "prime-factorization",
+      "topics": [
+        "prime-factorization",
+        "arithmetic"
+      ],
+      "level_label": "C",
+      "difficulty_label": "C",
+      "rating": null,
+      "rating_system": "codeforces",
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "prime-factorization": [
+          "mathematics",
+          "number-theory",
+          "prime-factorization"
+        ],
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2267:D",
+      "platform": "codeforces",
+      "problem_id": "2267D",
+      "title": "Codeforces 2267D",
+      "platform_meta": {
+        "contest_id": 2267,
+        "problem_index": "D",
+        "rating": null,
+        "divisions": []
+      },
+      "url": "https://codeforces.com/contest/2267/problem/D",
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "language": "Python",
+          "source_file": "solutions/greedy/sorting-greedy/codeforces-2267D/2026-09-25.py",
+          "note": "Idea: Separate values by their original index parity and sort both groups. Construct a candidate sequence by repeatedly taking the smallest available value of the required parity that is at least the previous value; after reaching n, rebuild the remaining values in descending order and continue by taking the largest valid value below the previous one.\nKey observation: Values can only be selected from the parity class required by the current position, so the construction greedily chooses the closest feasible value in the required direction while frequency maps prevent reusing elements.\nComplexity: O(N log N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2267/problem/D\n# @primary sorting-greedy\n# @topics sorting-greedy, comparison-sorting, hash-map\n# @note\n# Idea: Separate values by their original index parity and sort both groups. Construct a candidate sequence by repeatedly taking the smallest available value of the required parity that is at least the previous value; after reaching n, rebuild the remaining values in descending order and continue by taking the largest valid value below the previous one.\n# Key observation: Values can only be selected from the parity class required by the current position, so the construction greedily chooses the closest feasible value in the required direction while frequency maps prevent reusing elements.\n# Complexity: O(N log N) time and O(N) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input())\n\n    a = [0] + list(map(int, input().strip().split()))\n    od = {}\n    ev = {}\n    odl = []\n    evl = []\n    m = 1\n    for i in range(1, n + 1):\n        if i % 2 != 0: \n            od[a[i]] = od.get(a[i], 0) + 1\n            odl.append(a[i])\n        else: \n            if a[i] == n: m = 2\n            evl.append(a[i])\n            ev[a[i]] = ev.get(a[i], 0) + 1\n\n    flag = 0\n\n    for i in range(1, n):\n        if a[i] < a[i - 1]: flag = 1\n    if not flag: return \"YES\"\n    \n\n    odl = sorted(odl)\n    evl = sorted(evl)\n    resl = [0]\n    flag = 0\n    # flag == 0 的时候没有找到 n\n    k, j = 0, 0\n    cnt = 0\n    # 找大的，找小的\n    len_evl = len(evl)\n    len_odl = len(odl)\n    for i in range(1, n + 1):\n        if flag == 0:\n            if i % 2 == 0:\n                while k < len_evl and evl[k] < resl[cnt]: k += 1\n                if k < len_evl: \n                    resl.append(evl[k])\n                    cnt += 1\n                    ev[evl[k]] -= 1 #这个数有没有被用过\n                    if evl[k] == n: flag = 1\n                \n            else:\n                while j < len_odl and odl[j] < resl[cnt]: j += 1\n                if j < len_odl: \n                    resl.append(odl[j])\n                    cnt += 1\n                    od[odl[j]] -= 1\n                    if odl[j] == n: flag = 1\n                \n        else:\n            if flag == 1:\n                odll = []\n                evll = []\n                for ttt in ev:\n                    if ev[ttt] > 0: evll.append(ttt)\n                for ttt in od:\n                    if od[ttt] > 0: odll.append(ttt)\n                flag += 1\n                k, j = 0, 0\n                odll = sorted(odll, reverse=True)\n                evll = sorted(evll, reverse=True)\n                lk = len(evll)\n                lj = len(odll)\n\n                if i % 2 == 0:\n                    while k < lk and evll[k] > resl[cnt]: k += 1\n                    if k < lk: \n                        resl.append(evll[k])\n                        cnt += 1\n                else:\n                    while j < lj and odll[j] > resl[cnt]: j += 1\n                    if j < lj: \n                        resl.append(odll[j])\n                        cnt += 1\n            else:\n                if i % 2 == 0:\n                    while k < lk and evll[k] > resl[cnt]: k += 1\n                    if k < lk: \n                        resl.append(evll[k])\n                        cnt += 1\n                else:\n                    while j < lj and odll[j] > resl[cnt]: j += 1\n                    if j < lj: \n                        resl.append(odll[j])\n                        cnt += 1\n\n    if len(resl) - 1 == n: return \"YES\"\n    else: return \"NO\"\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        print(solve_case())\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "sorting-greedy",
+      "topics": [
+        "sorting-greedy",
+        "comparison-sorting",
+        "hash-map"
+      ],
+      "level_label": "D",
+      "difficulty_label": "D",
+      "rating": null,
+      "rating_system": "codeforces",
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "sorting-greedy": [
+          "greedy",
+          "sorting-greedy"
+        ],
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
+        ],
+        "hash-map": [
+          "data-structures",
+          "hash-map"
+        ]
+      }
+    },
+    {
       "id": "codeforces:702:C",
       "platform": "codeforces",
       "problem_id": "702C",

@@ -313,6 +313,111 @@
       ]
     },
     {
+      "id": "codeforces:2267:A",
+      "platform": "codeforces",
+      "problem_id": "2267A",
+      "title": "Codeforces 2267A",
+      "platform_meta": {
+        "contest_id": 2267,
+        "problem_index": "A",
+        "rating": null,
+        "divisions": []
+      },
+      "url": "https://codeforces.com/contest/2267/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/two-pointers/codeforces-2267A/2026-09-25.py",
+          "note": "Idea: Use two pointers from both ends of the string. For every mismatched mirrored pair, add two changes, but subtract one if either character already equals the target character c.\nKey observation: Each mirrored pair is independent: equal characters need no change, while a mismatched pair costs two operations unless one side is already c, in which case only one additional change is needed.\nComplexity: O(N) time and O(N) space per test case."
+        }
+      ],
+      "primary_topic": "two-pointers",
+      "topics": [
+        "two-pointers",
+        "string-simulation"
+      ]
+    },
+    {
+      "id": "codeforces:2267:B",
+      "platform": "codeforces",
+      "problem_id": "2267B",
+      "title": "Codeforces 2267B",
+      "platform_meta": {
+        "contest_id": 2267,
+        "problem_index": "B",
+        "rating": null,
+        "divisions": []
+      },
+      "url": "https://codeforces.com/contest/2267/problem/B",
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/sorting/comparison-sorting/codeforces-2267B/2026-09-25.py",
+          "note": "Idea: Count the frequency of every value, sort the distinct values in descending order, then repeatedly scan them and output one remaining copy of each value until all elements are printed.\nKey observation: Each pass outputs every currently available distinct value exactly once in descending order, while the frequency table determines how many future passes each value survives.\nComplexity: O(N + U log U + NU) time and O(N + U) space per test case, where U is the number of distinct values."
+        }
+      ],
+      "primary_topic": "comparison-sorting",
+      "topics": [
+        "comparison-sorting",
+        "hash-map"
+      ]
+    },
+    {
+      "id": "codeforces:2267:C",
+      "platform": "codeforces",
+      "problem_id": "2267C",
+      "title": "Codeforces 2267C",
+      "platform_meta": {
+        "contest_id": 2267,
+        "problem_index": "C",
+        "rating": null,
+        "divisions": []
+      },
+      "url": "https://codeforces.com/contest/2267/problem/c",
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "language": "Python",
+          "source_file": "solutions/mathematics/number-theory/prime-factorization/codeforces-2267C/2026-09-25.py",
+          "note": "Idea: Extract all distinct prime factors of m by trial division. For each prime factor p, scan the array and sum every element divisible by p, then take the maximum such sum.\nKey observation: Only distinct prime divisors of m need to be considered, and for a fixed divisor p the required contribution is exactly the sum of array elements divisible by p.\nComplexity: O(sqrt(M) + NP) time and O(P) space per test case, where P is the number of distinct prime factors of M."
+        }
+      ],
+      "primary_topic": "prime-factorization",
+      "topics": [
+        "prime-factorization",
+        "arithmetic"
+      ]
+    },
+    {
+      "id": "codeforces:2267:D",
+      "platform": "codeforces",
+      "problem_id": "2267D",
+      "title": "Codeforces 2267D",
+      "platform_meta": {
+        "contest_id": 2267,
+        "problem_index": "D",
+        "rating": null,
+        "divisions": []
+      },
+      "url": "https://codeforces.com/contest/2267/problem/D",
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "language": "Python",
+          "source_file": "solutions/greedy/sorting-greedy/codeforces-2267D/2026-09-25.py",
+          "note": "Idea: Separate values by their original index parity and sort both groups. Construct a candidate sequence by repeatedly taking the smallest available value of the required parity that is at least the previous value; after reaching n, rebuild the remaining values in descending order and continue by taking the largest valid value below the previous one.\nKey observation: Values can only be selected from the parity class required by the current position, so the construction greedily chooses the closest feasible value in the required direction while frequency maps prevent reusing elements.\nComplexity: O(N log N) time and O(N) space per test case."
+        }
+      ],
+      "primary_topic": "sorting-greedy",
+      "topics": [
+        "sorting-greedy",
+        "comparison-sorting",
+        "hash-map"
+      ]
+    },
+    {
       "id": "codeforces:702:C",
       "platform": "codeforces",
       "problem_id": "702C",
