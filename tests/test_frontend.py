@@ -50,6 +50,16 @@ class FrontendTests(unittest.TestCase):
         self.assertIn("function problemRating(problem)", script)
         self.assertIn('selected === "codeforces" || selected === "atcoder"', script)
 
+    def test_scrollable_problem_table_and_analytics_exist(self):
+        html = (PROJECT_ROOT / "docs/index.html").read_text(encoding="utf-8")
+        css = (PROJECT_ROOT / "docs/style.css").read_text(encoding="utf-8")
+        script = (PROJECT_ROOT / "docs/app.js").read_text(encoding="utf-8")
+        for chart_id in ("activityChart", "platformChart", "languageChart", "topicChart"):
+            self.assertIn(f'id="{chart_id}"', html)
+        self.assertIn("max-height: min(680px, 72vh)", css)
+        self.assertIn("position: sticky", css)
+        self.assertIn("function renderAnalytics(problems)", script)
+
 
 if __name__ == "__main__":
     unittest.main()

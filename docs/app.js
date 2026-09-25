@@ -6,6 +6,7 @@ const state = {
   topicChildren: new Map(),
   selectedProblem: null,
   ratingPlatform: "",
+  charts: new Map(),
 };
 
 const elements = {};
@@ -102,6 +103,159 @@ function countBy(values) {
   const counts = new Map();
   values.forEach((value) => counts.set(value, (counts.get(value) || 0) + 1));
   return counts;
+}
+
+const chartColors = [
+  "#2563eb", "#14b8a6", "#8b5cf6", "#f59e0b", "#ec4899",
+  "#22c55e", "#06b6d4", "#f97316", "#6366f1", "#84cc16",
+];
+
+function sortedCounts(values, limit = Number.POSITIVE_INFINITY) {
+  return [...countBy(values).entries()]
+    .sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])))
+    .slice(0, limit);
+}
+
+function matchingAttempts(problems) {
+  const from = elements.dateFrom.value;
+  const to = elements.dateTo.value;
+  return problems.flatMap((problem) => (problem.attempts || []).filter((attempt) => (
+    (!from || attempt.date >= from) && (!to || attempt.date <= to)
+  )));
+}
+
+function chartOptions(extra = {}) {
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    interaction: { intersect: false, mode: "nearest" },
+    plugins: {
+      legend: {
+        position: "bottom",
+        labels: { color: "#475569", boxWidth: 11, boxHeight: 11, padding: 14, usePointStyle: true },
+      },
+      tooltip: {
+        backgroundColor: "#172033",
+        titleColor: "#ffffff",
+        bodyColor: "#ffffff",
+        padding: 10,
+        cornerRadius: 7,
+      },
+    },
+    ...extra,
+  };
+}
+
+function drawChart(name, config, hasData) {
+  const canvas = elements[`${name}Chart`];
+  const empty = elements[`${name}ChartEmpty`];
+  const previous = state.charts.get(name);
+  if (previous) previous.destroy();
+  state.charts.delete(name);
+  canvas.hidden = !hasData;
+  empty.hidden = hasData;
+  if (!hasData || !window.Chart) {
+    if (!window.Chart && hasData) {
+      canvas.hidden = true;
+      empty.hidden = false;
+      empty.textContent = "Chart library could not be loaded";
+    }
+    return;
+  }
+  empty.textContent = `No matching ${name} data`;
+  state.charts.set(name, new window.Chart(canvas, config));
+}
+
+function renderAnalytics(problems) {
+  const attempts = matchingAttempts(problems);
+
+  const activity = [...countBy(attempts.map((attempt) => attempt.date)).entries()]
+    .sort((a, b) => a[0].localeCompare(b[0]));
+  drawChart("activity", {
+    type: "line",
+    data: {
+      labels: activity.map(([date]) => date),
+      datasets: [{
+        label: "Attempts",
+        data: activity.map(([, count]) => count),
+        borderColor: "#2563eb",
+        backgroundColor: "rgba(37, 99, 235, 0.12)",
+        borderWidth: 2,
+        pointBackgroundColor: "#2563eb",
+        pointRadius: 3,
+        pointHoverRadius: 5,
+        tension: 0.28,
+        fill: true,
+      }],
+    },
+    options: chartOptions({
+      plugins: { ...chartOptions().plugins, legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: "#64748b", maxRotation: 0, autoSkip: true, maxTicksLimit: 12 } },
+        y: { beginAtZero: true, grid: { color: "#edf2f7" }, ticks: { color: "#64748b", precision: 0 } },
+      },
+    }),
+  }, activity.length > 0);
+
+  const platforms = sortedCounts(problems.map((problem) => problem.platform));
+  drawChart("platform", {
+    type: "doughnut",
+    data: {
+      labels: platforms.map(([platform]) => platformLabel(platform)),
+      datasets: [{
+        data: platforms.map(([, count]) => count),
+        backgroundColor: chartColors.slice(0, platforms.length),
+        borderColor: "#ffffff",
+        borderWidth: 3,
+        hoverOffset: 5,
+      }],
+    },
+    options: chartOptions({ cutout: "64%" }),
+  }, platforms.length > 0);
+
+  const languages = sortedCounts(attempts.map((attempt) => attempt.language || "Unknown"));
+  drawChart("language", {
+    type: "doughnut",
+    data: {
+      labels: languages.map(([language]) => language),
+      datasets: [{
+        data: languages.map(([, count]) => count),
+        backgroundColor: chartColors.slice(0, languages.length),
+        borderColor: "#ffffff",
+        borderWidth: 3,
+        hoverOffset: 5,
+      }],
+    },
+    options: chartOptions({ cutout: "64%" }),
+  }, languages.length > 0);
+
+  const topics = sortedCounts(
+    problems.map((problem) => problem.primary_topic || problem.topics?.[0]).filter(Boolean),
+    10,
+  );
+  drawChart("topic", {
+    type: "bar",
+    data: {
+      labels: topics.map(([topic]) => state.topics.get(topic)?.name || topic),
+      datasets: [{
+        label: "Problems",
+        data: topics.map(([, count]) => count),
+        backgroundColor: topics.map((_, index) => `${chartColors[index % chartColors.length]}cc`),
+        borderColor: topics.map((_, index) => chartColors[index % chartColors.length]),
+        borderWidth: 1,
+        borderRadius: 5,
+      }],
+    },
+    options: chartOptions({
+      indexAxis: "y",
+      plugins: { ...chartOptions().plugins, legend: { display: false } },
+      scales: {
+        x: { beginAtZero: true, grid: { color: "#edf2f7" }, ticks: { color: "#64748b", precision: 0 } },
+        y: { grid: { display: false }, ticks: { color: "#475569" } },
+      },
+    }),
+  }, topics.length > 0);
 }
 
 function option(select, value, label) {
@@ -307,6 +461,7 @@ function renderProblems() {
   elements.resultCount.textContent = String(problems.length);
   elements.problemRows.replaceChildren();
   elements.emptyState.hidden = problems.length > 0;
+  renderAnalytics(problems);
 
   problems.forEach((problem) => {
     const row = document.createElement("tr");
@@ -448,6 +603,8 @@ async function initialize() {
     "platformCounts", "topicCounts", "platformTotal", "topicTotal", "problemDialog",
     "dialogPlatform", "dialogTitle", "dialogMeta", "dialogProblemLink", "attemptSelect",
     "dialogNote", "dialogCode", "codeLanguage", "closeDialog", "copyCode", "loadError",
+    "activityChart", "activityChartEmpty", "platformChart", "platformChartEmpty",
+    "languageChart", "languageChartEmpty", "topicChart", "topicChartEmpty",
   ].forEach((id) => { elements[id] = byId(id); });
 
   bindEvents();

@@ -28,6 +28,58 @@
         <article class="stat"><span>Longest streak</span><strong id="longestStreak">0</strong><small>days</small></article>
       </section>
 
+      <section class="analytics-panel" aria-labelledby="analyticsTitle">
+        <div class="analytics-heading">
+          <div>
+            <p class="eyebrow">DATA OVERVIEW</p>
+            <h2 id="analyticsTitle">Training Analytics</h2>
+          </div>
+          <span>Charts follow the active filters</span>
+        </div>
+        <div class="analytics-grid">
+          <article class="chart-card chart-card-wide">
+            <div class="chart-title">
+              <h3>Activity Timeline</h3>
+              <span>Attempts by training date</span>
+            </div>
+            <div class="chart-frame chart-frame-wide">
+              <canvas id="activityChart" aria-label="Attempts by training date"></canvas>
+              <p class="chart-empty" id="activityChartEmpty" hidden>No matching activity data</p>
+            </div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-title">
+              <h3>Platforms</h3>
+              <span>Unique problems</span>
+            </div>
+            <div class="chart-frame">
+              <canvas id="platformChart" aria-label="Problems by platform"></canvas>
+              <p class="chart-empty" id="platformChartEmpty" hidden>No matching platform data</p>
+            </div>
+          </article>
+          <article class="chart-card">
+            <div class="chart-title">
+              <h3>Solution Languages</h3>
+              <span>Recorded attempts</span>
+            </div>
+            <div class="chart-frame">
+              <canvas id="languageChart" aria-label="Attempts by programming language"></canvas>
+              <p class="chart-empty" id="languageChartEmpty" hidden>No matching language data</p>
+            </div>
+          </article>
+          <article class="chart-card chart-card-wide">
+            <div class="chart-title">
+              <h3>Primary Topics</h3>
+              <span>Top 10 by problem count</span>
+            </div>
+            <div class="chart-frame chart-frame-topics">
+              <canvas id="topicChart" aria-label="Problems by primary topic"></canvas>
+              <p class="chart-empty" id="topicChartEmpty" hidden>No matching topic data</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="workspace">
         <div class="records-panel">
           <div class="filters" aria-label="Problem filters">
@@ -159,6 +211,7 @@
       Could not load notebook data. Run <code>python scripts/manage.py build</code> and refresh.
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
     <script src="./app.js" defer></script>
   </body>
 </html>
