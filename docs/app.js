@@ -155,6 +155,7 @@ function drawChart(name, config, hasData) {
   state.charts.delete(name);
   canvas.hidden = !hasData;
   empty.hidden = hasData;
+  if (name === "activity") elements.resetActivityZoom.disabled = !hasData;
   if (!hasData || !window.Chart) {
     if (!window.Chart && hasData) {
       canvas.hidden = true;
@@ -190,7 +191,19 @@ function renderAnalytics(problems) {
       }],
     },
     options: chartOptions({
-      plugins: { ...chartOptions().plugins, legend: { display: false } },
+      plugins: {
+        ...chartOptions().plugins,
+        legend: { display: false },
+        zoom: {
+          limits: { x: { minRange: 2 } },
+          pan: { enabled: true, mode: "x" },
+          zoom: {
+            wheel: { enabled: true, speed: 0.08 },
+            pinch: { enabled: true },
+            mode: "x",
+          },
+        },
+      },
       scales: {
         x: { grid: { display: false }, ticks: { color: "#64748b", maxRotation: 0, autoSkip: true, maxTicksLimit: 12 } },
         y: { beginAtZero: true, grid: { color: "#edf2f7" }, ticks: { color: "#64748b", precision: 0 } },
@@ -577,6 +590,10 @@ function bindEvents() {
     renderProblems();
   });
   elements.resetFilters.addEventListener("click", resetFilters);
+  elements.resetActivityZoom.addEventListener("click", () => {
+    const chart = state.charts.get("activity");
+    if (chart?.resetZoom) chart.resetZoom();
+  });
   elements.closeDialog.addEventListener("click", () => elements.problemDialog.close());
   elements.problemDialog.addEventListener("click", (event) => {
     if (event.target === elements.problemDialog) elements.problemDialog.close();
@@ -605,6 +622,7 @@ async function initialize() {
     "dialogNote", "dialogCode", "codeLanguage", "closeDialog", "copyCode", "loadError",
     "activityChart", "activityChartEmpty", "platformChart", "platformChartEmpty",
     "languageChart", "languageChartEmpty", "topicChart", "topicChartEmpty",
+    "resetActivityZoom",
   ].forEach((id) => { elements[id] = byId(id); });
 
   bindEvents();

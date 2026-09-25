@@ -38,9 +38,12 @@
         </div>
         <div class="analytics-grid">
           <article class="chart-card chart-card-wide">
-            <div class="chart-title">
-              <h3>Activity Timeline</h3>
-              <span>Attempts by training date</span>
+            <div class="chart-title activity-chart-title">
+              <div>
+                <h3>Activity Timeline</h3>
+                <span>Mouse wheel or pinch to zoom · drag to pan</span>
+              </div>
+              <button class="chart-reset-button" id="resetActivityZoom" type="button">Reset zoom</button>
             </div>
             <div class="chart-frame chart-frame-wide">
               <canvas id="activityChart" aria-label="Attempts by training date"></canvas>
@@ -212,6 +215,8 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.2.0/dist/chartjs-plugin-zoom.min.js" defer></script>
     <script src="./app.js" defer></script>
   </body>
 </html>

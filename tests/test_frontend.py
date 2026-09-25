@@ -56,9 +56,12 @@ class FrontendTests(unittest.TestCase):
         script = (PROJECT_ROOT / "docs/app.js").read_text(encoding="utf-8")
         for chart_id in ("activityChart", "platformChart", "languageChart", "topicChart"):
             self.assertIn(f'id="{chart_id}"', html)
+        self.assertIn('id="resetActivityZoom"', html)
+        self.assertIn("chartjs-plugin-zoom", html)
         self.assertIn("max-height: min(680px, 72vh)", css)
         self.assertIn("position: sticky", css)
         self.assertIn("function renderAnalytics(problems)", script)
+        self.assertIn('state.charts.get("activity")', script)
 
 
 if __name__ == "__main__":
