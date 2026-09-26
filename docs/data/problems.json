@@ -233,6 +233,190 @@
       }
     },
     {
+      "id": "atcoder:abc477_a",
+      "platform": "atcoder",
+      "problem_id": "ABC477_A",
+      "title": "AtCoder ABC477 A",
+      "platform_meta": {
+        "contest_id": "abc477",
+        "contest_series": "ABC",
+        "problem_index": "A",
+        "task_id": "abc477_a",
+        "difficulty_rating": 17,
+        "difficulty_raw": -870.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc477/tasks/abc477_a",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/implementation/atcoder-ABC477_A/2026-09-26.py",
+          "note": "Idea: Read the current traffic-light color and directly output the next color in the fixed cycle B -> Y -> R -> B.\nKey observation: There are only three possible input states, so the next state can be determined with constant-time case analysis.\nComplexity: O(1) time and O(1) space.",
+          "code": "# @url https://atcoder.jp/contests/abc477/tasks/abc477_a\n# @primary implementation\n# @topics implementation\n# @note\n# Idea: Read the current traffic-light color and directly output the next color in the fixed cycle B -> Y -> R -> B.\n# Key observation: There are only three possible input states, so the next state can be determined with constant-time case analysis.\n# Complexity: O(1) time and O(1) space.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    c = input().strip()\n    \n    if c == 'B':print(\"Y\")\n    elif c == 'Y': print(\"R\")\n    else:print(\"B\")\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "implementation",
+      "topics": [
+        "implementation"
+      ],
+      "level_label": "ABC · A",
+      "difficulty_label": "ABC · A",
+      "rating": 17,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈17",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "implementation": [
+          "fundamentals",
+          "implementation"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc477_b",
+      "platform": "atcoder",
+      "problem_id": "ABC477_B",
+      "title": "AtCoder ABC477 B",
+      "platform_meta": {
+        "contest_id": "abc477",
+        "contest_series": "ABC",
+        "problem_index": "B",
+        "task_id": "abc477_b",
+        "difficulty_rating": 79,
+        "difficulty_raw": -249.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc477/tasks/abc477_b",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/enumeration/atcoder-ABC477_B/2026-09-26.py",
+          "note": "Idea: For every person, scan all other people and check whether any distance is smaller than D. Output the indices for which no such person exists.\nKey observation: A person is valid exactly when every pairwise distance from that person to another person is at least D, so checking all ordered pairs directly is sufficient.\nComplexity: O(N^2) time and O(N) space.",
+          "code": "# @url https://atcoder.jp/contests/abc477/tasks/abc477_b\n# @primary enumeration\n# @topics enumeration, array\n# @note\n# Idea: For every person, scan all other people and check whether any distance is smaller than D. Output the indices for which no such person exists.\n# Key observation: A person is valid exactly when every pairwise distance from that person to another person is at least D, so checking all ordered pairs directly is sufficient.\n# Complexity: O(N^2) time and O(N) space.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, d = map(int, input().strip().split())\n    a = list(map(int, input().strip().split()))\n\n    res = []\n    for i in range(n):\n        t = 0\n        for j in range(n):\n            if j != i:\n                if abs(a[i] - a[j]) < d:\n                    t = 1\n        if t == 0: res.append(i + 1)\n\n    if len(res) == 0:print(0)\n    else:\n        print(len(res))\n        print(*res, end = ' ')\n\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "enumeration",
+      "topics": [
+        "enumeration",
+        "array"
+      ],
+      "level_label": "ABC · B",
+      "difficulty_label": "ABC · B",
+      "rating": 79,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈79",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "enumeration": [
+          "fundamentals",
+          "enumeration"
+        ],
+        "array": [
+          "data-structures",
+          "array"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc477_c",
+      "platform": "atcoder",
+      "problem_id": "ABC477_C",
+      "title": "AtCoder ABC477 C",
+      "platform_meta": {
+        "contest_id": "abc477",
+        "contest_series": "ABC",
+        "problem_index": "C",
+        "task_id": "abc477_c",
+        "difficulty_rating": 456,
+        "difficulty_raw": 456.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc477/tasks/abc477_c",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/search/binary-search/atcoder-ABC477_C/2026-09-26.py",
+          "note": "Idea: Enumerate every occurrence of t in s and store its start and end positions. For each query interval, use binary search on the sorted occurrence starts to find occurrences nearest to the left boundary and check whether one lies completely inside the interval.\nKey observation: Occurrence start positions are stored in increasing order, so only occurrences around the query's left boundary need to be inspected after binary search.\nComplexity: O(|S||T| + Q log M) time and O(M) space, where M is the number of occurrences of T in S.",
+          "code": "# @url https://atcoder.jp/contests/abc477/tasks/abc477_c\n# @primary binary-search\n# @topics binary-search, string-simulation\n# @note\n# Idea: Enumerate every occurrence of t in s and store its start and end positions. For each query interval, use binary search on the sorted occurrence starts to find occurrences nearest to the left boundary and check whether one lies completely inside the interval.\n# Key observation: Occurrence start positions are stored in increasing order, so only occurrences around the query's left boundary need to be inspected after binary search.\n# Complexity: O(|S||T| + Q log M) time and O(M) space, where M is the number of occurrences of T in S.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    Q = int(input().strip())\n    s = input().strip()\n    t = input().strip()\n    len_t = len(t)\n    len_s = len(s)\n    ls = []\n    for i in range(len_s - len_t + 1):\n        flag = 1\n        for j in range(len_t):\n            if s[i + j] != t[j]: flag = 0\n        if flag:\n            ls.append([i + 1, i + len_t])\n\n\n    len_ls = len(ls)\n    if len_ls == 0:\n        for _ in range(Q):\n            l, r = map(int, input().strip().split())\n            print(\"No\")\n    else:\n        for _ in range(Q):\n            l, r = map(int, input().strip().split())\n            if r - l + 1 < len_t:\n                print(\"No\")\n                continue\n            # t in s[l : r + 1]\n            # 最靠近l的\n            # 左边最靠近\n            ll = 0\n            rr = len_ls - 1\n            while ll < rr:\n                mid = (ll + rr) // 2\n                if ls[mid][0] >= l: rr = mid\n                else: ll = mid + 1\n\n            lll = 0\n            rrr = len_ls - 1\n            while lll < rrr:\n                mid = (lll + rrr + 1) // 2\n                if ls[mid][0] <= l: lll = mid\n                else: rrr = mid - 1\n\n\n            if (r >= ls[lll][1] and l <= ls[lll][0]) or (r >= ls[ll][1] and l <= ls[ll][0]): print(\"Yes\")\n            else: print(\"No\")\n\n\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "binary-search",
+      "topics": [
+        "binary-search",
+        "string-simulation"
+      ],
+      "level_label": "ABC · C",
+      "difficulty_label": "ABC · C",
+      "rating": 456,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈456",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "binary-search": [
+          "search",
+          "binary-search"
+        ],
+        "string-simulation": [
+          "strings",
+          "string-simulation"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc477_d",
+      "platform": "atcoder",
+      "problem_id": "ABC477_D",
+      "title": "AtCoder ABC477 D",
+      "platform_meta": {
+        "contest_id": "abc477",
+        "contest_series": "ABC",
+        "problem_index": "D",
+        "task_id": "abc477_d",
+        "difficulty_rating": 946,
+        "difficulty_raw": 946.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc477/tasks/abc477_d",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/offline-processing/atcoder-ABC477_D/2026-09-26.py",
+          "note": "Idea: Store all operations and process them in reverse. Maintain a set of positions whose final color is not yet determined; when a painting operation is encountered, assign its color to every currently unresolved exposed position, and reverse toggle operations update which positions are exposed.\nKey observation: Once a position receives its final color during reverse processing, it never needs to be colored again. Therefore each position is processed by the painting loops at most once overall.\nComplexity: O(N + Q) expected time and O(N + Q) space.",
+          "code": "# @url https://atcoder.jp/contests/abc477/tasks/abc477_d\n# @primary offline-processing\n# @topics offline-processing, hash-set, simulation\n# @note\n# Idea: Store all operations and process them in reverse. Maintain a set of positions whose final color is not yet determined; when a painting operation is encountered, assign its color to every currently unresolved exposed position, and reverse toggle operations update which positions are exposed.\n# Key observation: Once a position receives its final color during reverse processing, it never needs to be colored again. Therefore each position is processed by the painting loops at most once overall.\n# Complexity: O(N + Q) expected time and O(N + Q) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, q = map(int, input().strip().split())\n    s = [[0, []] for _ in range(n + 5)]\n    op = []\n    color = [[0, 'a']]\n    for _ in range(q):\n        a, b = input().strip().split()\n        a = int(a)\n        if a == 1: \n            op.append([a, int(b)])\n            s[int(b)][0] ^= 1   # 找上一次违背盖住\n        else: \n            color.append([_ + 1, b])\n            op.append([a, b])\n    \n\n    res = ['a' for _ in range(n + 5)]\n    last = [0 for _ in range(n + 5)] #是否确定\n    ss = set()\n    for i in range(1, n + 1):\n        if s[i][0] == 0:  #要是没有被盖住的话\n            ss.add(i)\n\n    # 倒着找\n    for i in range(q - 1, -1, -1):\n        a, b = op[i][0], op[i][1]\n\n        if a == 2: #如果涂色了\n            for j in ss:  #就把没旗子的涂上去\n                res[j] = b\n                last[j] = 1\n            ss.clear()\n        else:\n            if s[b][0] == 1:\n                s[b][0] = 0\n                if last[b] == 0:\n                    ss.add(b)\n            else:\n                s[b][0] = 1\n                ss.discard(b)\n\n    for i in range(1, n + 1):\n        print(res[i], end='')\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "offline-processing",
+      "topics": [
+        "offline-processing",
+        "hash-set",
+        "simulation"
+      ],
+      "level_label": "ABC · D",
+      "difficulty_label": "ABC · D",
+      "rating": 946,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈946",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "offline-processing": [
+          "fundamentals",
+          "offline-processing"
+        ],
+        "hash-set": [
+          "data-structures",
+          "hash-set"
+        ],
+        "simulation": [
+          "fundamentals",
+          "simulation"
+        ]
+      }
+    },
+    {
       "id": "codeforces:1117:A",
       "platform": "codeforces",
       "problem_id": "1117A",
@@ -678,6 +862,146 @@
         "hash-map": [
           "data-structures",
           "hash-map"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2269:A",
+      "platform": "codeforces",
+      "problem_id": "2269A",
+      "title": "Codeforces 2269A",
+      "platform_meta": {
+        "contest_id": 2269,
+        "problem_index": "A",
+        "rating": null,
+        "divisions": [
+          "div2"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2269/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/greedy/general-greedy/codeforces-2269A/2026-09-26.py",
+          "note": "Idea: Place the K withdrawal days at the end. Let the balance grow through the first N-K days, withdraw after the next doubling, then withdraw every remaining day while the account repeatedly resets to 1.\nKey observation: The withdrawal amounts are powers of two determined by the lengths of the K growth segments. Since their lengths are positive and sum to N, the total is maximized by making one segment as long as possible and all remaining segments length 1.\nComplexity: O(N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2269/problem/A\n# @primary general-greedy\n# @topics general-greedy, arithmetic\n# @division div2\n# @note\n# Idea: Place the K withdrawal days at the end. Let the balance grow through the first N-K days, withdraw after the next doubling, then withdraw every remaining day while the account repeatedly resets to 1.\n# Key observation: The withdrawal amounts are powers of two determined by the lengths of the K growth segments. Since their lengths are positive and sum to N, the total is maximized by making one segment as long as possible and all remaining segments length 1.\n# Complexity: O(N) time and O(N) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n, k = map(int, input().split())\n    p = [0] * (n + 1)\n    for i in range(k):\n        p[n - i] = 1\n    res = 0\n    t = 1\n    for i in range(1, n + 1):\n        if p[i] == 0: t *= 2\n        else:\n            t *= 2\n            res += t\n            t = 1\n    print(res)\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "general-greedy",
+      "topics": [
+        "general-greedy",
+        "arithmetic"
+      ],
+      "level_label": "Div.2 · A",
+      "difficulty_label": "Div.2 · A",
+      "rating": null,
+      "rating_system": "codeforces",
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "general-greedy": [
+          "greedy",
+          "general-greedy"
+        ],
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2269:B",
+      "platform": "codeforces",
+      "problem_id": "2269B",
+      "title": "Codeforces 2269B",
+      "platform_meta": {
+        "contest_id": 2269,
+        "problem_index": "B",
+        "rating": null,
+        "divisions": [
+          "div2"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2269/problem/B",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/graph-theory/functional-graph/codeforces-2269B/2026-09-26.py",
+          "note": "Idea: For every starting number, repeatedly replace it by the sum of squares of its digits while storing visited states and their indices until reaching either a fixed point or a cycle. Then compare every pair using their fixed points or their states at a common time inside their eventual cycles.\nKey observation: The digit-square transformation is deterministic, so every starting value eventually enters a fixed point or directed cycle. Two sequences are permanently identical exactly when they reach the same state at the same time and therefore follow the same deterministic suffix forever.\nComplexity: O(NL + N^2) time and O(NL) space per test case, where L is the maximum generated sequence length before repetition.",
+          "code": "# @url https://codeforces.com/contest/2269/problem/B\n# @primary functional-graph\n# @topics functional-graph, hash-map, simulation\n# @division div2\n# @note\n# Idea: For every starting number, repeatedly replace it by the sum of squares of its digits while storing visited states and their indices until reaching either a fixed point or a cycle. Then compare every pair using their fixed points or their states at a common time inside their eventual cycles.\n# Key observation: The digit-square transformation is deterministic, so every starting value eventually enters a fixed point or directed cycle. Two sequences are permanently identical exactly when they reach the same state at the same time and therefore follow the same deterministic suffix forever.\n# Complexity: O(NL + N^2) time and O(NL) space per test case, where L is the maximum generated sequence length before repetition.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a = [0] + input().strip().split()\n    b = [0] * (n + 1)\n    def solve(x):\n\n        t = 0\n        last = t\n        for i in x:\n            t += int(i) * int(i)\n        k = {}\n        p = []\n        q = 0\n        while t != last and k.get(t, -1) == -1:\n            last = t\n            k[last] = q\n            p.append(last)\n            q += 1\n\n            t = 0\n            for i in str(last):\n                t += int(i) * int(i)\n\n\n        if t == last: return [True, t]\n        else: return [False, q, p, k[t]]\n\n    for i in range(1, n + 1):\n        b[i] = solve(a[i])\n\n    res = 0\n    for i in range(1, n):\n        if b[i][0] == True:\n            for j in range(i + 1, n + 1):\n                if b[j][0] == True and b[j][1] == b[i][1]: res += 1\n        else:\n            for j in range(i + 1, n + 1):\n                if b[j][0] == False:\n                    l = max(b[i][3], b[j][3])\n\n                    if l < b[i][1]:\n                        x = b[i][2][l]\n                    else:\n                        x = b[i][2][b[i][3] + (l - b[i][3]) % (b[i][1] - b[i][3])]\n\n                    \n                    if l < b[j][1]:\n                        y = b[j][2][l]\n                    else:\n                        y = b[j][2][b[j][3] + (l - b[j][3]) % (b[j][1] - b[j][3])]\n                        \n                    if x == y:\n                        res += 1\n    print(res)\n    \n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "functional-graph",
+      "topics": [
+        "functional-graph",
+        "hash-map",
+        "simulation"
+      ],
+      "level_label": "Div.2 · B",
+      "difficulty_label": "Div.2 · B",
+      "rating": null,
+      "rating_system": "codeforces",
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "functional-graph": [
+          "graph-theory",
+          "functional-graph"
+        ],
+        "hash-map": [
+          "data-structures",
+          "hash-map"
+        ],
+        "simulation": [
+          "fundamentals",
+          "simulation"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2269:C",
+      "platform": "codeforces",
+      "problem_id": "2269C",
+      "title": "Codeforces 2269C",
+      "platform_meta": {
+        "contest_id": 2269,
+        "problem_index": "C",
+        "rating": null,
+        "divisions": [
+          "div2"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2269/problem/C",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/greedy/general-greedy/codeforces-2269C/2026-09-26.py",
+          "note": "Idea: Compute the total array sum and determine the minimum value that must remain uncollected. For each symmetric pair that can contribute one surviving element, subtract the smaller value, and when the middle section is forced to remain, subtract those elements as well.\nKey observation: The operation structure determines which symmetric positions compete for a surviving slot, so maximizing the collected score is equivalent to minimizing the remaining sum by keeping the smaller value from every available symmetric pair.\nComplexity: O(N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2269/problem/C\n# @primary general-greedy\n# @topics general-greedy, arithmetic\n# @division div2\n# @note\n# Idea: Compute the total array sum and determine the minimum value that must remain uncollected. For each symmetric pair that can contribute one surviving element, subtract the smaller value, and when the middle section is forced to remain, subtract those elements as well.\n# Key observation: The operation structure determines which symmetric positions compete for a surviving slot, so maximizing the collected score is equivalent to minimizing the remaining sum by keeping the smaller value from every available symmetric pair.\n# Complexity: O(N) time and O(N) space per test case.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n, k = map(int, input().strip().split())\n    a = [0] + list(map(int, input().strip().split()))\n    if k == 1:\n        print(sum(a))\n        return\n\n    d = n - k + 1\n    t = min(d, k - 1)\n\n    val = 0\n    for i in range(1, t + 1):\n        val += min(a[i], a[n - i + 1])\n\n    if k - 1 > d:\n        for i in range(d + 1, n - d + 1):\n            val += a[i]\n    \n    print(sum(a) - val)\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "general-greedy",
+      "topics": [
+        "general-greedy",
+        "arithmetic"
+      ],
+      "level_label": "Div.2 · C",
+      "difficulty_label": "Div.2 · C",
+      "rating": null,
+      "rating_system": "codeforces",
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "general-greedy": [
+          "greedy",
+          "general-greedy"
+        ],
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
         ]
       }
     },

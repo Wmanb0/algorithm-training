@@ -147,6 +147,122 @@
       ]
     },
     {
+      "id": "atcoder:abc477_a",
+      "platform": "atcoder",
+      "problem_id": "ABC477_A",
+      "title": "AtCoder ABC477 A",
+      "platform_meta": {
+        "contest_id": "abc477",
+        "contest_series": "ABC",
+        "problem_index": "A",
+        "task_id": "abc477_a",
+        "difficulty_rating": 17,
+        "difficulty_raw": -870.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc477/tasks/abc477_a",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/implementation/atcoder-ABC477_A/2026-09-26.py",
+          "note": "Idea: Read the current traffic-light color and directly output the next color in the fixed cycle B -> Y -> R -> B.\nKey observation: There are only three possible input states, so the next state can be determined with constant-time case analysis.\nComplexity: O(1) time and O(1) space."
+        }
+      ],
+      "primary_topic": "implementation",
+      "topics": [
+        "implementation"
+      ]
+    },
+    {
+      "id": "atcoder:abc477_b",
+      "platform": "atcoder",
+      "problem_id": "ABC477_B",
+      "title": "AtCoder ABC477 B",
+      "platform_meta": {
+        "contest_id": "abc477",
+        "contest_series": "ABC",
+        "problem_index": "B",
+        "task_id": "abc477_b",
+        "difficulty_rating": 79,
+        "difficulty_raw": -249.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc477/tasks/abc477_b",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/enumeration/atcoder-ABC477_B/2026-09-26.py",
+          "note": "Idea: For every person, scan all other people and check whether any distance is smaller than D. Output the indices for which no such person exists.\nKey observation: A person is valid exactly when every pairwise distance from that person to another person is at least D, so checking all ordered pairs directly is sufficient.\nComplexity: O(N^2) time and O(N) space."
+        }
+      ],
+      "primary_topic": "enumeration",
+      "topics": [
+        "enumeration",
+        "array"
+      ]
+    },
+    {
+      "id": "atcoder:abc477_c",
+      "platform": "atcoder",
+      "problem_id": "ABC477_C",
+      "title": "AtCoder ABC477 C",
+      "platform_meta": {
+        "contest_id": "abc477",
+        "contest_series": "ABC",
+        "problem_index": "C",
+        "task_id": "abc477_c",
+        "difficulty_rating": 456,
+        "difficulty_raw": 456.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc477/tasks/abc477_c",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/search/binary-search/atcoder-ABC477_C/2026-09-26.py",
+          "note": "Idea: Enumerate every occurrence of t in s and store its start and end positions. For each query interval, use binary search on the sorted occurrence starts to find occurrences nearest to the left boundary and check whether one lies completely inside the interval.\nKey observation: Occurrence start positions are stored in increasing order, so only occurrences around the query's left boundary need to be inspected after binary search.\nComplexity: O(|S||T| + Q log M) time and O(M) space, where M is the number of occurrences of T in S."
+        }
+      ],
+      "primary_topic": "binary-search",
+      "topics": [
+        "binary-search",
+        "string-simulation"
+      ]
+    },
+    {
+      "id": "atcoder:abc477_d",
+      "platform": "atcoder",
+      "problem_id": "ABC477_D",
+      "title": "AtCoder ABC477 D",
+      "platform_meta": {
+        "contest_id": "abc477",
+        "contest_series": "ABC",
+        "problem_index": "D",
+        "task_id": "abc477_d",
+        "difficulty_rating": 946,
+        "difficulty_raw": 946.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc477/tasks/abc477_d",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/offline-processing/atcoder-ABC477_D/2026-09-26.py",
+          "note": "Idea: Store all operations and process them in reverse. Maintain a set of positions whose final color is not yet determined; when a painting operation is encountered, assign its color to every currently unresolved exposed position, and reverse toggle operations update which positions are exposed.\nKey observation: Once a position receives its final color during reverse processing, it never needs to be colored again. Therefore each position is processed by the painting loops at most once overall.\nComplexity: O(N + Q) expected time and O(N + Q) space."
+        }
+      ],
+      "primary_topic": "offline-processing",
+      "topics": [
+        "offline-processing",
+        "hash-set",
+        "simulation"
+      ]
+    },
+    {
       "id": "codeforces:1117:A",
       "platform": "codeforces",
       "problem_id": "1117A",
@@ -415,6 +531,91 @@
         "sorting-greedy",
         "comparison-sorting",
         "hash-map"
+      ]
+    },
+    {
+      "id": "codeforces:2269:A",
+      "platform": "codeforces",
+      "problem_id": "2269A",
+      "title": "Codeforces 2269A",
+      "platform_meta": {
+        "contest_id": 2269,
+        "problem_index": "A",
+        "rating": null,
+        "divisions": [
+          "div2"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2269/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/greedy/general-greedy/codeforces-2269A/2026-09-26.py",
+          "note": "Idea: Place the K withdrawal days at the end. Let the balance grow through the first N-K days, withdraw after the next doubling, then withdraw every remaining day while the account repeatedly resets to 1.\nKey observation: The withdrawal amounts are powers of two determined by the lengths of the K growth segments. Since their lengths are positive and sum to N, the total is maximized by making one segment as long as possible and all remaining segments length 1.\nComplexity: O(N) time and O(N) space per test case."
+        }
+      ],
+      "primary_topic": "general-greedy",
+      "topics": [
+        "general-greedy",
+        "arithmetic"
+      ]
+    },
+    {
+      "id": "codeforces:2269:B",
+      "platform": "codeforces",
+      "problem_id": "2269B",
+      "title": "Codeforces 2269B",
+      "platform_meta": {
+        "contest_id": 2269,
+        "problem_index": "B",
+        "rating": null,
+        "divisions": [
+          "div2"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2269/problem/B",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/graph-theory/functional-graph/codeforces-2269B/2026-09-26.py",
+          "note": "Idea: For every starting number, repeatedly replace it by the sum of squares of its digits while storing visited states and their indices until reaching either a fixed point or a cycle. Then compare every pair using their fixed points or their states at a common time inside their eventual cycles.\nKey observation: The digit-square transformation is deterministic, so every starting value eventually enters a fixed point or directed cycle. Two sequences are permanently identical exactly when they reach the same state at the same time and therefore follow the same deterministic suffix forever.\nComplexity: O(NL + N^2) time and O(NL) space per test case, where L is the maximum generated sequence length before repetition."
+        }
+      ],
+      "primary_topic": "functional-graph",
+      "topics": [
+        "functional-graph",
+        "hash-map",
+        "simulation"
+      ]
+    },
+    {
+      "id": "codeforces:2269:C",
+      "platform": "codeforces",
+      "problem_id": "2269C",
+      "title": "Codeforces 2269C",
+      "platform_meta": {
+        "contest_id": 2269,
+        "problem_index": "C",
+        "rating": null,
+        "divisions": [
+          "div2"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2269/problem/C",
+      "attempts": [
+        {
+          "date": "2026-09-26",
+          "language": "Python",
+          "source_file": "solutions/greedy/general-greedy/codeforces-2269C/2026-09-26.py",
+          "note": "Idea: Compute the total array sum and determine the minimum value that must remain uncollected. For each symmetric pair that can contribute one surviving element, subtract the smaller value, and when the middle section is forced to remain, subtract those elements as well.\nKey observation: The operation structure determines which symmetric positions compete for a surviving slot, so maximizing the collected score is equivalent to minimizing the remaining sum by keeping the smaller value from every available symmetric pair.\nComplexity: O(N) time and O(N) space per test case."
+        }
+      ],
+      "primary_topic": "general-greedy",
+      "topics": [
+        "general-greedy",
+        "arithmetic"
       ]
     },
     {

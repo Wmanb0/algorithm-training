@@ -4,18 +4,18 @@
 
 ## Statistics
 
-- Training days: **6**
-- Problems solved: **23**
-- Training attempts: **26**
+- Training days: **7**
+- Problems solved: **30**
+- Training attempts: **33**
 - Platforms: **5**
-- Topics used: **24**
+- Topics used: **27**
 
 ### By Platform
 
 | Platform | Problems |
 |---|---:|
-| Codeforces | 12 |
-| AtCoder | 5 |
+| Codeforces | 15 |
+| AtCoder | 9 |
 | Cses | 3 |
 | LeetCode | 2 |
 | Usaco | 1 |
@@ -26,30 +26,45 @@
 |---|---:|
 | Comparison Sorting | 10 |
 | Sorting-based Greedy | 6 |
+| Hash Map | 5 |
+| Arithmetic | 4 |
 | Binary Search on Answer | 4 |
-| Hash Map | 4 |
+| Enumeration | 4 |
+| General Greedy | 4 |
 | Two Pointers | 4 |
-| Enumeration | 3 |
-| Arithmetic | 2 |
+| Implementation | 3 |
+| Simulation | 3 |
+| String Simulation | 3 |
+| Array | 2 |
+| Binary Search | 2 |
 | Case Analysis | 2 |
-| General Greedy | 2 |
-| Implementation | 2 |
 | Prefix Sum | 2 |
-| String Simulation | 2 |
-| Array | 1 |
-| Binary Search | 1 |
 | Constructive Algorithms | 1 |
 | Exchange Argument | 1 |
+| Functional Graph | 1 |
 | General Dynamic Programming | 1 |
+| Hash Set | 1 |
 | Incremental Construction | 1 |
 | Monotonic Stack | 1 |
+| Offline Processing | 1 |
 | Ordered Map | 1 |
 | Points and Vectors | 1 |
 | Prime Factorization | 1 |
-| Simulation | 1 |
 | Stack | 1 |
 
 ## Daily Log
+
+### 2026-09-26
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [AtCoder ABC477 A](https://atcoder.jp/contests/abc477/tasks/abc477_a) | AtCoder | ABC · A | AtCoder ≈17 | Implementation |
+| [AtCoder ABC477 B](https://atcoder.jp/contests/abc477/tasks/abc477_b) | AtCoder | ABC · B | AtCoder ≈79 | Enumeration, Array |
+| [AtCoder ABC477 C](https://atcoder.jp/contests/abc477/tasks/abc477_c) | AtCoder | ABC · C | AtCoder ≈456 | Binary Search, String Simulation |
+| [AtCoder ABC477 D](https://atcoder.jp/contests/abc477/tasks/abc477_d) | AtCoder | ABC · D | AtCoder ≈946 | Offline Processing, Hash Set, Simulation |
+| [Codeforces 2269A](https://codeforces.com/contest/2269/problem/A) | Codeforces | Div.2 · A | — | General Greedy, Arithmetic |
+| [Codeforces 2269B](https://codeforces.com/contest/2269/problem/B) | Codeforces | Div.2 · B | — | Functional Graph, Hash Map, Simulation |
+| [Codeforces 2269C](https://codeforces.com/contest/2269/problem/C) | Codeforces | Div.2 · C | — | General Greedy, Arithmetic |
 
 ### 2026-09-25
 
