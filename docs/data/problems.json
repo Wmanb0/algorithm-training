@@ -686,6 +686,131 @@
       }
     },
     {
+      "id": "codeforces:2266:A",
+      "platform": "codeforces",
+      "problem_id": "2266A",
+      "title": "Codeforces 2266A",
+      "platform_meta": {
+        "contest_id": 2266,
+        "problem_index": "A",
+        "rating": null,
+        "divisions": [
+          "div3"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2266/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-27",
+          "language": "Python",
+          "source_file": "solutions/mathematics/arithmetic/codeforces-2266A/2026-09-27.py",
+          "note": "Idea: Compute how many participants must be weak for each problem as n - a, n - b, and n - c, then take the maximum of these three values.\nKey observation: At most min(a, b, c) participants can have solved all three problems, so the minimum number of weak participants is n - min(a, b, c), which is equivalent to max(n - a, n - b, n - c).\nComplexity: O(1) time and O(1) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2266/problem/A\n# @primary arithmetic\n# @topics arithmetic\n# @division div3\n# @note\n# Idea: Compute how many participants must be weak for each problem as n - a, n - b, and n - c, then take the maximum of these three values.\n# Key observation: At most min(a, b, c) participants can have solved all three problems, so the minimum number of weak participants is n - min(a, b, c), which is equivalent to max(n - a, n - b, n - c).\n# Complexity: O(1) time and O(1) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a, b, c = map(int, input().strip().split())\n    print(max(n - a, n - b, n - c))\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "arithmetic",
+      "topics": [
+        "arithmetic"
+      ],
+      "level_label": "Div.3 · A",
+      "difficulty_label": "Div.3 · A",
+      "rating": null,
+      "rating_system": "codeforces",
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2266:B",
+      "platform": "codeforces",
+      "problem_id": "2266B",
+      "title": "Codeforces 2266B",
+      "platform_meta": {
+        "contest_id": 2266,
+        "problem_index": "B",
+        "rating": null,
+        "divisions": [
+          "div3"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2266/problem/B",
+      "attempts": [
+        {
+          "date": "2026-09-27",
+          "language": "Python",
+          "source_file": "solutions/mathematics/arithmetic/codeforces-2266B/2026-09-27.py",
+          "note": "Idea: Directly compute the two candidate final differences |a + c - b| and |a - b|, then output their maximum.\nKey observation: Alice's optimal result is determined by the better of taking all stones from the third pile and taking none, so only these two endpoint outcomes need to be compared.\nComplexity: O(1) time and O(1) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2266/problem/B\n# @primary arithmetic\n# @topics arithmetic\n# @division div3\n# @note\n# Idea: Directly compute the two candidate final differences |a + c - b| and |a - b|, then output their maximum.\n# Key observation: Alice's optimal result is determined by the better of taking all stones from the third pile and taking none, so only these two endpoint outcomes need to be compared.\n# Complexity: O(1) time and O(1) space per test case.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    a, b, c = map(int, input().strip().split())\n\n    print(max(abs(a + c - b), abs(a - b)))\n\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "arithmetic",
+      "topics": [
+        "arithmetic"
+      ],
+      "level_label": "Div.3 · B",
+      "difficulty_label": "Div.3 · B",
+      "rating": null,
+      "rating_system": "codeforces",
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2266:C",
+      "platform": "codeforces",
+      "problem_id": "2266C",
+      "title": "Codeforces 2266C",
+      "platform_meta": {
+        "contest_id": 2266,
+        "problem_index": "C",
+        "rating": null,
+        "divisions": [
+          "div3"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2266/problem/C",
+      "attempts": [
+        {
+          "date": "2026-09-27",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/enumeration/codeforces-2266C/2026-09-27.py",
+          "note": "Idea: Count the total number of zeros and ones, then scan every possible split position. Maintain the number of ones on the left and zeros on the right, and minimize their sum.\nKey observation: A sorted binary string has the form 000...111, so for any fixed split, every 1 on the left and every 0 on the right must be changed. Enumerating all splits therefore finds the minimum number of required operations.\nComplexity: O(N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2266/problem/C\n# @primary enumeration\n# @topics enumeration, string-simulation\n# @division div3\n# @note\n# Idea: Count the total number of zeros and ones, then scan every possible split position. Maintain the number of ones on the left and zeros on the right, and minimize their sum.\n# Key observation: A sorted binary string has the form 000...111, so for any fixed split, every 1 on the left and every 0 on the right must be changed. Enumerating all splits therefore finds the minimum number of required operations.\n# Complexity: O(N) time and O(N) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n\n    n = int(input().strip())\n    s = input().strip()\n    cnt_0 = s.count('0')\n    cnt_1 = s.count('1')\n\n    if s[0] == '1':\n        print(cnt_0)\n    else:\n        last_1 = cnt_1\n        last_0 = cnt_0 - 1\n        res = last_0\n        cnt1 = 0\n        cnt0 = 1\n        # 全变成1的,就是 cnt_0 - 1\n        for i in range(1, n):\n            if s[i] == '1': \n                cnt1 += 1\n                last_1 -= 1\n            else: \n                cnt0 += 1\n                last_0 -= 1\n\n            res = min(res, cnt1 + last_0)\n        print(res)\n\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "enumeration",
+      "topics": [
+        "enumeration",
+        "string-simulation"
+      ],
+      "level_label": "Div.3 · C",
+      "difficulty_label": "Div.3 · C",
+      "rating": null,
+      "rating_system": "codeforces",
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "enumeration": [
+          "fundamentals",
+          "enumeration"
+        ],
+        "string-simulation": [
+          "strings",
+          "string-simulation"
+        ]
+      }
+    },
+    {
       "id": "codeforces:2267:A",
       "platform": "codeforces",
       "problem_id": "2267A",

@@ -4,9 +4,9 @@
 
 ## Statistics
 
-- Training days: **7**
-- Problems solved: **30**
-- Training attempts: **33**
+- Training days: **8**
+- Problems solved: **33**
+- Training attempts: **36**
 - Platforms: **5**
 - Topics used: **27**
 
@@ -14,7 +14,7 @@
 
 | Platform | Problems |
 |---|---:|
-| Codeforces | 15 |
+| Codeforces | 18 |
 | AtCoder | 9 |
 | Cses | 3 |
 | LeetCode | 2 |
@@ -25,16 +25,16 @@
 | Topic | Problems |
 |---|---:|
 | Comparison Sorting | 10 |
+| Arithmetic | 6 |
 | Sorting-based Greedy | 6 |
+| Enumeration | 5 |
 | Hash Map | 5 |
-| Arithmetic | 4 |
 | Binary Search on Answer | 4 |
-| Enumeration | 4 |
 | General Greedy | 4 |
+| String Simulation | 4 |
 | Two Pointers | 4 |
 | Implementation | 3 |
 | Simulation | 3 |
-| String Simulation | 3 |
 | Array | 2 |
 | Binary Search | 2 |
 | Case Analysis | 2 |
@@ -53,6 +53,14 @@
 | Stack | 1 |
 
 ## Daily Log
+
+### 2026-09-27
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [Codeforces 2266A](https://codeforces.com/contest/2266/problem/A) | Codeforces | Div.3 · A | — | Arithmetic |
+| [Codeforces 2266B](https://codeforces.com/contest/2266/problem/B) | Codeforces | Div.3 · B | — | Arithmetic |
+| [Codeforces 2266C](https://codeforces.com/contest/2266/problem/C) | Codeforces | Div.3 · C | — | Enumeration, String Simulation |
 
 ### 2026-09-26
 

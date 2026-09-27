@@ -429,6 +429,88 @@
       ]
     },
     {
+      "id": "codeforces:2266:A",
+      "platform": "codeforces",
+      "problem_id": "2266A",
+      "title": "Codeforces 2266A",
+      "platform_meta": {
+        "contest_id": 2266,
+        "problem_index": "A",
+        "rating": null,
+        "divisions": [
+          "div3"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2266/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-27",
+          "language": "Python",
+          "source_file": "solutions/mathematics/arithmetic/codeforces-2266A/2026-09-27.py",
+          "note": "Idea: Compute how many participants must be weak for each problem as n - a, n - b, and n - c, then take the maximum of these three values.\nKey observation: At most min(a, b, c) participants can have solved all three problems, so the minimum number of weak participants is n - min(a, b, c), which is equivalent to max(n - a, n - b, n - c).\nComplexity: O(1) time and O(1) space per test case."
+        }
+      ],
+      "primary_topic": "arithmetic",
+      "topics": [
+        "arithmetic"
+      ]
+    },
+    {
+      "id": "codeforces:2266:B",
+      "platform": "codeforces",
+      "problem_id": "2266B",
+      "title": "Codeforces 2266B",
+      "platform_meta": {
+        "contest_id": 2266,
+        "problem_index": "B",
+        "rating": null,
+        "divisions": [
+          "div3"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2266/problem/B",
+      "attempts": [
+        {
+          "date": "2026-09-27",
+          "language": "Python",
+          "source_file": "solutions/mathematics/arithmetic/codeforces-2266B/2026-09-27.py",
+          "note": "Idea: Directly compute the two candidate final differences |a + c - b| and |a - b|, then output their maximum.\nKey observation: Alice's optimal result is determined by the better of taking all stones from the third pile and taking none, so only these two endpoint outcomes need to be compared.\nComplexity: O(1) time and O(1) space per test case."
+        }
+      ],
+      "primary_topic": "arithmetic",
+      "topics": [
+        "arithmetic"
+      ]
+    },
+    {
+      "id": "codeforces:2266:C",
+      "platform": "codeforces",
+      "problem_id": "2266C",
+      "title": "Codeforces 2266C",
+      "platform_meta": {
+        "contest_id": 2266,
+        "problem_index": "C",
+        "rating": null,
+        "divisions": [
+          "div3"
+        ]
+      },
+      "url": "https://codeforces.com/contest/2266/problem/C",
+      "attempts": [
+        {
+          "date": "2026-09-27",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/enumeration/codeforces-2266C/2026-09-27.py",
+          "note": "Idea: Count the total number of zeros and ones, then scan every possible split position. Maintain the number of ones on the left and zeros on the right, and minimize their sum.\nKey observation: A sorted binary string has the form 000...111, so for any fixed split, every 1 on the left and every 0 on the right must be changed. Enumerating all splits therefore finds the minimum number of required operations.\nComplexity: O(N) time and O(N) space per test case."
+        }
+      ],
+      "primary_topic": "enumeration",
+      "topics": [
+        "enumeration",
+        "string-simulation"
+      ]
+    },
+    {
       "id": "codeforces:2267:A",
       "platform": "codeforces",
       "problem_id": "2267A",
