@@ -4,9 +4,9 @@
 
 ## Statistics
 
-- Training days: **8**
-- Problems solved: **33**
-- Training attempts: **36**
+- Training days: **9**
+- Problems solved: **35**
+- Training attempts: **38**
 - Platforms: **5**
 - Topics used: **27**
 
@@ -14,7 +14,7 @@
 
 | Platform | Problems |
 |---|---:|
-| Codeforces | 18 |
+| Codeforces | 20 |
 | AtCoder | 9 |
 | Cses | 3 |
 | LeetCode | 2 |
@@ -25,17 +25,17 @@
 | Topic | Problems |
 |---|---:|
 | Comparison Sorting | 10 |
-| Arithmetic | 6 |
+| Arithmetic | 7 |
 | Sorting-based Greedy | 6 |
 | Enumeration | 5 |
+| General Greedy | 5 |
 | Hash Map | 5 |
 | Binary Search on Answer | 4 |
-| General Greedy | 4 |
+| Implementation | 4 |
 | String Simulation | 4 |
 | Two Pointers | 4 |
-| Implementation | 3 |
+| Array | 3 |
 | Simulation | 3 |
-| Array | 2 |
 | Binary Search | 2 |
 | Case Analysis | 2 |
 | Prefix Sum | 2 |
@@ -53,6 +53,13 @@
 | Stack | 1 |
 
 ## Daily Log
+
+### 2026-09-28
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [Codeforces 1338A](https://codeforces.com/contest/1338/problem/A) | Codeforces | Div.1 · A | CF 1500 | General Greedy, Arithmetic |
+| [Codeforces 1872E](https://codeforces.com/contest/1872/problem/E) | Codeforces | Div.3 · E | CF 1500 | Implementation, Array |
 
 ### 2026-09-27
 

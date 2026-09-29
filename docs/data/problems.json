@@ -551,6 +551,52 @@
       }
     },
     {
+      "id": "codeforces:1338:A",
+      "platform": "codeforces",
+      "problem_id": "1338A",
+      "title": "Codeforces 1338A",
+      "platform_meta": {
+        "contest_id": 1338,
+        "problem_index": "A",
+        "rating": 1500,
+        "divisions": [
+          "div1"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/1338/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-28",
+          "language": "Python",
+          "source_file": "solutions/greedy/general-greedy/codeforces-1338A/2026-09-28.py",
+          "note": "Idea: Scan the array from left to right and keep it nondecreasing by raising every element that is smaller than the previous adjusted value. For each required increase, compute how many binary bits are needed to represent that difference and keep the maximum.\nKey observation: After T seconds, any individual position can receive any total increment from 0 to 2^T - 1 by choosing the corresponding powers of two. Therefore a required increase d can be achieved exactly when d < 2^T, so the answer is the maximum bit length of any required correction.\nComplexity: O(N log V) time and O(N) space per test case, where V is the maximum required increase.",
+          "code": "# @url https://codeforces.com/contest/1338/problem/A\n# @primary general-greedy\n# @topics general-greedy, arithmetic\n# @rating 1500\n# @division div1\n# @note\n# Idea: Scan the array from left to right and keep it nondecreasing by raising every element that is smaller than the previous adjusted value. For each required increase, compute how many binary bits are needed to represent that difference and keep the maximum.\n# Key observation: After T seconds, any individual position can receive any total increment from 0 to 2^T - 1 by choosing the corresponding powers of two. Therefore a required increase d can be achieved exactly when d < 2^T, so the answer is the maximum bit length of any required correction.\n# Complexity: O(N log V) time and O(N) space per test case, where V is the maximum required increase.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a = [0] + list(map(int, input().strip().split()))\n    res = 0\n    for i in range(2, n + 1):\n        if a[i] < a[i - 1]:\n            t = a[i - 1] - a[i]\n            k = 0\n            while t != 0:\n                k += 1\n                t >>= 1\n            a[i] = a[i - 1]\n            res = max(res, k)\n    print(res)\n\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "general-greedy",
+      "topics": [
+        "general-greedy",
+        "arithmetic"
+      ],
+      "level_label": "Div.1 · A",
+      "difficulty_label": "Div.1 · A",
+      "rating": 1500,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1500",
+      "rating_source": "manual",
+      "topic_paths": {
+        "general-greedy": [
+          "greedy",
+          "general-greedy"
+        ],
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
       "id": "codeforces:1398:C",
       "platform": "codeforces",
       "problem_id": "1398C",
@@ -634,6 +680,52 @@
         "enumeration": [
           "fundamentals",
           "enumeration"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:1872:E",
+      "platform": "codeforces",
+      "problem_id": "1872E",
+      "title": "Codeforces 1872E",
+      "platform_meta": {
+        "contest_id": 1872,
+        "problem_index": "E",
+        "rating": 1500,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/1872/problem/E",
+      "attempts": [
+        {
+          "date": "2026-09-28",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/implementation/codeforces-1872E/2026-09-28.py",
+          "note": "Idea: Compute the XOR of the values currently belonging to groups 0 and 1, and build a prefix XOR array over a. For a type-1 query, obtain the XOR of a[l..r] from the prefix array and XOR it into both group values; for a type-2 query, output the stored XOR of the requested group.\nKey observation: Flipping every bit of s on [l, r] moves every corresponding a[i] from one group to the other. Therefore the XOR of the entire interval must be removed from one group and added to the other, which is achieved by XORing the same interval value into both maintained group XORs.\nComplexity: O(N + Q) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/1872/problem/E\n# @primary implementation\n# @topics implementation, array\n# @rating 1500\n# @division div3\n# @note\n# Idea: Compute the XOR of the values currently belonging to groups 0 and 1, and build a prefix XOR array over a. For a type-1 query, obtain the XOR of a[l..r] from the prefix array and XOR it into both group values; for a type-2 query, output the stored XOR of the requested group.\n# Key observation: Flipping every bit of s on [l, r] moves every corresponding a[i] from one group to the other. Therefore the XOR of the entire interval must be removed from one group and added to the other, which is achieved by XORing the same interval value into both maintained group XORs.\n# Complexity: O(N + Q) time and O(N) space per test case.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n\n    n = int(input().strip())\n    a = [0] + list(map(int, input().strip().split()))\n    s = '2' + input().strip()\n    q = int(input().strip())\n\n    x0 = 0\n    x1 = 0\n    v = [0]\n    for i in range(1, n + 1):\n        if s[i] == '0': x0 ^= a[i]\n        else: x1 ^= a[i]\n        v.append(v[i - 1] ^ a[i])\n\n    for _ in range(q):\n        op = input().strip().split()\n        if op[0] == '2':\n            if op[1] == '1': print(x1, end=' ')\n            else: print(x0, end=' ')\n            pass\n        else:\n            l, r = int(op[1]), int(op[2])\n\n            V = v[r] ^ v[l - 1]\n            x0 ^= V\n            x1 ^= V\n    print()\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "implementation",
+      "topics": [
+        "implementation",
+        "array"
+      ],
+      "level_label": "Div.3 · E",
+      "difficulty_label": "Div.3 · E",
+      "rating": 1500,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1500",
+      "rating_source": "manual",
+      "topic_paths": {
+        "implementation": [
+          "fundamentals",
+          "implementation"
+        ],
+        "array": [
+          "data-structures",
+          "array"
         ]
       }
     },
