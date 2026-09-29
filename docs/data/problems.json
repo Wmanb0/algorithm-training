@@ -778,6 +778,185 @@
       }
     },
     {
+      "id": "codeforces:2259:A",
+      "platform": "codeforces",
+      "problem_id": "2259A",
+      "title": "Codeforces 2259A",
+      "platform_meta": {
+        "contest_id": 2259,
+        "problem_index": "A",
+        "rating": 800,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2259/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-29",
+          "language": "Python",
+          "source_file": "solutions/strings/string-simulation/codeforces-2259A/2026-09-29.py",
+          "note": "Idea: Partition the string into consecutive blocks of length K and inspect each block independently. Count a block if it contains no '0', meaning all K characters are '1'.\nKey observation: The code only considers the fixed non-overlapping blocks [0,K), [K,2K), ...; therefore each block can be checked independently by testing whether its zero count is zero.\nComplexity: O(N) time and O(K) auxiliary space per test case due to substring slicing.",
+          "code": "# @url https://codeforces.com/contest/2259/problem/A\n# @primary string-simulation\n# @topics string-simulation, enumeration\n# @rating 800\n# @division div3\n# @note\n# Idea: Partition the string into consecutive blocks of length K and inspect each block independently. Count a block if it contains no '0', meaning all K characters are '1'.\n# Key observation: The code only considers the fixed non-overlapping blocks [0,K), [K,2K), ...; therefore each block can be checked independently by testing whether its zero count is zero.\n# Complexity: O(N) time and O(K) auxiliary space per test case due to substring slicing.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n, k = map(int, input().strip().split())\n    s = input().strip()\n    l = 0\n    res = 0\n    for i in range(n // k):\n        t = s[l : l + k]\n        if t.count('0') == 0: res += 1\n        l += k\n    print(res)\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "string-simulation",
+      "topics": [
+        "string-simulation",
+        "enumeration"
+      ],
+      "level_label": "Div.3 · A",
+      "difficulty_label": "Div.3 · A",
+      "rating": 800,
+      "rating_system": "codeforces",
+      "rating_label": "CF 800",
+      "rating_source": "manual",
+      "topic_paths": {
+        "string-simulation": [
+          "strings",
+          "string-simulation"
+        ],
+        "enumeration": [
+          "fundamentals",
+          "enumeration"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2259:B",
+      "platform": "codeforces",
+      "problem_id": "2259B",
+      "title": "Codeforces 2259B",
+      "platform_meta": {
+        "contest_id": 2259,
+        "problem_index": "B",
+        "rating": 800,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2259/problem/B",
+      "attempts": [
+        {
+          "date": "2026-09-29",
+          "language": "Python",
+          "source_file": "solutions/mathematics/arithmetic/codeforces-2259B/2026-09-29.py",
+          "note": "Idea: Classify every value into one of three groups: odd numbers, numbers congruent to 2 modulo 4, and numbers divisible by 4. Count the size of each group and output the largest count.\nKey observation: The code's classification depends only on divisibility by 2 and 4, so every array element belongs to exactly one of the three relevant residue classes.\nComplexity: O(N) time and O(N) space per test case for the input array.",
+          "code": "# @url https://codeforces.com/contest/2259/problem/B\n# @primary arithmetic\n# @topics arithmetic\n# @rating 800\n# @division div3\n# @note\n# Idea: Classify every value into one of three groups: odd numbers, numbers congruent to 2 modulo 4, and numbers divisible by 4. Count the size of each group and output the largest count.\n# Key observation: The code's classification depends only on divisibility by 2 and 4, so every array element belongs to exactly one of the three relevant residue classes.\n# Complexity: O(N) time and O(N) space per test case for the input array.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a = list(map(int, input().strip().split()))\n    od = 0\n    ev1 = 0\n    ev2 = 0\n    for i in a:\n        if i % 2 == 0: \n            if (i // 2) % 2 == 0: ev2 += 1\n            else: ev1 += 1\n        else: od += 1\n    print(max(od, ev1, ev2))\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "arithmetic",
+      "topics": [
+        "arithmetic"
+      ],
+      "level_label": "Div.3 · B",
+      "difficulty_label": "Div.3 · B",
+      "rating": 800,
+      "rating_system": "codeforces",
+      "rating_label": "CF 800",
+      "rating_source": "manual",
+      "topic_paths": {
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2259:C",
+      "platform": "codeforces",
+      "problem_id": "2259C",
+      "title": "Codeforces 2259C",
+      "platform_meta": {
+        "contest_id": 2259,
+        "problem_index": "C",
+        "rating": 1000,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2259/problem/C",
+      "attempts": [
+        {
+          "date": "2026-09-29",
+          "language": "Python",
+          "source_file": "solutions/greedy/greedy-construction/codeforces-2259C/2026-09-29.py",
+          "note": "Idea: Scan the array from left to right while tracking how many fixed or constructed 1s already exist and how many 1s and -1s remain. Replace each -1 with 0 or 1 according to these counts so that suitable 1s are preserved on both sides while unnecessary -1s become 0.\nKey observation: Once a 1 already exists on the left and another usable endpoint can still remain on the right, an intermediate -1 can safely become 0; otherwise the current -1 must become 1 to create or preserve an endpoint.\nComplexity: O(N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2259/problem/C\n# @primary greedy-construction\n# @topics greedy-construction, array\n# @rating 1000\n# @division div3\n# @note\n# Idea: Scan the array from left to right while tracking how many fixed or constructed 1s already exist and how many 1s and -1s remain. Replace each -1 with 0 or 1 according to these counts so that suitable 1s are preserved on both sides while unnecessary -1s become 0.\n# Key observation: Once a 1 already exists on the left and another usable endpoint can still remain on the right, an intermediate -1 can safely become 0; otherwise the current -1 must become 1 to create or preserve an endpoint.\n# Complexity: O(N) time and O(N) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a = [0] + list(map(int, input().strip().split()))\n\n    cnt_1 = a.count(1)\n    now_1 = 0\n    cnt_11 = a.count(-1)\n    for i in range(1, n + 1):\n        if a[i] == 1: \n            now_1 += 1\n            cnt_1 -= 1\n\n        #\n        if a[i] == -1:\n            if now_1 > 0 and (cnt_11 > 1 or cnt_1 > 0): # 已经有 1 并且不是最后一个 -1\n                a[i] = 0\n            #如果没有1\n            if now_1 == 0:\n                a[i] = 1\n                now_1 += 1\n            # 如果是最后一个-1且后面没有1\n            if cnt_11 == 1 and cnt_1 == 0:\n                a[i] = 1\n            cnt_11 -= 1\n\n    print(*a[1:])\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "greedy-construction",
+      "topics": [
+        "greedy-construction",
+        "array"
+      ],
+      "level_label": "Div.3 · C",
+      "difficulty_label": "Div.3 · C",
+      "rating": 1000,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1000",
+      "rating_source": "manual",
+      "topic_paths": {
+        "greedy-construction": [
+          "greedy",
+          "greedy-construction"
+        ],
+        "array": [
+          "data-structures",
+          "array"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2259:D",
+      "platform": "codeforces",
+      "problem_id": "2259D",
+      "title": "Codeforces 2259D",
+      "platform_meta": {
+        "contest_id": 2259,
+        "problem_index": "D",
+        "rating": 1200,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2259/problem/D",
+      "attempts": [
+        {
+          "date": "2026-09-29",
+          "language": "Python",
+          "source_file": "solutions/greedy/greedy-construction/codeforces-2259D/2026-09-29.py",
+          "note": "Idea: Count the number of zeros first. If there is exactly one zero, report that no construction exists. Otherwise construct the assignment string directly: with no zeros, cycle through A, B, C; with at least two zeros, place the first two zeros into different groups and assign the remaining elements using the fixed pattern in the code.\nKey observation: The construction only needs special handling for zero values because the MEX of each multiset is determined by whether zero and subsequent required values are present; a single zero cannot be shared across multiple multisets, while zero zeros or at least two zeros allow the code's direct construction.\nComplexity: O(N) time and O(N) space per test case for the input array.",
+          "code": "# @url https://codeforces.com/contest/2259/problem/D\n# @primary greedy-construction\n# @topics greedy-construction, array\n# @rating 1200\n# @division div3\n# @note\n# Idea: Count the number of zeros first. If there is exactly one zero, report that no construction exists. Otherwise construct the assignment string directly: with no zeros, cycle through A, B, C; with at least two zeros, place the first two zeros into different groups and assign the remaining elements using the fixed pattern in the code.\n# Key observation: The construction only needs special handling for zero values because the MEX of each multiset is determined by whether zero and subsequent required values are present; a single zero cannot be shared across multiple multisets, while zero zeros or at least two zeros allow the code's direct construction.\n# Complexity: O(N) time and O(N) space per test case for the input array.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a = list(map(int, input().split()))\n    if a.count(0) == 1:\n        print(\"NO\")\n        return\n    print(\"YES\")\n    if a.count(0) == 0:\n        for i in range(n):\n            if i % 3 == 0: print(\"A\", end='')\n            elif i % 3 == 1: print(\"B\", end='')\n            else:print(\"C\", end='')\n    else:\n        cnt_0 = 0\n        for i in range(n):\n            if a[i] == 0 and cnt_0 == 0: \n                print(\"A\", end='')\n                cnt_0 += 1\n            elif a[i] == 0 and cnt_0 == 1: \n                print(\"B\", end='')\n                cnt_0 += 1\n            elif a[i] == 0: print(\"A\", end='')\n            else:print(\"C\", end='')\n    print()\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "greedy-construction",
+      "topics": [
+        "greedy-construction",
+        "array"
+      ],
+      "level_label": "Div.3 · D",
+      "difficulty_label": "Div.3 · D",
+      "rating": 1200,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1200",
+      "rating_source": "manual",
+      "topic_paths": {
+        "greedy-construction": [
+          "greedy",
+          "greedy-construction"
+        ],
+        "array": [
+          "data-structures",
+          "array"
+        ]
+      }
+    },
+    {
       "id": "codeforces:2266:A",
       "platform": "codeforces",
       "problem_id": "2266A",

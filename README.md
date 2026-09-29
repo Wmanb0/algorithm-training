@@ -4,17 +4,17 @@
 
 ## Statistics
 
-- Training days: **9**
-- Problems solved: **35**
-- Training attempts: **38**
+- Training days: **10**
+- Problems solved: **39**
+- Training attempts: **42**
 - Platforms: **5**
-- Topics used: **27**
+- Topics used: **28**
 
 ### By Platform
 
 | Platform | Problems |
 |---|---:|
-| Codeforces | 20 |
+| Codeforces | 24 |
 | AtCoder | 9 |
 | Cses | 3 |
 | LeetCode | 2 |
@@ -25,19 +25,20 @@
 | Topic | Problems |
 |---|---:|
 | Comparison Sorting | 10 |
-| Arithmetic | 7 |
+| Arithmetic | 8 |
+| Enumeration | 6 |
 | Sorting-based Greedy | 6 |
-| Enumeration | 5 |
+| Array | 5 |
 | General Greedy | 5 |
 | Hash Map | 5 |
+| String Simulation | 5 |
 | Binary Search on Answer | 4 |
 | Implementation | 4 |
-| String Simulation | 4 |
 | Two Pointers | 4 |
-| Array | 3 |
 | Simulation | 3 |
 | Binary Search | 2 |
 | Case Analysis | 2 |
+| Greedy Construction | 2 |
 | Prefix Sum | 2 |
 | Constructive Algorithms | 1 |
 | Exchange Argument | 1 |
@@ -53,6 +54,15 @@
 | Stack | 1 |
 
 ## Daily Log
+
+### 2026-09-29
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [Codeforces 2259A](https://codeforces.com/contest/2259/problem/A) | Codeforces | Div.3 · A | CF 800 | String Simulation, Enumeration |
+| [Codeforces 2259B](https://codeforces.com/contest/2259/problem/B) | Codeforces | Div.3 · B | CF 800 | Arithmetic |
+| [Codeforces 2259C](https://codeforces.com/contest/2259/problem/C) | Codeforces | Div.3 · C | CF 1000 | Greedy Construction, Array |
+| [Codeforces 2259D](https://codeforces.com/contest/2259/problem/D) | Codeforces | Div.3 · D | CF 1200 | Greedy Construction, Array |
 
 ### 2026-09-28
 

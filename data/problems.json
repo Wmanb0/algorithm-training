@@ -487,6 +487,121 @@
       ]
     },
     {
+      "id": "codeforces:2259:A",
+      "platform": "codeforces",
+      "problem_id": "2259A",
+      "title": "Codeforces 2259A",
+      "platform_meta": {
+        "contest_id": 2259,
+        "problem_index": "A",
+        "rating": 800,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2259/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-29",
+          "language": "Python",
+          "source_file": "solutions/strings/string-simulation/codeforces-2259A/2026-09-29.py",
+          "note": "Idea: Partition the string into consecutive blocks of length K and inspect each block independently. Count a block if it contains no '0', meaning all K characters are '1'.\nKey observation: The code only considers the fixed non-overlapping blocks [0,K), [K,2K), ...; therefore each block can be checked independently by testing whether its zero count is zero.\nComplexity: O(N) time and O(K) auxiliary space per test case due to substring slicing."
+        }
+      ],
+      "primary_topic": "string-simulation",
+      "topics": [
+        "string-simulation",
+        "enumeration"
+      ]
+    },
+    {
+      "id": "codeforces:2259:B",
+      "platform": "codeforces",
+      "problem_id": "2259B",
+      "title": "Codeforces 2259B",
+      "platform_meta": {
+        "contest_id": 2259,
+        "problem_index": "B",
+        "rating": 800,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2259/problem/B",
+      "attempts": [
+        {
+          "date": "2026-09-29",
+          "language": "Python",
+          "source_file": "solutions/mathematics/arithmetic/codeforces-2259B/2026-09-29.py",
+          "note": "Idea: Classify every value into one of three groups: odd numbers, numbers congruent to 2 modulo 4, and numbers divisible by 4. Count the size of each group and output the largest count.\nKey observation: The code's classification depends only on divisibility by 2 and 4, so every array element belongs to exactly one of the three relevant residue classes.\nComplexity: O(N) time and O(N) space per test case for the input array."
+        }
+      ],
+      "primary_topic": "arithmetic",
+      "topics": [
+        "arithmetic"
+      ]
+    },
+    {
+      "id": "codeforces:2259:C",
+      "platform": "codeforces",
+      "problem_id": "2259C",
+      "title": "Codeforces 2259C",
+      "platform_meta": {
+        "contest_id": 2259,
+        "problem_index": "C",
+        "rating": 1000,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2259/problem/C",
+      "attempts": [
+        {
+          "date": "2026-09-29",
+          "language": "Python",
+          "source_file": "solutions/greedy/greedy-construction/codeforces-2259C/2026-09-29.py",
+          "note": "Idea: Scan the array from left to right while tracking how many fixed or constructed 1s already exist and how many 1s and -1s remain. Replace each -1 with 0 or 1 according to these counts so that suitable 1s are preserved on both sides while unnecessary -1s become 0.\nKey observation: Once a 1 already exists on the left and another usable endpoint can still remain on the right, an intermediate -1 can safely become 0; otherwise the current -1 must become 1 to create or preserve an endpoint.\nComplexity: O(N) time and O(N) space per test case."
+        }
+      ],
+      "primary_topic": "greedy-construction",
+      "topics": [
+        "greedy-construction",
+        "array"
+      ]
+    },
+    {
+      "id": "codeforces:2259:D",
+      "platform": "codeforces",
+      "problem_id": "2259D",
+      "title": "Codeforces 2259D",
+      "platform_meta": {
+        "contest_id": 2259,
+        "problem_index": "D",
+        "rating": 1200,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2259/problem/D",
+      "attempts": [
+        {
+          "date": "2026-09-29",
+          "language": "Python",
+          "source_file": "solutions/greedy/greedy-construction/codeforces-2259D/2026-09-29.py",
+          "note": "Idea: Count the number of zeros first. If there is exactly one zero, report that no construction exists. Otherwise construct the assignment string directly: with no zeros, cycle through A, B, C; with at least two zeros, place the first two zeros into different groups and assign the remaining elements using the fixed pattern in the code.\nKey observation: The construction only needs special handling for zero values because the MEX of each multiset is determined by whether zero and subsequent required values are present; a single zero cannot be shared across multiple multisets, while zero zeros or at least two zeros allow the code's direct construction.\nComplexity: O(N) time and O(N) space per test case for the input array."
+        }
+      ],
+      "primary_topic": "greedy-construction",
+      "topics": [
+        "greedy-construction",
+        "array"
+      ]
+    },
+    {
       "id": "codeforces:2266:A",
       "platform": "codeforces",
       "problem_id": "2266A",
