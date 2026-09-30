@@ -4,17 +4,17 @@
 
 ## Statistics
 
-- Training days: **10**
-- Problems solved: **39**
-- Training attempts: **42**
+- Training days: **11**
+- Problems solved: **44**
+- Training attempts: **49**
 - Platforms: **5**
-- Topics used: **28**
+- Topics used: **31**
 
 ### By Platform
 
 | Platform | Problems |
 |---|---:|
-| Codeforces | 24 |
+| Codeforces | 29 |
 | AtCoder | 9 |
 | Cses | 3 |
 | LeetCode | 2 |
@@ -24,23 +24,26 @@
 
 | Topic | Problems |
 |---|---:|
-| Comparison Sorting | 10 |
-| Arithmetic | 8 |
+| Comparison Sorting | 11 |
+| Arithmetic | 10 |
+| Sorting-based Greedy | 7 |
 | Enumeration | 6 |
-| Sorting-based Greedy | 6 |
+| String Simulation | 6 |
 | Array | 5 |
 | General Greedy | 5 |
 | Hash Map | 5 |
-| String Simulation | 5 |
+| Implementation | 5 |
 | Binary Search on Answer | 4 |
-| Implementation | 4 |
 | Two Pointers | 4 |
+| Greedy Construction | 3 |
 | Simulation | 3 |
 | Binary Search | 2 |
 | Case Analysis | 2 |
-| Greedy Construction | 2 |
 | Prefix Sum | 2 |
+| Breadth-First Search | 1 |
+| Connected Components | 1 |
 | Constructive Algorithms | 1 |
+| Difference Array | 1 |
 | Exchange Argument | 1 |
 | Functional Graph | 1 |
 | General Dynamic Programming | 1 |
@@ -54,6 +57,18 @@
 | Stack | 1 |
 
 ## Daily Log
+
+### 2026-09-30
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [Codeforces 2254A](https://codeforces.com/contest/2254/problem/A) | Codeforces | Div.3 · A | CF 800 | Arithmetic |
+| [Codeforces 2254B](https://codeforces.com/contest/2254/problem/B) | Codeforces | Div.3 · B | CF 900 | String Simulation |
+| [Codeforces 2254C1](https://codeforces.com/contest/2254/problem/C1) | Codeforces | Div.3 · C1 | CF 1000 | Implementation, Arithmetic |
+| [Codeforces 2254C2](https://codeforces.com/contest/2254/problem/C2) | Codeforces | Div.3 · C2 | CF 1200 | Sorting-based Greedy, Comparison Sorting |
+| [Codeforces 2259E](https://codeforces.com/contest/2259/problem/E) | Codeforces | Div.3 · E | CF 1500 | Greedy Construction, Difference Array |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=668) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy, Breadth-First Search, Connected Components |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=668) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy, Breadth-First Search, Connected Components |
 
 ### 2026-09-29
 
@@ -108,7 +123,7 @@
 | [Codeforces 1117A](https://codeforces.com/contest/1117/problem/A) | Codeforces | Div.2 · A | CF 1100 | Implementation |
 | [Codeforces 1158A](https://codeforces.com/problemset/problem/1158/A) | Codeforces | Div.1 · A | CF 1500 | Sorting-based Greedy, Comparison Sorting |
 | [Codeforces 762B](https://codeforces.com/contest/762/problem/B) | Codeforces | Div.2 · B | CF 1400 | Sorting-based Greedy, Comparison Sorting |
-| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=668) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy, Breadth-First Search, Connected Components |
 
 ### 2026-09-23
 
@@ -122,8 +137,8 @@
 | Problem | Platform | Level | Rating | Topics |
 |---|---|---|---:|---|
 | [Codeforces 702C](https://codeforces.com/contest/702/problem/C) | Codeforces | Div.1 · Div.2 · C | CF 1500 | Binary Search on Answer, Two Pointers, Comparison Sorting |
-| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
-| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=668) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy, Breadth-First Search, Connected Components |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=668) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy, Breadth-First Search, Connected Components |
 
 ### 2026-09-21
 
@@ -133,7 +148,7 @@
 | [Codeforces 1398C](https://codeforces.com/contest/1398/problem/C) | Codeforces | C | CF 1600 | Prefix Sum, Hash Map |
 | [Codeforces 1826D](https://codeforces.com/contest/1826/problem/D) | Codeforces | D | — | General Dynamic Programming, Enumeration |
 | [Codeforces 2008E](https://codeforces.com/contest/2008/problem/E) | Codeforces | E | — | Enumeration, Case Analysis, Incremental Construction |
-| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy |
+| [Index.php](https://usaco.org/index.php?page=viewproblem2&cpid=668) | Usaco | — | — | Two Pointers, Comparison Sorting, Binary Search, Points and Vectors, Binary Search on Answer, Sorting-based Greedy, Breadth-First Search, Connected Components |
 
 ### 2026-09-20
 

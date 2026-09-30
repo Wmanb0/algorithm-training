@@ -778,6 +778,181 @@
       }
     },
     {
+      "id": "codeforces:2254:A",
+      "platform": "codeforces",
+      "problem_id": "2254A",
+      "title": "Codeforces 2254A",
+      "platform_meta": {
+        "contest_id": 2254,
+        "problem_index": "A",
+        "rating": 800,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2254/problem/A",
+      "attempts": [
+        {
+          "date": "2026-09-30",
+          "language": "Python",
+          "source_file": "solutions/mathematics/arithmetic/codeforces-2254A/2026-09-30.py",
+          "note": "Idea: If any two token counts are already equal, output zero. Otherwise find the middle value among the three counts and output the smaller distance from it to either the minimum or maximum value.\nKey observation: Each round decreases the current maximum by one and increases the current minimum by one while the middle value remains unchanged, so the game ends when one of the two extremes reaches the middle value.\nComplexity: O(1) time and O(1) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2254/problem/A\n# @primary arithmetic\n# @topics arithmetic\n# @rating 800\n# @division div3\n# @note\n# Idea: If any two token counts are already equal, output zero. Otherwise find the middle value among the three counts and output the smaller distance from it to either the minimum or maximum value.\n# Key observation: Each round decreases the current maximum by one and increases the current minimum by one while the middle value remains unchanged, so the game ends when one of the two extremes reaches the middle value.\n# Complexity: O(1) time and O(1) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    a, b, c = map(int, input().strip().split())\n    if a == b or b == c or a == c: print(0)\n    else:\n        x = sum([a, b, c]) - max(a, b, c) - min(a, b, c)\n        \n        print(min(max(a, b, c) - x, x - min(a, b, c)))\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "arithmetic",
+      "topics": [
+        "arithmetic"
+      ],
+      "level_label": "Div.3 · A",
+      "difficulty_label": "Div.3 · A",
+      "rating": 800,
+      "rating_system": "codeforces",
+      "rating_label": "CF 800",
+      "rating_source": "manual",
+      "topic_paths": {
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2254:B",
+      "platform": "codeforces",
+      "problem_id": "2254B",
+      "title": "Codeforces 2254B",
+      "platform_meta": {
+        "contest_id": 2254,
+        "problem_index": "B",
+        "rating": 900,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2254/problem/B",
+      "attempts": [
+        {
+          "date": "2026-09-30",
+          "language": "Python",
+          "source_file": "solutions/strings/string-simulation/codeforces-2254B/2026-09-30.py",
+          "note": "Idea: Scan the string to choose an internal character whose removal can best merge neighboring runs. Then rebuild the compressed string while skipping that position and output its resulting length.\nKey observation: Deleting one internal character can only affect the runs containing that character and its two neighbors, so the useful deletion is determined by the local pattern around the removed position.\nComplexity: O(N^2) worst-case time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2254/problem/B\n# @primary string-simulation\n# @topics string-simulation\n# @rating 900\n# @division div3\n# @note\n# Idea: Scan the string to choose an internal character whose removal can best merge neighboring runs. Then rebuild the compressed string while skipping that position and output its resulting length.\n# Key observation: Deleting one internal character can only affect the runs containing that character and its two neighbors, so the useful deletion is determined by the local pattern around the removed position.\n# Complexity: O(N^2) worst-case time and O(N) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    s = input().strip()\n    k = 0\n    idx = -1\n    for i in range(1, n - 1):\n        if s[i] != s[i - 1] and s[i] != s[i + 1] and k == 0:\n            k = 1\n            idx = i\n        if s[i] != s[i - 1] and s[i] != s[i + 1] and s[i + 1] == s[i - 1]:\n            k = 2\n            idx = i\n\n    ss = s[0]\n    kk = 1\n    for i in range(1, n):\n        if s[i] != ss[kk - 1] and i != idx: \n            ss += s[i]\n            kk += 1\n    print(len(ss))\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "string-simulation",
+      "topics": [
+        "string-simulation"
+      ],
+      "level_label": "Div.3 · B",
+      "difficulty_label": "Div.3 · B",
+      "rating": 900,
+      "rating_system": "codeforces",
+      "rating_label": "CF 900",
+      "rating_source": "manual",
+      "topic_paths": {
+        "string-simulation": [
+          "strings",
+          "string-simulation"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2254:C1",
+      "platform": "codeforces",
+      "problem_id": "2254C1",
+      "title": "Codeforces 2254C1",
+      "platform_meta": {
+        "contest_id": 2254,
+        "problem_index": "C1",
+        "rating": 1000,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2254/problem/C1",
+      "attempts": [
+        {
+          "date": "2026-09-30",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/implementation/codeforces-2254C1/2026-09-30.py",
+          "note": "Idea: Count the number of ones in a and b separately on even and odd indices. Output YES exactly when the corresponding parity counts are equal in both strings.\nKey observation: Every allowed transformation moves a one by exactly two positions, so index parity is preserved. Therefore the number of ones on each parity class is invariant and completely determines reachability.\nComplexity: O(N) time and O(1) auxiliary space per test case.",
+          "code": "# @url https://codeforces.com/contest/2254/problem/C1\n# @primary implementation\n# @topics implementation, arithmetic\n# @rating 1000\n# @division div3\n# @note\n# Idea: Count the number of ones in a and b separately on even and odd indices. Output YES exactly when the corresponding parity counts are equal in both strings.\n# Key observation: Every allowed transformation moves a one by exactly two positions, so index parity is preserved. Therefore the number of ones on each parity class is invariant and completely determines reachability.\n# Complexity: O(N) time and O(1) auxiliary space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a = input().strip()\n    b = input().strip()\n    oda = 0\n    eva = 0\n    odb = 0\n    evb = 0\n    for i in range(n):\n        if i % 2 == 0:\n            if a[i] == '1': eva += 1\n            if b[i] == '1': evb += 1\n        else:\n            if a[i] == '1': oda += 1\n            if b[i] == '1': odb += 1\n\n    if eva == evb and oda == odb: print(\"YES\")\n    else: print(\"NO\")\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "implementation",
+      "topics": [
+        "implementation",
+        "arithmetic"
+      ],
+      "level_label": "Div.3 · C1",
+      "difficulty_label": "Div.3 · C1",
+      "rating": 1000,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1000",
+      "rating_source": "manual",
+      "topic_paths": {
+        "implementation": [
+          "fundamentals",
+          "implementation"
+        ],
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2254:C2",
+      "platform": "codeforces",
+      "problem_id": "2254C2",
+      "title": "Codeforces 2254C2",
+      "platform_meta": {
+        "contest_id": 2254,
+        "problem_index": "C2",
+        "rating": 1200,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2254/problem/C2",
+      "attempts": [
+        {
+          "date": "2026-09-30",
+          "language": "Python",
+          "source_file": "solutions/greedy/sorting-greedy/codeforces-2254C2/2026-09-30.py",
+          "note": "Idea: Record the positions of ones in both strings separately for even and odd indices. If the corresponding counts differ, output -1; otherwise sort each position list, pair positions in order, and sum half of their absolute distances.\nKey observation: A one can move only between positions of the same parity, and each operation shifts it by two positions. Pairing the sorted positions in the same order minimizes the total movement within each parity class.\nComplexity: O(N log N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2254/problem/C2\n# @primary sorting-greedy\n# @topics sorting-greedy, comparison-sorting\n# @rating 1200\n# @division div3\n# @note\n# Idea: Record the positions of ones in both strings separately for even and odd indices. If the corresponding counts differ, output -1; otherwise sort each position list, pair positions in order, and sum half of their absolute distances.\n# Key observation: A one can move only between positions of the same parity, and each operation shifts it by two positions. Pairing the sorted positions in the same order minimizes the total movement within each parity class.\n# Complexity: O(N log N) time and O(N) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a = input().strip()\n    b = input().strip()\n    oda = []\n    eva = []\n    odb = []\n    evb = []\n    for i in range(n):\n        if i % 2 == 0:\n            if a[i] == '1': eva.append(i + 1)\n            if b[i] == '1': evb.append(i + 1)\n        else:\n            if a[i] == '1': oda.append(i + 1)\n            if b[i] == '1': odb.append(i + 1)\n\n    if len(eva) == len(evb) and len(oda) == len(odb): \n        res = 0\n        eva = sorted(eva)\n        evb = sorted(evb)\n        oda = sorted(oda)\n        odb = sorted(odb)\n        k = len(eva)\n        for i in range(k):\n            res += abs(evb[i] - eva[i]) // 2\n        k = len(odb)\n        for i in range(k):\n            res += abs(oda[i] - odb[i]) // 2\n        print(res)\n    else: print(\"-1\")\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "sorting-greedy",
+      "topics": [
+        "sorting-greedy",
+        "comparison-sorting"
+      ],
+      "level_label": "Div.3 · C2",
+      "difficulty_label": "Div.3 · C2",
+      "rating": 1200,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1200",
+      "rating_source": "manual",
+      "topic_paths": {
+        "sorting-greedy": [
+          "greedy",
+          "sorting-greedy"
+        ],
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
+        ]
+      }
+    },
+    {
       "id": "codeforces:2259:A",
       "platform": "codeforces",
       "problem_id": "2259A",
@@ -953,6 +1128,52 @@
         "array": [
           "data-structures",
           "array"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2259:E",
+      "platform": "codeforces",
+      "problem_id": "2259E",
+      "title": "Codeforces 2259E",
+      "platform_meta": {
+        "contest_id": 2259,
+        "problem_index": "E",
+        "rating": 1500,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2259/problem/E",
+      "attempts": [
+        {
+          "date": "2026-09-30",
+          "language": "Python",
+          "source_file": "solutions/greedy/greedy-construction/codeforces-2259E/2026-09-30.py",
+          "note": "Idea: Use a difference array to mark every position that cannot contain treasure because it lies strictly inside the required distance interval of a known positive value. First force every known zero position to contain treasure, then for each positive a[i], place treasure at one of the two possible endpoints i-a[i] or i+a[i] if neither endpoint has already satisfied the constraint.\nKey observation: For a known positive distance a[i], no treasure may appear strictly closer than a[i], while at least one valid endpoint exactly a[i] away must contain treasure. The difference array lets the code test forbidden positions in O(1) after preprocessing.\nComplexity: O(N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2259/problem/E\n# @primary greedy-construction\n# @topics greedy-construction, difference-array\n# @rating 1500\n# @division div3\n# @note\n# Idea: Use a difference array to mark every position that cannot contain treasure because it lies strictly inside the required distance interval of a known positive value. First force every known zero position to contain treasure, then for each positive a[i], place treasure at one of the two possible endpoints i-a[i] or i+a[i] if neither endpoint has already satisfied the constraint.\n# Key observation: For a known positive distance a[i], no treasure may appear strictly closer than a[i], while at least one valid endpoint exactly a[i] away must contain treasure. The difference array lets the code test forbidden positions in O(1) after preprocessing.\n# Complexity: O(N) time and O(N) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a = [0] + list(map(int, input().strip().split()))\n    if a.count(-1) == n:\n        print(1,end='')\n        print(\"0\"*(n-1))\n        return\n\n    dif = [0] * (n + 5)\n\n    for i in range(1, n + 1):\n        if a[i] != -1 and a[i] > 0:\n            l = max(1, i - a[i] + 1)\n            r = min(n, i + a[i] - 1)\n            if l <= r:\n                dif[l] += 1\n                dif[r + 1] -= 1\n\n    pre = [0] * (n + 5)\n    for i in range(1, n + 1):\n        pre[i] = pre[i - 1] + dif[i]\n\n    res = [0] * (n)\n\n    for i in range(1, n + 1):\n        if a[i] == 0:\n            if pre[i] > 0:\n                print(\"-1\")\n                return\n            res[i - 1] = 1\n\n    for i in range(1, n + 1):\n        if a[i] != -1 and a[i] > 0:\n            l = i - a[i]\n            r = i + a[i]\n\n            if l >= 1 and res[l - 1] == 1:\n                continue\n            if r <= n and res[r - 1] == 1:\n                continue\n\n            if l >= 1 and pre[l] == 0:\n                res[l - 1] = 1\n            elif r <= n and pre[r] == 0:\n                res[r - 1] = 1\n            else:\n                print(\"-1\")\n                return\n\n    for i in res:\n        print(i, end='')\n    print()\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "greedy-construction",
+      "topics": [
+        "greedy-construction",
+        "difference-array"
+      ],
+      "level_label": "Div.3 · E",
+      "difficulty_label": "Div.3 · E",
+      "rating": 1500,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1500",
+      "rating_source": "manual",
+      "topic_paths": {
+        "greedy-construction": [
+          "greedy",
+          "greedy-construction"
+        ],
+        "difference-array": [
+          "fundamentals",
+          "difference-array"
         ]
       }
     },
@@ -1721,7 +1942,7 @@
       "problem_id": "index.php",
       "title": "Index.php",
       "platform_meta": {},
-      "url": "https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en",
+      "url": "https://usaco.org/index.php?page=viewproblem2&cpid=668",
       "attempts": [
         {
           "date": "2026-09-21",
@@ -1750,16 +1971,32 @@
           "source_file": "solutions/greedy/sorting-greedy/usaco-index.php/2026-09-24.py",
           "note": "Idea: Split Elsie's cards into the two halves of the game and sort them in the required directions. Use Bessie's larger cards to greedily beat as many cards as possible in the first half, then use her smaller cards to greedily play below as many cards as possible in the second half.\nKey observation: In each half, using the weakest card that can still win preserves stronger or smaller useful cards for later rounds, so the sorted greedy matching maximizes the number of wins.\nComplexity: O(N log N) time and O(N) space.",
           "code": "# @url https://usaco.org/index.php?page=viewproblem2&cpid=573&lang=en\n# @primary sorting-greedy\n# @topics sorting-greedy, two-pointers, comparison-sorting\n# @note\n# Idea: Split Elsie's cards into the two halves of the game and sort them in the required directions. Use Bessie's larger cards to greedily beat as many cards as possible in the first half, then use her smaller cards to greedily play below as many cards as possible in the second half.\n# Key observation: In each half, using the weakest card that can still win preserves stronger or smaller useful cards for later rounds, so the sorted greedy matching maximizes the number of wins.\n# Complexity: O(N log N) time and O(N) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n = int(input())\n\n    a = []\n    k = {}\n    b = []\n    for _ in range(n):\n        t = int(input().strip())\n        k[t] = 1\n        a.append(t)\n    for i in range(1, 2 * n + 1):\n        if k.get(i, 0) == 0: b.append(i)\n\n    d = a[:n // 2]\n    d = sorted(d)\n    dd = a[n // 2:]\n    dd = sorted(dd, reverse=True)\n\n    res = 0\n    j = 0\n    bb = b[n // 2:]\n    for i in range(n // 2):\n\n        if bb[i] > d[j]:\n            j += 1\n            res += 1\n\n\n    j = 0\n    bbb = b[:n // 2]\n    bbb = sorted(bbb, reverse=True)\n    for i in range(n // 2):\n        if bbb[i] < dd[j]:\n            j += 1\n            res += 1\n\n    print(res)\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        },
+        {
+          "date": "2026-09-30",
+          "language": "Python",
+          "source_file": "solutions/graph-theory/connected-components/usaco-index.php/2026-09-30.py",
+          "note": "Idea: Traverse every connected component with BFS while maintaining the minimum and maximum x and y coordinates of its cows. Compute the perimeter of the component's axis-aligned bounding rectangle and keep the minimum.\nKey observation: Every connected component must be enclosed independently, and the smallest axis-aligned rectangle containing a component is determined solely by its minimum and maximum x and y coordinates.\nComplexity: O(N + M) time and O(N + M) space.",
+          "code": "# @url https://usaco.org/index.php?page=viewproblem2&cpid=944\n# @primary connected-components\n# @topics connected-components, breadth-first-search, points-and-vectors\n# @note\n# Idea: Traverse every connected component with BFS while maintaining the minimum and maximum x and y coordinates of its cows. Compute the perimeter of the component's axis-aligned bounding rectangle and keep the minimum.\n# Key observation: Every connected component must be enclosed independently, and the smallest axis-aligned rectangle containing a component is determined solely by its minimum and maximum x and y coordinates.\n# Complexity: O(N + M) time and O(N + M) space.\n# @endnote\n\nimport sys\nfrom collections import deque\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, m = map(int, input().strip().split())\n    adj = [[] for _ in range(n + 1)]\n    op = [[]]\n    for i in range(n):\n        x, y = map(int, input().strip().split())\n        op.append([x, y])\n\n    for _ in range(m):\n        a, b = map(int, input().strip().split())\n        adj[a].append(b)\n        adj[b].append(a)\n\n    res = int(1e10)\n    vis = [False] * (n + 1)\n    for i in range(1, n + 1):\n        if not vis[i]:\n            minx = op[i][0]\n            maxx = op[i][0]\n            miny = op[i][1]\n            maxy = op[i][1]\n            q = deque([i])\n            vis[i] = True\n            while q:\n                x = q.popleft()\n                for j in adj[x]:\n                    if not vis[j]:\n                        q.append(j)\n                        vis[j] = True\n                        minx = min(minx, op[j][0])\n                        maxx = max(maxx, op[j][0])\n                        miny = min(miny, op[j][1])\n                        maxy = max(maxy, op[j][1])\n            res = min(res, ((maxx - minx) + (maxy - miny)) * 2)\n    print(res)\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        },
+        {
+          "date": "2026-09-30",
+          "language": "Python",
+          "source_file": "solutions/search/breadth-first-search/usaco-index.php/2026-09-30-2.py",
+          "note": "Idea: Build a directed graph where cow i has an edge to cow j whenever j lies within i's transmission radius. Run BFS starting from every cow and count how many cows are reachable, then output the maximum count.\nKey observation: Once a cow receives the broadcast, it can forward it using its own transmission radius, so the total number reached from one starting cow is exactly the number of vertices reachable from that cow in the directed graph.\nComplexity: O(N^3) time and O(N^2) space.",
+          "code": "# @url https://usaco.org/index.php?page=viewproblem2&cpid=668\n# @primary breadth-first-search\n# @topics breadth-first-search, points-and-vectors\n# @note\n# Idea: Build a directed graph where cow i has an edge to cow j whenever j lies within i's transmission radius. Run BFS starting from every cow and count how many cows are reachable, then output the maximum count.\n# Key observation: Once a cow receives the broadcast, it can forward it using its own transmission radius, so the total number reached from one starting cow is exactly the number of vertices reachable from that cow in the directed graph.\n# Complexity: O(N^3) time and O(N^2) space.\n# @endnote\n\nimport sys\nfrom collections import deque\ninput = sys.stdin.readline\n\n\ndef solve():\n    n = int(input().strip())\n    adj = [[] for _ in range(n + 1)]\n    cow = []\n    for i in range(n):\n        x, y, p = map(int, input().strip().split())\n        cow.append([x, y, p])\n        \n    for i in range(n):\n        ax, ay, ap = cow[i][0], cow[i][1], cow[i][2]\n        for j in range(i + 1, n):\n            bx, by, bp = cow[j][0], cow[j][1], cow[j][2]\n            dis = (ax - bx) * (ax - bx) + (ay - by) * (ay - by)\n            if dis <= ap * ap:\n                adj[i + 1].append(j + 1)\n\n            if dis <= bp * bp:\n                adj[j + 1].append(i + 1)\n\n    res = 1\n    for i in range(1, n + 1):\n        cnt = 1\n        q = deque([i])\n        vis = [False] * (n + 1)\n        vis[i] = True\n        while q:\n            x = q.popleft()\n            for j in adj[x]:\n                if not vis[j]:\n                    cnt += 1\n                    vis[j] = True\n                    q.append(j)\n        res = max(res, cnt)\n    print(res)\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
         }
       ],
-      "primary_topic": "sorting-greedy",
+      "primary_topic": "breadth-first-search",
       "topics": [
         "two-pointers",
         "comparison-sorting",
         "binary-search",
         "points-and-vectors",
         "binary-search-on-answer",
-        "sorting-greedy"
+        "sorting-greedy",
+        "breadth-first-search",
+        "connected-components"
       ],
       "level_label": "—",
       "difficulty_label": "—",
@@ -1792,6 +2029,14 @@
         "sorting-greedy": [
           "greedy",
           "sorting-greedy"
+        ],
+        "breadth-first-search": [
+          "search",
+          "breadth-first-search"
+        ],
+        "connected-components": [
+          "graph-theory",
+          "connected-components"
         ]
       }
     }
