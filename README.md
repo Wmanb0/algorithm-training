@@ -4,59 +4,98 @@
 
 ## Statistics
 
-- Training days: **11**
-- Problems solved: **44**
-- Training attempts: **49**
-- Platforms: **5**
-- Topics used: **31**
+- Training days: **15**
+- Problems solved: **56**
+- Training attempts: **61**
+- Platforms: **6**
+- Topics used: **37**
 
 ### By Platform
 
 | Platform | Problems |
 |---|---:|
-| Codeforces | 29 |
-| AtCoder | 9 |
+| Codeforces | 35 |
+| AtCoder | 14 |
 | Cses | 3 |
 | LeetCode | 2 |
+| Dmoj | 1 |
 | Usaco | 1 |
 
 ### By Topic
 
 | Topic | Problems |
 |---|---:|
-| Comparison Sorting | 11 |
-| Arithmetic | 10 |
+| Arithmetic | 14 |
+| Comparison Sorting | 13 |
+| Array | 8 |
+| Enumeration | 8 |
+| String Simulation | 8 |
+| General Greedy | 7 |
 | Sorting-based Greedy | 7 |
-| Enumeration | 6 |
-| String Simulation | 6 |
-| Array | 5 |
-| General Greedy | 5 |
-| Hash Map | 5 |
-| Implementation | 5 |
+| Hash Map | 6 |
+| Implementation | 6 |
 | Binary Search on Answer | 4 |
+| Simulation | 4 |
 | Two Pointers | 4 |
 | Greedy Construction | 3 |
-| Simulation | 3 |
 | Binary Search | 2 |
 | Case Analysis | 2 |
+| Difference Array | 2 |
 | Prefix Sum | 2 |
 | Breadth-First Search | 1 |
 | Connected Components | 1 |
 | Constructive Algorithms | 1 |
-| Difference Array | 1 |
+| DAG DP | 1 |
+| Depth-First Search | 1 |
 | Exchange Argument | 1 |
 | Functional Graph | 1 |
 | General Dynamic Programming | 1 |
 | Hash Set | 1 |
 | Incremental Construction | 1 |
+| Interval Merging | 1 |
+| Kosaraju | 1 |
 | Monotonic Stack | 1 |
 | Offline Processing | 1 |
 | Ordered Map | 1 |
 | Points and Vectors | 1 |
 | Prime Factorization | 1 |
+| Priority Queue | 1 |
 | Stack | 1 |
+| Topological Sort | 1 |
 
 ## Daily Log
+
+### 2026-10-05
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [Codeforces 2264A](https://codeforces.com/contest/2264/problem/A) | Codeforces | Div.2 · A | CF 800 | Implementation, Array |
+| [Codeforces 2264B](https://codeforces.com/contest/2264/problem/B) | Codeforces | Div.2 · B | CF 1000 | Priority Queue, General Greedy |
+
+### 2026-10-03
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [AtCoder ABC478 A](https://atcoder.jp/contests/abc478/tasks/abc478_a) | AtCoder | ABC · A | AtCoder ≈18 | Simulation, Array |
+| [AtCoder ABC478 B](https://atcoder.jp/contests/abc478/tasks/abc478_b) | AtCoder | ABC · B | AtCoder ≈90 | Enumeration, Arithmetic |
+| [AtCoder ABC478 C](https://atcoder.jp/contests/abc478/tasks/abc478_c) | AtCoder | ABC · C | AtCoder ≈426 | Comparison Sorting, Array |
+| [AtCoder ABC478 D](https://atcoder.jp/contests/abc478/tasks/abc478_d) | AtCoder | ABC · D | AtCoder ≈729 | Interval Merging, Difference Array, Hash Map, Comparison Sorting |
+| [AtCoder ABC478 E](https://atcoder.jp/contests/abc478/tasks/abc478_e) | AtCoder | ABC · E | AtCoder ≈1376 | Kosaraju, Topological Sort, DAG DP |
+
+### 2026-10-02
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [Codeforces 2241A](https://codeforces.com/contest/2241/problem/A) | Codeforces | Div.3 · A | CF 800 | Arithmetic |
+| [Codeforces 2241B](https://codeforces.com/contest/2241/problem/B) | Codeforces | Div.3 · B | CF 1100 | Enumeration, Arithmetic, String Simulation |
+
+### 2026-10-01
+
+| Problem | Platform | Level | Rating | Topics |
+|---|---|---|---:|---|
+| [Acsl1p4](https://dmoj.ca/problem/acsl1p4) | Dmoj | — | — | Depth-First Search |
+| [Codeforces 2244A](https://codeforces.com/contest/2244/problem/A) | Codeforces | Div.3 · A | CF 800 | String Simulation |
+| [Codeforces 2244B](https://codeforces.com/contest/2244/problem/B) | Codeforces | Div.3 · B | CF 800 | General Greedy, Arithmetic |
 
 ### 2026-09-30
 

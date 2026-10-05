@@ -417,6 +417,255 @@
       }
     },
     {
+      "id": "atcoder:abc478_a",
+      "platform": "atcoder",
+      "problem_id": "ABC478_A",
+      "title": "AtCoder ABC478 A",
+      "platform_meta": {
+        "contest_id": "abc478",
+        "contest_series": "ABC",
+        "problem_index": "A",
+        "task_id": "abc478_a",
+        "difficulty_rating": 18,
+        "difficulty_raw": -835.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc478/tasks/abc478_a",
+      "attempts": [
+        {
+          "date": "2026-10-03",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/simulation/atcoder-ABC478_A/2026-10-03.py",
+          "note": "Idea: Simulate distributing the M grapes one at a time. Repeatedly increment person k mod N and advance k until no grapes remain.\nKey observation: The recipients repeat periodically in the fixed order 1,2,...,N, so taking the distribution index modulo N directly identifies the next person.\nComplexity: O(M + N) time and O(N) space.",
+          "code": "# @url https://atcoder.jp/contests/abc478/tasks/abc478_a\n# @primary simulation\n# @topics simulation, array\n# @note\n# Idea: Simulate distributing the M grapes one at a time. Repeatedly increment person k mod N and advance k until no grapes remain.\n# Key observation: The recipients repeat periodically in the fixed order 1,2,...,N, so taking the distribution index modulo N directly identifies the next person.\n# Complexity: O(M + N) time and O(N) space.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, m = map(int, input().strip().split())\n    res = [0] * (n)\n    k = 0\n    while m > 0:\n        res[k % n] += 1\n        k += 1\n        m -= 1\n    for i in res:\n        print(i)\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "simulation",
+      "topics": [
+        "simulation",
+        "array"
+      ],
+      "level_label": "ABC · A",
+      "difficulty_label": "ABC · A",
+      "rating": 18,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈18",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "simulation": [
+          "fundamentals",
+          "simulation"
+        ],
+        "array": [
+          "data-structures",
+          "array"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc478_b",
+      "platform": "atcoder",
+      "problem_id": "ABC478_B",
+      "title": "AtCoder ABC478 B",
+      "platform_meta": {
+        "contest_id": "abc478",
+        "contest_series": "ABC",
+        "problem_index": "B",
+        "task_id": "abc478_b",
+        "difficulty_rating": 90,
+        "difficulty_raw": -197.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc478/tasks/abc478_b",
+      "attempts": [
+        {
+          "date": "2026-10-03",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/enumeration/atcoder-ABC478_B/2026-10-03.py",
+          "note": "Idea: Enumerate every triple of distinct topping indices i < j < k. If their total price i+j+k+3 does not exceed V, update the maximum total happiness.\nKey observation: N is small enough to examine every possible set of three toppings, so directly evaluating every triple guarantees that the maximum feasible happiness is found.\nComplexity: O(N^3) time and O(N) space.",
+          "code": "# @url https://atcoder.jp/contests/abc478/tasks/abc478_b\n# @primary enumeration\n# @topics enumeration, arithmetic\n# @note\n# Idea: Enumerate every triple of distinct topping indices i < j < k. If their total price i+j+k+3 does not exceed V, update the maximum total happiness.\n# Key observation: N is small enough to examine every possible set of three toppings, so directly evaluating every triple guarantees that the maximum feasible happiness is found.\n# Complexity: O(N^3) time and O(N) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, v = map(int, input().strip().split())\n    a = list(map(int, input().strip().split()))\n    res = 0\n\n    for i in range(n):\n        for j in range(i + 1, n):\n            for k in range(j + 1, n):\n                if i + j + k + 3 <= v:\n                    res = max(res, a[i] + a[j] + a[k])\n    print(res)\n\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "enumeration",
+      "topics": [
+        "enumeration",
+        "arithmetic"
+      ],
+      "level_label": "ABC · B",
+      "difficulty_label": "ABC · B",
+      "rating": 90,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈90",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "enumeration": [
+          "fundamentals",
+          "enumeration"
+        ],
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc478_c",
+      "platform": "atcoder",
+      "problem_id": "ABC478_C",
+      "title": "AtCoder ABC478 C",
+      "platform_meta": {
+        "contest_id": "abc478",
+        "contest_series": "ABC",
+        "problem_index": "C",
+        "task_id": "abc478_c",
+        "difficulty_rating": 426,
+        "difficulty_raw": 426.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc478/tasks/abc478_c",
+      "attempts": [
+        {
+          "date": "2026-10-03",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/sorting/comparison-sorting/atcoder-ABC478_C/2026-10-03.py",
+          "note": "Idea: Sort a copy of the whole array and find the first position where the original array differs from the globally sorted order. Sort the prefix extending through K positions from that point, rebuild the array, and check whether the result is nondecreasing.\nKey observation: Before the first mismatch, the original array already agrees with the final sorted order, so the code chooses the earliest relevant position and tests whether sorting the corresponding region makes the entire sequence sorted.\nComplexity: O(N log N) time and O(N) space.",
+          "code": "# @url https://atcoder.jp/contests/abc478/tasks/abc478_c\n# @primary comparison-sorting\n# @topics comparison-sorting, array\n# @note\n# Idea: Sort a copy of the whole array and find the first position where the original array differs from the globally sorted order. Sort the prefix extending through K positions from that point, rebuild the array, and check whether the result is nondecreasing.\n# Key observation: Before the first mismatch, the original array already agrees with the final sorted order, so the code chooses the earliest relevant position and tests whether sorting the corresponding region makes the entire sequence sorted.\n# Complexity: O(N log N) time and O(N) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, k = map(int, input().strip().split())\n    a = [0] + list(map(int, input().strip().split()))\n    t = sorted(a)\n    p = 1\n    for i in range(1, n - k + 2):\n        if a[i] != t[i]:\n            p = i\n            break\n    b = a[: p + k]\n    b = sorted(b)\n    c = b + a[p + k:]\n\n    \n    for i in range(2,  n + 1):\n        if c[i] < c[i - 1]: \n            print(\"No\")\n            return\n    print(\"Yes\")\n\n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "comparison-sorting",
+      "topics": [
+        "comparison-sorting",
+        "array"
+      ],
+      "level_label": "ABC · C",
+      "difficulty_label": "ABC · C",
+      "rating": 426,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈426",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
+        ],
+        "array": [
+          "data-structures",
+          "array"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc478_d",
+      "platform": "atcoder",
+      "problem_id": "ABC478_D",
+      "title": "AtCoder ABC478 D",
+      "platform_meta": {
+        "contest_id": "abc478",
+        "contest_series": "ABC",
+        "problem_index": "D",
+        "task_id": "abc478_d",
+        "difficulty_rating": 729,
+        "difficulty_raw": 729.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc478/tasks/abc478_d",
+      "attempts": [
+        {
+          "date": "2026-10-03",
+          "language": "Python",
+          "source_file": "solutions/greedy/interval-greedy/interval-merging/atcoder-ABC478_D/2026-10-03.py",
+          "note": "Idea: Group all intervals by their inserted value X. For each value, sort its intervals and merge overlapping intervals so each position is counted at most once for that X, then add every merged interval to a global difference array.\nKey observation: Multiple operations inserting the same X into the same position still contribute only one distinct set element, so intervals belonging to the same X must first be replaced by their union.\nComplexity: O(Q log Q + N) time and O(N + Q) space.",
+          "code": "# @url https://atcoder.jp/contests/abc478/tasks/abc478_d\n# @primary interval-merging\n# @topics interval-merging, difference-array, hash-map, comparison-sorting\n# @note\n# Idea: Group all intervals by their inserted value X. For each value, sort its intervals and merge overlapping intervals so each position is counted at most once for that X, then add every merged interval to a global difference array.\n# Key observation: Multiple operations inserting the same X into the same position still contribute only one distinct set element, so intervals belonging to the same X must first be replaced by their union.\n# Complexity: O(Q log Q + N) time and O(N + Q) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, q = map(int, input().strip().split())\n    d = {}\n    for _ in range(q):\n        l, r, x = map(int, input().strip().split())\n        if d.get(x, 0) == 0:\n            d[x] = [[l, r]]\n        else: d[x].append([l, r])\n        \n\n    diff = [0] * (n + 5)\n    for x in d:\n        d[x] = sorted(d[x], key=lambda x : (x[0], x[1]))\n        m = len(d[x])\n        l = d[x][0][0]\n        r = d[x][0][1]\n        \n        for i in range(1, m):\n            \n            if d[x][i][0] <= r:\n                r = max(r, d[x][i][1])\n            else:\n                diff[l] += 1\n                diff[r + 1] -= 1\n                l = d[x][i][0]\n                r = d[x][i][1]\n        \n        diff[l] += 1\n        diff[r + 1] -= 1\n\n    for i in range(1, n + 1):\n        diff[i] += diff[i - 1]\n        print(diff[i], end=' ')\n    \n    pass\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "interval-merging",
+      "topics": [
+        "interval-merging",
+        "difference-array",
+        "hash-map",
+        "comparison-sorting"
+      ],
+      "level_label": "ABC · D",
+      "difficulty_label": "ABC · D",
+      "rating": 729,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈729",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "interval-merging": [
+          "greedy",
+          "interval-greedy",
+          "interval-merging"
+        ],
+        "difference-array": [
+          "fundamentals",
+          "difference-array"
+        ],
+        "hash-map": [
+          "data-structures",
+          "hash-map"
+        ],
+        "comparison-sorting": [
+          "fundamentals",
+          "sorting",
+          "comparison-sorting"
+        ]
+      }
+    },
+    {
+      "id": "atcoder:abc478_e",
+      "platform": "atcoder",
+      "problem_id": "ABC478_E",
+      "title": "AtCoder ABC478 E",
+      "platform_meta": {
+        "contest_id": "abc478",
+        "contest_series": "ABC",
+        "problem_index": "E",
+        "task_id": "abc478_e",
+        "difficulty_rating": 1376,
+        "difficulty_raw": 1376.0,
+        "rating_source": "atcoder-problems"
+      },
+      "url": "https://atcoder.jp/contests/abc478/tasks/abc478_e",
+      "attempts": [
+        {
+          "date": "2026-10-03",
+          "language": "Python",
+          "source_file": "solutions/graph-theory/strongly-connected-components/kosaraju/atcoder-ABC478_E/2026-10-03.py",
+          "note": "Idea: Build the constraint graph and use Kosaraju's algorithm to compute its strongly connected components. Reject if a strict inequality lies inside one component, then build the condensation DAG and process it topologically while propagating d[y] = max(d[y], d[x] + t).\nKey observation: Vertices in the same strongly connected component must receive equal values, so a strict edge inside one component is impossible. After contracting SCCs, the graph is a DAG and each edge requires the destination value to be at least the source value plus t.\nComplexity: O(N + Q) time and O(N + Q) space.",
+          "code": "# @url https://atcoder.jp/contests/abc478/tasks/abc478_e\n# @primary kosaraju\n# @topics kosaraju, topological-sort, dag-dp\n# @note\n# Idea: Build the constraint graph and use Kosaraju's algorithm to compute its strongly connected components. Reject if a strict inequality lies inside one component, then build the condensation DAG and process it topologically while propagating d[y] = max(d[y], d[x] + t).\n# Key observation: Vertices in the same strongly connected component must receive equal values, so a strict edge inside one component is impossible. After contracting SCCs, the graph is a DAG and each edge requires the destination value to be at least the source value plus t.\n# Complexity: O(N + Q) time and O(N + Q) space.\n# @endnote\n\nimport sys\nfrom collections import deque\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, q = map(int, input().strip().split())\n    adj = [[] for _ in range(n)]\n    radj = [[] for _ in range(n)]\n    op = []\n\n    for _ in range(q):\n        t, u, v = map(int, input().strip().split())\n        u -= 1\n        v -= 1\n        adj[u].append(v)\n        radj[v].append(u)\n        op.append([t, u, v])\n\n    vis = [False] * (n)\n    b = []\n\n    def dfs(x):\n        vis[x] = True\n\n        for i in adj[x]:\n            if not vis[i]:\n                dfs(i)\n\n        b.append(x)\n\n    for i in range(n):\n        if not vis[i]:\n            dfs(i)\n\n    comp = [-1] * n\n    cnt = 0\n\n    def dfs2(x):\n        comp[x] = cnt\n\n        for i in radj[x]:\n            if comp[i] == -1:\n                dfs2(i)\n\n    for i in reversed(b):\n        if comp[i] == -1:\n            dfs2(i)\n            cnt += 1\n\n    for t, u, v in op:\n        # scc 中有 小于号\n        if t == 1 and comp[u] == comp[v]:\n            print(\"No\")\n            return\n\n    g = [[] for _ in range(cnt)]\n    idx = [0] * cnt\n\n    for t, u, v in op:\n        x = comp[u]\n        y = comp[v]\n\n        if x != y: \n            g[x].append([y, t])\n            idx[y] += 1\n\n    d = [1] * cnt\n    q = deque()\n\n    for i in range(cnt):\n        if idx[i] == 0:\n            q.append(i)\n\n    while q:\n        x = q.popleft()\n\n        for y, t in g[x]:\n\n            d[y] = max(d[y], d[x] + t) # 如果是 小于 就 加 1\n\n            idx[y] -= 1\n            if idx[y] == 0:\n                q.append(y)\n\n    res = [0] * n\n\n    for i in range(n):\n        res[i] = d[comp[i]]\n\n    print(\"Yes\")\n    print(*res)\n\n\n    pass\n\n\nif __name__ == \"__main__\":\n    sys.setrecursionlimit(int(10 ** 6))\n    solve()"
+        }
+      ],
+      "primary_topic": "kosaraju",
+      "topics": [
+        "kosaraju",
+        "topological-sort",
+        "dag-dp"
+      ],
+      "level_label": "ABC · E",
+      "difficulty_label": "ABC · E",
+      "rating": 1376,
+      "rating_system": "atcoder-problems",
+      "rating_label": "AtCoder ≈1376",
+      "rating_source": "atcoder-problems",
+      "topic_paths": {
+        "kosaraju": [
+          "graph-theory",
+          "strongly-connected-components",
+          "kosaraju"
+        ],
+        "topological-sort": [
+          "graph-theory",
+          "topological-sort"
+        ],
+        "dag-dp": [
+          "dynamic-programming",
+          "dag-dp"
+        ]
+      }
+    },
+    {
       "id": "codeforces:1117:A",
       "platform": "codeforces",
       "problem_id": "1117A",
@@ -774,6 +1023,185 @@
         "incremental-construction": [
           "paradigms",
           "incremental-construction"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2241:A",
+      "platform": "codeforces",
+      "problem_id": "2241A",
+      "title": "Codeforces 2241A",
+      "platform_meta": {
+        "contest_id": 2241,
+        "problem_index": "A",
+        "rating": 800,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2241/problem/A",
+      "attempts": [
+        {
+          "date": "2026-10-02",
+          "language": "Python",
+          "source_file": "solutions/mathematics/arithmetic/codeforces-2241A/2026-10-02.py",
+          "note": "Idea: Check whether a is divisible by b and output YES exactly when a % b equals zero.\nKey observation: Repeatedly dividing a by divisors is equivalent to removing one divisor equal to a / b, which is possible exactly when b divides a.\nComplexity: O(1) time and O(1) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2241/problem/A\n# @primary arithmetic\n# @topics arithmetic\n# @rating 800\n# @division div3\n# @note\n# Idea: Check whether a is divisible by b and output YES exactly when a % b equals zero.\n# Key observation: Repeatedly dividing a by divisors is equivalent to removing one divisor equal to a / b, which is possible exactly when b divides a.\n# Complexity: O(1) time and O(1) space per test case.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    a, b = map(int, input().strip().split())\n    if a % b == 0: print(\"YES\")\n    else: print(\"NO\")\n    pass\n\n\ndef main():\n    t = int(input().strip())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "arithmetic",
+      "topics": [
+        "arithmetic"
+      ],
+      "level_label": "Div.3 · A",
+      "difficulty_label": "Div.3 · A",
+      "rating": 800,
+      "rating_system": "codeforces",
+      "rating_label": "CF 800",
+      "rating_source": "manual",
+      "topic_paths": {
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2241:B",
+      "platform": "codeforces",
+      "problem_id": "2241B",
+      "title": "Codeforces 2241B",
+      "platform_meta": {
+        "contest_id": 2241,
+        "problem_index": "B",
+        "rating": 1100,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2241/problem/B",
+      "attempts": [
+        {
+          "date": "2026-10-02",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/enumeration/codeforces-2241B/2026-10-02.py",
+          "note": "Idea: Inspect the distinct decimal digits of the given number and handle the simple special cases directly. Otherwise enumerate multipliers from 1 through 7, multiply the number by each candidate, and inspect the distinct digits of the product.\nKey observation: Whether a number is good can be checked directly from the number of distinct digits in its decimal representation, so each bounded candidate multiplier can be tested independently.\nComplexity: O(log X) time and O(log X) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2241/problem/B\n# @primary enumeration\n# @topics enumeration, arithmetic, string-simulation\n# @rating 1100\n# @division div3\n# @note\n# Idea: Inspect the distinct decimal digits of the given number and handle the simple special cases directly. Otherwise enumerate multipliers from 1 through 7, multiply the number by each candidate, and inspect the distinct digits of the product.\n# Key observation: Whether a number is good can be checked directly from the number of distinct digits in its decimal representation, so each bounded candidate multiplier can be tested independently.\n# Complexity: O(log X) time and O(log X) space per test case.\n# @endnote\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = input().strip()\n    k = list(set(n))\n    if len(k) < 2: print(10)\n    elif '1' in k and '0' in k and len(k) == 2: print(10)\n    else:\n        t = int(n)\n        d = 10\n        for i in range(1, 8):\n            a = str(i * t)\n            p = list(set(a))\n            aa = str(i)\n            pp = list(set(aa))\n            if len(p) <= 2 and len(pp) <= 2: print(t, i)\n\n    \n    pass\n\n\ndef main():\n    t = int(input().strip())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "enumeration",
+      "topics": [
+        "enumeration",
+        "arithmetic",
+        "string-simulation"
+      ],
+      "level_label": "Div.3 · B",
+      "difficulty_label": "Div.3 · B",
+      "rating": 1100,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1100",
+      "rating_source": "manual",
+      "topic_paths": {
+        "enumeration": [
+          "fundamentals",
+          "enumeration"
+        ],
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
+        ],
+        "string-simulation": [
+          "strings",
+          "string-simulation"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2244:A",
+      "platform": "codeforces",
+      "problem_id": "2244A",
+      "title": "Codeforces 2244A",
+      "platform_meta": {
+        "contest_id": 2244,
+        "problem_index": "A",
+        "rating": 800,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2244/problem/A",
+      "attempts": [
+        {
+          "date": "2026-10-01",
+          "language": "Python",
+          "source_file": "solutions/strings/string-simulation/codeforces-2244A/2026-10-01.py",
+          "note": "Idea: Scan the string and measure the length of every consecutive block of '#'. Keep the maximum block length and output half of it rounded up.\nKey observation: A line of length L is erased from both ends simultaneously, so it requires ceil(L / 2) seconds; therefore only the longest consecutive '#' block matters.\nComplexity: O(N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2244/problem/A\n# @primary string-simulation\n# @topics string-simulation\n# @rating 800\n# @division div3\n# @note\n# Idea: Scan the string and measure the length of every consecutive block of '#'. Keep the maximum block length and output half of it rounded up.\n# Key observation: A line of length L is erased from both ends simultaneously, so it requires ceil(L / 2) seconds; therefore only the longest consecutive '#' block matters.\n# Complexity: O(N) time and O(N) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input())\n    s = input().strip()\n    k = 0\n    i = 0\n    while i < n:\n        p = 0\n        while i < n and s[i] == \"#\":\n            p += 1\n            i += 1\n        k = max(k, p)\n        i += 1   \n\n    print((k + 1) // 2)\n    pass\n\n\ndef main():\n    \n    t = int(input().strip())\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "string-simulation",
+      "topics": [
+        "string-simulation"
+      ],
+      "level_label": "Div.3 · A",
+      "difficulty_label": "Div.3 · A",
+      "rating": 800,
+      "rating_system": "codeforces",
+      "rating_label": "CF 800",
+      "rating_source": "manual",
+      "topic_paths": {
+        "string-simulation": [
+          "strings",
+          "string-simulation"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2244:B",
+      "platform": "codeforces",
+      "problem_id": "2244B",
+      "title": "Codeforces 2244B",
+      "platform_meta": {
+        "contest_id": 2244,
+        "problem_index": "B",
+        "rating": 800,
+        "divisions": [
+          "div3"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2244/problem/B",
+      "attempts": [
+        {
+          "date": "2026-10-01",
+          "language": "Python",
+          "source_file": "solutions/greedy/general-greedy/codeforces-2244B/2026-10-01.py",
+          "note": "Idea: Process the stacks from left to right. For each position i, require at least i books, fix it to exactly i, and transfer all surplus books to the next position.\nKey observation: Books can only move to the right, so after leaving position i its value can no longer be increased from the right. Keeping exactly the minimum required value i leaves the maximum possible surplus for later stacks.\nComplexity: O(N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2244/problem/B\n# @primary general-greedy\n# @topics general-greedy, arithmetic\n# @rating 800\n# @division div3\n# @note\n# Idea: Process the stacks from left to right. For each position i, require at least i books, fix it to exactly i, and transfer all surplus books to the next position.\n# Key observation: Books can only move to the right, so after leaving position i its value can no longer be increased from the right. Keeping exactly the minimum required value i leaves the maximum possible surplus for later stacks.\n# Complexity: O(N) time and O(N) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a = [0] + list(map(int, input().strip().split()))\n    for i in range(1, n):\n        if a[i] < i: \n            print(\"NO\")\n            return\n        k = a[i] - i\n        a[i + 1] += k\n        a[i] = i\n    if a[n] <= a[n - 1]: print(\"NO\")\n    else: print(\"YES\")\n    pass\n\n\ndef main():\n    t = int(input())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "general-greedy",
+      "topics": [
+        "general-greedy",
+        "arithmetic"
+      ],
+      "level_label": "Div.3 · B",
+      "difficulty_label": "Div.3 · B",
+      "rating": 800,
+      "rating_system": "codeforces",
+      "rating_label": "CF 800",
+      "rating_source": "manual",
+      "topic_paths": {
+        "general-greedy": [
+          "greedy",
+          "general-greedy"
+        ],
+        "arithmetic": [
+          "mathematics",
+          "arithmetic"
         ]
       }
     },
@@ -1174,6 +1602,98 @@
         "difference-array": [
           "fundamentals",
           "difference-array"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2264:A",
+      "platform": "codeforces",
+      "problem_id": "2264A",
+      "title": "Codeforces 2264A",
+      "platform_meta": {
+        "contest_id": 2264,
+        "problem_index": "A",
+        "rating": 800,
+        "divisions": [
+          "div2"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2264/problem/A",
+      "attempts": [
+        {
+          "date": "2026-10-05",
+          "language": "Python",
+          "source_file": "solutions/fundamentals/implementation/codeforces-2264A/2026-10-05.py",
+          "note": "Idea: Remove every element already equal to its target position, reverse the remaining values, and check whether this reversed sequence is nondecreasing.\nKey observation: The chosen operation reverses exactly the values placed at the selected indices while fixed positions may remain untouched, so the non-fixed values must appear in the reverse order required by the sorted permutation.\nComplexity: O(N) time and O(N) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2264/problem/A\n# @primary implementation\n# @topics implementation, array\n# @rating 800\n# @division div2\n# @note\n# Idea: Remove every element already equal to its target position, reverse the remaining values, and check whether this reversed sequence is nondecreasing.\n# Key observation: The chosen operation reverses exactly the values placed at the selected indices while fixed positions may remain untouched, so the non-fixed values must appear in the reverse order required by the sorted permutation.\n# Complexity: O(N) time and O(N) space per test case.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve_case():\n    n = int(input().strip())\n    a = [0] + list(map(int, input().strip().split()))\n\n    b = []\n    for i in range(1, n + 1):\n        if a[i] != i:\n            b.append(a[i])\n\n    b = b[::-1]\n\n    for i in range(1, len(b)):\n        if b[i] < b[i - 1]: \n            print(\"NO\")\n            return\n    \n    print(\"YES\")\n    pass\n\n\ndef main():\n    t = int(input().strip())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "implementation",
+      "topics": [
+        "implementation",
+        "array"
+      ],
+      "level_label": "Div.2 · A",
+      "difficulty_label": "Div.2 · A",
+      "rating": 800,
+      "rating_system": "codeforces",
+      "rating_label": "CF 800",
+      "rating_source": "manual",
+      "topic_paths": {
+        "implementation": [
+          "fundamentals",
+          "implementation"
+        ],
+        "array": [
+          "data-structures",
+          "array"
+        ]
+      }
+    },
+    {
+      "id": "codeforces:2264:B",
+      "platform": "codeforces",
+      "problem_id": "2264B",
+      "title": "Codeforces 2264B",
+      "platform_meta": {
+        "contest_id": 2264,
+        "problem_index": "B",
+        "rating": 1000,
+        "divisions": [
+          "div2"
+        ],
+        "rating_source": "manual"
+      },
+      "url": "https://codeforces.com/contest/2264/problem/B",
+      "attempts": [
+        {
+          "date": "2026-10-05",
+          "language": "Python",
+          "source_file": "solutions/data-structures/priority-queue/codeforces-2264B/2026-10-05.py",
+          "note": "Idea: Scan the array from left to right while maintaining the smallest M-1 previous values in a max-heap implemented with negated values. For each possible final element a[i], evaluate m * a[i] minus the sum of those selected previous values and maximize the result.\nKey observation: Once a[i] is fixed as the final selected value, maximizing the expression requires minimizing the sum of the other M-1 selected earlier values, so only the M-1 smallest values seen so far need to be retained.\nComplexity: O(N log M) time and O(N + M) space per test case.",
+          "code": "# @url https://codeforces.com/contest/2264/problem/B\n# @primary priority-queue\n# @topics priority-queue, general-greedy\n# @rating 1000\n# @division div2\n# @note\n# Idea: Scan the array from left to right while maintaining the smallest M-1 previous values in a max-heap implemented with negated values. For each possible final element a[i], evaluate m * a[i] minus the sum of those selected previous values and maximize the result.\n# Key observation: Once a[i] is fixed as the final selected value, maximizing the expression requires minimizing the sum of the other M-1 selected earlier values, so only the M-1 smallest values seen so far need to be retained.\n# Complexity: O(N log M) time and O(N + M) space per test case.\n# @endnote\n\nimport sys\nimport heapq\ninput = sys.stdin.readline\n\n\ndef solve_case():\n\n    n, m = map(int, input().strip().split())\n\n    a = [-10**30] + list(map(int, input().strip().split()))\n    \n    if m == 1:\n        print(max(a))\n        return\n\n    q = []\n    s = 0\n    res = -10**30\n\n    for i in range(1, n + 1):\n\n        if len(q) == m - 1:\n            res = max(res, m * a[i] - s)\n\n        heapq.heappush(q, -a[i])\n        s += a[i]\n\n        if len(q) > m - 1:\n            x = -heapq.heappop(q)\n            s -= x\n\n    print(res)\n\n\n    pass\n\n\ndef main():\n    t = int(input().strip())\n\n    for _ in range(t):\n        solve_case()\n\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      ],
+      "primary_topic": "priority-queue",
+      "topics": [
+        "priority-queue",
+        "general-greedy"
+      ],
+      "level_label": "Div.2 · B",
+      "difficulty_label": "Div.2 · B",
+      "rating": 1000,
+      "rating_system": "codeforces",
+      "rating_label": "CF 1000",
+      "rating_source": "manual",
+      "topic_paths": {
+        "priority-queue": [
+          "data-structures",
+          "priority-queue"
+        ],
+        "general-greedy": [
+          "greedy",
+          "general-greedy"
         ]
       }
     },
@@ -1835,6 +2355,39 @@
           "fundamentals",
           "sorting",
           "comparison-sorting"
+        ]
+      }
+    },
+    {
+      "id": "dmoj:acsl1p4",
+      "platform": "dmoj",
+      "problem_id": "acsl1p4",
+      "title": "Acsl1p4",
+      "platform_meta": {},
+      "url": "https://dmoj.ca/problem/acsl1p4",
+      "attempts": [
+        {
+          "date": "2026-10-01",
+          "language": "Python",
+          "source_file": "solutions/search/depth-first-search/dmoj-acsl1p4/2026-10-01.py",
+          "note": "Idea: Build a directed graph from each match result, directing the edge from the winner to the loser. Start a DFS from every vertex and check whether the search can return to its starting vertex; count every starting vertex for which this is possible.\nKey observation: A vertex belongs to a directed cycle exactly when there exists a directed path starting from that vertex that eventually returns to itself.\nComplexity: O(N(N + K)) time and O(N + K) space.",
+          "code": "# @url https://dmoj.ca/problem/acsl1p4\n# @primary depth-first-search\n# @topics depth-first-search\n# @note\n# Idea: Build a directed graph from each match result, directing the edge from the winner to the loser. Start a DFS from every vertex and check whether the search can return to its starting vertex; count every starting vertex for which this is possible.\n# Key observation: A vertex belongs to a directed cycle exactly when there exists a directed path starting from that vertex that eventually returns to itself.\n# Complexity: O(N(N + K)) time and O(N + K) space.\n# @endnote\n\nimport sys\n\ninput = sys.stdin.readline\n\n\ndef solve():\n    n, k = map(int, input().split())\n\n    adj = [[] for _ in range(n)]\n\n    for _ in range(k):\n        a, b, sa, sb = map(int, input().split())\n        a -= 1\n        b -= 1\n\n        if sa > sb:\n            adj[a].append(b)\n        else:\n            adj[b].append(a)\n\n    cycle = set()\n\n    for start in range(n):\n        vis = [False] * n\n        vis[start] = True\n\n        def dfs(x):\n            for y in adj[x]:\n                if y == start:\n                    return True\n\n                if not vis[y]:\n                    vis[y] = True\n                    if dfs(y):\n                        return True\n\n            return False\n\n        if dfs(start):\n            cycle.add(start)\n\n    print(len(cycle))\n\n\nif __name__ == \"__main__\":\n    solve()"
+        }
+      ],
+      "primary_topic": "depth-first-search",
+      "topics": [
+        "depth-first-search"
+      ],
+      "level_label": "—",
+      "difficulty_label": "—",
+      "rating": null,
+      "rating_system": null,
+      "rating_label": "—",
+      "rating_source": null,
+      "topic_paths": {
+        "depth-first-search": [
+          "search",
+          "depth-first-search"
         ]
       }
     },
